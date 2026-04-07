@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pesquisa — SEO Local em Portugal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brand:       #1a6fff;
+      --brand-light: #e8f0ff;
+      --brand-dark:  #1456d4;
+      --navy:        #0c1428;
+      --navy-2:      #111c35;
+      --navy-card:   #16233d;
+      --navy-border: rgba(255,255,255,0.08);
+      --gray-50:  #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-700: #374151;
+      --gray-900: #111827;
+      --teal:     #00d4aa;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--gray-900);
+      background: #fff;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .nav-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 106px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .logo img {
+      width: 90px;
+      height: 90px;
+      display: block;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .logo-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--gray-900);
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray-500);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--gray-900); }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 18px;
+      background: var(--brand);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.15s, transform 0.1s;
+    }
+    .nav-cta:hover { background: var(--brand-dark); transform: translateY(-1px); }
+    .nav-cta:active { transform: translateY(0); }
+    .nav-cta:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+
+    /* ─── HERO ─── */
+    #hero {
+      background: #fff;
+      padding: 80px 24px 0;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 20px;
+    }
+
+    #hero h1 {
+      font-size: clamp(36px, 5vw, 62px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+      color: var(--gray-900);
+      max-width: 760px;
+      margin: 0 auto 20px;
+    }
+
+    #hero h1 span { color: var(--brand); }
+
+    #hero .hero-sub {
+      font-size: 17px;
+      color: var(--gray-500);
+      max-width: 500px;
+      margin: 0 auto 36px;
+      line-height: 1.65;
+    }
+
+    .hero-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: linear-gradient(135deg, #2563eb 0%, #1a6fff 50%, #0ea5e9 100%);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 4px 24px rgba(26,111,255,0.35), 0 1px 2px rgba(0,0,0,0.08);
+      transition: transform 0.15s, box-shadow 0.15s;
+      margin-bottom: 56px;
+    }
+    .hero-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(26,111,255,0.4), 0 1px 2px rgba(0,0,0,0.08);
+    }
+    .hero-btn:active { transform: translateY(0); }
+    .hero-btn:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+
+    /* browser mockup */
+    .hero-card {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 16px 16px 0 0;
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+      border-bottom: none;
+      box-shadow:
+        0 20px 60px -10px rgba(0,0,0,0.12),
+        0 4px 16px -4px rgba(0,0,0,0.08);
+    }
+
+    .card-topbar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 12px 16px;
+      background: var(--gray-100);
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .win-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .wd-r { background: #ff5f57; }
+    .wd-y { background: #febc2e; }
+    .wd-g { background: #28c840; }
+
+    .card-url {
+      flex: 1;
+      background: #fff;
+      border: 1px solid var(--gray-200);
+      border-radius: 5px;
+      padding: 4px 10px;
+      font-size: 11.5px;
+      color: var(--gray-400);
+      text-align: left;
+    }
+
+    .card-body {
+      background: linear-gradient(160deg, #1e3a6e 0%, #0c1e45 40%, #0a1628 100%);
+      min-height: 340px;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+    }
+
+    .card-sidebar {
+      border-right: 1px solid rgba(255,255,255,0.06);
+      padding: 14px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .cs-section {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      padding: 10px 8px 4px;
+    }
+
+    .cs-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 8px;
+      border-radius: 5px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+    }
+    .cs-item.active { background: rgba(26,111,255,0.2); color: #fff; }
+    .cs-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+
+    .card-content {
+      padding: 18px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .cc-kpis {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .kpi {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 8px;
+      padding: 11px 13px;
+    }
+    .kpi-l { font-size: 10px; color: rgba(255,255,255,0.4); margin-bottom: 3px; }
+    .kpi-v { font-size: 19px; font-weight: 800; color: #fff; letter-spacing: -0.02em; }
+    .kpi-s { font-size: 10px; color: var(--teal); margin-top: 2px; }
+
+    .cc-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .cc-table { width: 100%; border-collapse: collapse; }
+    .cc-table th {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      padding: 5px 8px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .cc-table td {
+      font-size: 11.5px;
+      padding: 7px 8px;
+      color: rgba(255,255,255,0.65);
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+
+    .pos {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px; height: 20px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 700;
+    }
+    .p1 { background: rgba(0,212,170,0.15); color: var(--teal); }
+    .p2 { background: rgba(0,212,170,0.10); color: var(--teal); }
+    .p3 { background: rgba(0,212,170,0.07); color: var(--teal); }
+    .pm { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.4); }
+    .up { color: var(--teal); font-size: 10px; font-weight: 700; }
+
+    .cc-chart {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 38px;
+    }
+    .ch-bar { flex: 1; border-radius: 2px 2px 0 0; background: rgba(26,111,255,0.25); }
+    .ch-bar.hi { background: var(--brand); }
+
+    /* ─── SECTION SHARED ─── */
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 14px;
+    }
+
+    /* ─── FEATURES (light) ─── */
+    #features {
+      background: #fff;
+      padding: 96px 24px;
+    }
+
+    .features-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .features-left h2 {
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--gray-900);
+      margin-bottom: 14px;
+    }
+
+    .features-left p {
+      font-size: 15px;
+      color: var(--gray-500);
+      line-height: 1.7;
+    }
+
+    .feat-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .feat-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .feat-icon {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: var(--brand-light);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--brand);
+      margin-top: 2px;
+    }
+
+    .feat-item h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 4px;
+    }
+
+    .feat-item p {
+      font-size: 13.5px;
+      color: var(--gray-500);
+      line-height: 1.6;
+    }
+
+    /* ─── CASE STUDY (dark) ─── */
+    #case-study {
+      background: var(--navy);
+      padding: 96px 24px;
+      text-align: center;
+    }
+
+    #case-study .section-label { color: var(--teal); }
+
+    #case-study h2 {
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: #fff;
+      max-width: 760px;
+      margin: 0 auto 12px;
+    }
+
+    #case-study h2 span { color: var(--teal); }
+
+    #case-study .sub {
+      font-size: 15px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 56px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.65;
+    }
+
+    .stats-wrap {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      max-width: 680px;
+      margin: 0 auto 16px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .stat-box {
+      background: var(--navy-2);
+      padding: 32px 28px;
+      text-align: left;
+    }
+
+    .stat-box.full {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .stat-n {
+      font-size: 48px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: var(--teal);
+      line-height: 1;
+    }
+
+    .stat-n.white { color: #fff; }
+
+    .stat-l {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+
+    .stat-note {
+      display: block;
+      font-size: 11.5px;
+      color: rgba(255,255,255,0.28);
+      margin-top: 3px;
+    }
+
+    .stat-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      background: rgba(0,212,170,0.12);
+      color: var(--teal);
+      margin-top: 8px;
+    }
+
+    /* ─── TESTIMONIAL (light) ─── */
+    #testimonial {
+      background: #fff;
+      padding: 96px 24px;
+      text-align: center;
+    }
+
+    .testimonial-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .testimonial-inner .section-label { display: block; margin-bottom: 32px; }
+
+    .quote-text {
+      font-size: clamp(18px, 2.5vw, 24px);
+      font-weight: 500;
+      color: var(--gray-700);
+      line-height: 1.55;
+      margin-bottom: 32px;
+    }
+
+    .quote-text .hl { color: var(--teal); font-weight: 700; }
+
+    .author-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .author-img {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--gray-200);
+    }
+
+    .author-name { font-size: 14px; font-weight: 700; color: var(--gray-900); text-align: left; }
+    .author-role { font-size: 12px; color: var(--gray-400); text-align: left; }
+
+    /* ─── PROCESS (dark) ─── */
+    #process {
+      background: var(--navy);
+      padding: 96px 24px;
+      text-align: center;
+    }
+
+    #process .section-label { color: var(--teal); }
+
+    #process h2 {
+      font-size: clamp(30px, 4.5vw, 56px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: #fff;
+      max-width: 700px;
+      margin: 0 auto 16px;
+    }
+
+    #process .sub {
+      font-size: 15px;
+      color: rgba(255,255,255,0.45);
+      max-width: 480px;
+      margin: 0 auto 56px;
+      line-height: 1.65;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .process-grid::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 12%; right: 12%;
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .proc-item { padding: 0 20px; position: relative; z-index: 1; }
+
+    .proc-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: rgba(26,111,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--brand);
+      margin: 0 auto 14px;
+    }
+
+    .proc-item h3 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .proc-item p  { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.6; }
+
+    /* ─── CTA BANNER (dark) ─── */
+    #cta-banner {
+      background: var(--navy-2);
+      padding: 80px 24px;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    #cta-banner .section-label { color: var(--teal); margin-bottom: 16px; }
+
+    #cta-banner h2 {
+      font-size: clamp(22px, 3vw, 38px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #fff;
+      max-width: 600px;
+      margin: 0 auto 12px;
+      line-height: 1.2;
+    }
+
+    #cta-banner p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.45);
+      max-width: 440px;
+      margin: 0 auto 28px;
+      line-height: 1.65;
+    }
+
+    /* ─── CONTACT (light) ─── */
+    #contact {
+      background: #fff;
+      padding: 96px 24px;
+      border-top: 1px solid #f0f0f0;
+    }
+    #contact .section-label { margin-bottom: 12px; }
+    #contact h2 {
+      font-size: clamp(26px, 3.5vw, 42px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--gray-900);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    #contact > .container > p {
+      font-size: 16px;
+      color: #6b7280;
+      line-height: 1.7;
+      max-width: 480px;
+      margin-bottom: 40px;
+    }
+    .contact-form {
+      max-width: 560px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .contact-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1.5px solid #e5e7eb;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 14px;
+      color: var(--gray-900);
+      background: #fafafa;
+      outline: none;
+      box-sizing: border-box;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+      border-color: var(--brand);
+      box-shadow: 0 0 0 3px rgba(26,111,255,0.1);
+      background: #fff;
+    }
+    .contact-form textarea { resize: vertical; min-height: 110px; }
+    .contact-form select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; }
+    .contact-submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 32px;
+      background: linear-gradient(135deg, #2563eb 0%, #1a6fff 50%, #0ea5e9 100%);
+      color: #fff;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 700;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      letter-spacing: -0.01em;
+      box-shadow: 0 4px 24px rgba(26,111,255,0.35), 0 1px 2px rgba(0,0,0,0.08);
+      transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.18s;
+    }
+    .contact-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(26,111,255,0.45); }
+    .contact-submit:active { transform: translateY(0); }
+    .contact-submit:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+    @media (max-width: 560px) {
+      .contact-row { grid-template-columns: 1fr; }
+    }
+
+    /* ─── DASHBOARD (dark) ─── */
+    #dashboard {
+      background: var(--navy);
+      padding: 80px 24px 0;
+      overflow: hidden;
+    }
+
+    #dashboard .section-label { color: var(--teal); text-align: center; display: block; }
+
+    #dashboard h2 {
+      font-size: clamp(26px, 3.5vw, 44px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 48px;
+      line-height: 1.15;
+    }
+
+    .dash-ui {
+      border-radius: 14px 14px 0 0;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-bottom: none;
+      box-shadow: 0 -8px 60px rgba(26,111,255,0.12), 0 0 0 1px rgba(26,111,255,0.06);
+    }
+
+    .dash-topbar {
+      background: #1a2744;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dash-tabs { display: flex; gap: 2px; margin-left: 12px; }
+    .dtab { padding: 5px 14px; font-size: 11.5px; font-weight: 500; border-radius: 5px; color: rgba(255,255,255,0.4); }
+    .dtab.active { background: rgba(26,111,255,0.2); color: #fff; }
+
+    .dash-body {
+      background: #0d1a30;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1px;
+      background-color: rgba(255,255,255,0.04);
+    }
+
+    .d-panel { background: #0d1a30; padding: 18px 20px; }
+
+    .dp-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 14px;
+    }
+
+    .dp-stat { font-size: 28px; font-weight: 900; color: #fff; letter-spacing: -0.03em; margin-bottom: 4px; }
+    .dp-change { font-size: 11px; font-weight: 600; color: var(--teal); }
+
+    .rank-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
+    .rank-row { display: flex; align-items: center; justify-content: space-between; font-size: 12px; }
+    .rank-kw { color: rgba(255,255,255,0.55); }
+    .rank-num { color: var(--teal); font-weight: 700; font-size: 12px; }
+
+    .map-box {
+      background: #081020;
+      border-radius: 8px;
+      height: 130px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+
+    .map-grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
+    .map-pin {
+      position: absolute;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--brand);
+      box-shadow: 0 0 0 4px rgba(26,111,255,0.2);
+    }
+
+    .map-pin.sec {
+      background: var(--teal);
+      box-shadow: 0 0 0 3px rgba(0,212,170,0.2);
+      width: 7px; height: 7px;
+    }
+
+    .traffic-bars { display: flex; align-items: flex-end; gap: 4px; height: 80px; }
+    .tb { flex: 1; border-radius: 3px 3px 0 0; }
+    .tb-lo { background: rgba(26,111,255,0.2); }
+    .tb-md { background: rgba(26,111,255,0.5); }
+    .tb-hi { background: var(--brand); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--navy-2);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 60px 24px 32px;
+    }
+
+    .footer-grid {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.32);
+      margin-top: 12px;
+      line-height: 1.7;
+      max-width: 260px;
+    }
+
+    .footer-logo .logo-name { color: rgba(255,255,255,0.85); }
+
+    .footer-col h5 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.28);
+      margin-bottom: 14px;
+    }
+
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer-col ul li a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.42);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-col ul li a:hover { color: #fff; }
+
+    .footer-bottom {
+      max-width: 1160px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.22); }
+    .footer-bottom a { font-size: 12px; color: rgba(255,255,255,0.22); text-decoration: none; }
+    .footer-bottom a:hover { color: rgba(255,255,255,0.5); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 960px) {
+      .features-wrap { grid-template-columns: 1fr; gap: 40px; }
+      .process-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .process-grid::before { display: none; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .dash-body { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+      .card-sidebar { display: none; }
+      .card-body { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .stats-wrap { grid-template-columns: 1fr; }
+      .stat-box.full { flex-direction: column; gap: 8px; }
+      .cc-kpis { grid-template-columns: 1fr 1fr; }
+      .process-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .dash-body { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <img src="brand_assets/logo.png" alt="">
+      <span class="logo-name">Posiciona</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#features">Serviços</a></li>
+      <li><a href="#process">Como Funciona</a></li>
+      <li><a href="#case-study">Resultados</a></li>
+      <li><a href="#dashboard">Dashboard</a></li>
+    </ul>
+
+    <a href="#contact" class="nav-cta">Começar Agora →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-label">Conheça a Posiciona</div>
+    <h1>A Sua Agência de <span>SEO Local</span>.<br>No Piloto Automático.</h1>
+    <p class="hero-sub">
+      Automatizamos, otimizamos e colocamos o seu negócio local no topo do Google Maps e da pesquisa orgânica, sem stress para si.
+    </p>
+    <a href="#contact" class="hero-btn">Auditoria Grátis →</a>
+  </div>
+
+  <div class="container">
+    <div class="hero-card">
+      <div class="card-topbar">
+        <div class="win-dot wd-r"></div>
+        <div class="win-dot wd-y"></div>
+        <div class="win-dot wd-g"></div>
+        <div class="card-url">pesquisa.pt/dashboard — Clínica Saúde Viva, Lisboa</div>
+      </div>
+      <div class="card-body">
+        <div class="card-sidebar">
+          <div class="cs-section">Painel</div>
+          <div class="cs-item active"><div class="cs-dot"></div>Posições Google</div>
+          <div class="cs-item"><div class="cs-dot"></div>Google Maps</div>
+          <div class="cs-item"><div class="cs-dot"></div>Tráfego Orgânico</div>
+          <div class="cs-section">Ferramentas</div>
+          <div class="cs-item"><div class="cs-dot"></div>Palavras-chave</div>
+          <div class="cs-item"><div class="cs-dot"></div>Concorrentes</div>
+          <div class="cs-item"><div class="cs-dot"></div>Avaliações Google</div>
+          <div class="cs-item"><div class="cs-dot"></div>Backlinks</div>
+          <div class="cs-section">Relatórios</div>
+          <div class="cs-item"><div class="cs-dot"></div>Relatório Mensal</div>
+          <div class="cs-item"><div class="cs-dot"></div>Configurações</div>
+        </div>
+        <div class="card-content">
+          <div class="cc-kpis">
+            <div class="kpi">
+              <div class="kpi-l">Posição Média</div>
+              <div class="kpi-v">#1.8</div>
+              <div class="kpi-s">↑ era #9.2 há 60 dias</div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-l">Cliques / mês</div>
+              <div class="kpi-v">5.340</div>
+              <div class="kpi-s">↑ +214% vs anterior</div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-l">Top 3 Keywords</div>
+              <div class="kpi-v">31</div>
+              <div class="kpi-s">↑ +19 este mês</div>
+            </div>
+          </div>
+          <div class="cc-label">Rankings — Principais Palavras-chave</div>
+          <table class="cc-table">
+            <thead>
+              <tr>
+                <th>Palavra-chave</th><th>Posição</th><th>Variação</th><th>Vol./mês</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>clínica dentária lisboa centro</td>
+                <td><span class="pos p1">1</span></td>
+                <td class="up">↑ +8</td>
+                <td>2.400</td>
+              </tr>
+              <tr>
+                <td>dentista urgência lisboa</td>
+                <td><span class="pos p2">2</span></td>
+                <td class="up">↑ +13</td>
+                <td>1.100</td>
+              </tr>
+              <tr>
+                <td>implantes dentários lisboa</td>
+                <td><span class="pos p3">3</span></td>
+                <td class="up">↑ +7</td>
+                <td>880</td>
+              </tr>
+              <tr>
+                <td>ortodontia adultos lisboa</td>
+                <td><span class="pos pm">6</span></td>
+                <td class="up">↑ +4</td>
+                <td>640</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="cc-label">Tráfego Orgânico — Últimos 6 Meses</div>
+          <div class="cc-chart">
+            <div class="ch-bar" style="height:22%"></div>
+            <div class="ch-bar" style="height:35%"></div>
+            <div class="ch-bar" style="height:50%"></div>
+            <div class="ch-bar" style="height:65%"></div>
+            <div class="ch-bar" style="height:82%"></div>
+            <div class="ch-bar hi" style="height:100%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES (light) -->
+<section id="features">
+  <div class="features-wrap" style="max-width:960px;margin:0 auto;padding:0 24px;">
+    <div class="features-left">
+      <div class="section-label">Os nossos serviços</div>
+      <h2>SEO Local que Age,<br>Não Apenas Analisa</h2>
+      <p>Enquanto os concorrentes só geram relatórios, nós implementamos, otimizamos e garantimos que o seu negócio aparece onde os clientes procuram.</p>
+    </div>
+    <ul class="feat-list">
+      <li class="feat-item">
+        <div class="feat-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1.5C5.27 1.5 2.25 4.52 2.25 8.25c0 4.22 6.75 9 6.75 9s6.75-4.78 6.75-9c0-3.73-3.02-6.75-6.75-6.75zm0 9a2.25 2.25 0 1 1 0-4.5 2.25 2.25 0 0 1 0 4.5z" fill="currentColor"/></svg>
+        </div>
+        <div>
+          <h3>Otimização Google Maps</h3>
+          <p>Perfil Google Business nas primeiras posições do pack local — onde 76% dos utilizadores clicam primeiro.</p>
+        </div>
+      </li>
+      <li class="feat-item">
+        <div class="feat-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M15 9a6 6 0 0 1-6 6m6-6a6 6 0 0 0-6-6m6 6H3m6 6a6 6 0 0 1-6-6m6 6c-.83 0-2.25-2.69-2.25-6S8.17 3 9 3m0 12c.83 0 2.25-2.69 2.25-6S9.83 3 9 3m-6 6a6 6 0 0 1 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <h3>SEO On-Page e Conteúdo Local</h3>
+          <p>Otimizamos títulos, meta descrições, schema markup e criamos conteúdo geo-targetizado para a sua cidade.</p>
+        </div>
+      </li>
+      <li class="feat-item">
+        <div class="feat-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M8.25 11.25a4.5 4.5 0 0 0 6.26.5l2.25-2.25a4.5 4.5 0 0 0-6.36-6.36L9.22 4.72" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.75 6.75a4.5 4.5 0 0 0-6.26-.5L1.24 8.5a4.5 4.5 0 0 0 6.36 6.36l1.41-1.41" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <h3>Link Building e Citações Locais</h3>
+          <p>Backlinks de qualidade em diretórios portugueses e parceiros regionais para aumentar a sua autoridade de domínio.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- CASE STUDY (dark) -->
+<section id="case-study">
+  <div class="container">
+    <div class="section-label">Caso de Sucesso Real</div>
+    <h2>Como um Negócio Local Passou do #14<br>ao <span>#1 em €18.400 de Receita Extra</span></h2>
+    <p class="sub">Uma clínica dentária em Lisboa estava invisível no Google. Em menos de 60 dias, dominaram as pesquisas locais.</p>
+
+    <div class="stats-wrap">
+      <div class="stat-box">
+        <div class="stat-n">5.340</div>
+        <div class="stat-l">Visitantes orgânicos / mês<span class="stat-note">vs 412 antes da campanha</span></div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-n">53</div>
+        <div class="stat-l">Dias para chegar ao #1<span class="stat-note">para "clínica dentária lisboa"</span></div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-n">98%</div>
+        <div class="stat-l">Consultas respondidas<span class="stat-note">via formulário de contacto</span></div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-n">66+</div>
+        <div class="stat-l">Novas avaliações 5★ Google<span class="stat-note">nos primeiros 90 dias</span></div>
+      </div>
+      <div class="stat-box full">
+        <div>
+          <div class="stat-n white">€18.400</div>
+          <div class="stat-badge">↑ Faturação adicional estimada nos primeiros 3 meses</div>
+        </div>
+        <div style="font-size:13.5px;color:rgba(255,255,255,0.38);line-height:1.75;max-width:380px;">
+          Calculado com base no aumento de consultas agendadas e no ticket médio da clínica. ROI de 6x sobre o investimento em SEO.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL (light) -->
+<section id="testimonial">
+  <div class="testimonial-inner" style="max-width:740px;margin:0 auto;padding:0 24px;">
+    <div class="section-label">O que dizem os nossos clientes</div>
+    <p class="quote-text">
+      "A Pesquisa tem gerido o SEO da nossa clínica nos últimos 6 meses. Em média, recebe <span class="hl">1.831 pesquisas mensais</span> no Google Maps e, desde que os implementámos, a nossa receita de novos pacientes cresceu <span class="hl">€18.400</span>."
+    </p>
+    <div class="author-row">
+      <img src="https://placehold.co/44x44/e5e7eb/374151?text=AC" alt="Ana Costa" class="author-img">
+      <div>
+        <div class="author-name">Ana Costa</div>
+        <div class="author-role">Diretora Clínica — Clínica Saúde Viva, Lisboa</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS (dark) -->
+<section id="process">
+  <div class="container">
+    <div class="section-label">Como Funciona</div>
+    <h2>Da Pesquisa ao Topo<br>em Dias, Não Meses</h2>
+    <p class="sub">Um processo estruturado de 4 passos que transforma pesquisas locais em clientes reais — sem complicações.</p>
+
+    <div class="process-grid">
+      <div class="proc-item">
+        <div class="proc-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.8"/><path d="M13.5 13.5L17 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Auditoria Completa</h3>
+        <p>Analisamos site, Google Business e concorrência local para identificar oportunidades imediatas.</p>
+      </div>
+      <div class="proc-item">
+        <div class="proc-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 6h12M4 10h8M4 14h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Estratégia à Medida</h3>
+        <p>Plano personalizado para a sua cidade e setor — palavras-chave, conteúdo e links com propósito.</p>
+      </div>
+      <div class="proc-item">
+        <div class="proc-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Implementação Rápida</h3>
+        <p>Otimizamos tudo em paralelo: Google Maps, on-page, citações NAP e backlinks locais.</p>
+      </div>
+      <div class="proc-item">
+        <div class="proc-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 14l4-4 4 4 4-6 4 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Crescimento Contínuo</h3>
+        <p>Relatórios mensais e ajustes de estratégia para manter e acelerar os resultados obtidos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER (dark) -->
+<section id="cta-banner">
+  <div class="container">
+    <div class="section-label">Experimente a Pesquisa</div>
+    <h2>Apareça no Top 3 do Google Maps.<br>Garantimos Resultados.</h2>
+    <p>Faça a sua auditoria SEO gratuita e receba um relatório personalizado com todas as oportunidades do seu negócio local — sem compromisso.</p>
+    <a href="#contact" class="hero-btn" style="margin-bottom:0;">Quero a Minha Auditoria Gratuita →</a>
+  </div>
+</section>
+
+<!-- DASHBOARD (dark) -->
+<section id="dashboard">
+  <div class="container">
+    <span class="section-label">Painel de Controlo Pesquisa</span>
+    <h2>Visibilidade Total<br>sobre os Seus Rankings Locais</h2>
+
+    <div class="dash-ui">
+      <div class="dash-topbar">
+        <div class="win-dot wd-r"></div>
+        <div class="win-dot wd-y"></div>
+        <div class="win-dot wd-g"></div>
+        <div class="dash-tabs">
+          <div class="dtab active">Dashboard</div>
+          <div class="dtab">Google Maps</div>
+          <div class="dtab">Palavras-chave</div>
+          <div class="dtab">Relatórios</div>
+        </div>
+      </div>
+      <div class="dash-body">
+        <div class="d-panel">
+          <div class="dp-title">Top Rankings Locais</div>
+          <div class="rank-list">
+            <div class="rank-row"><span class="rank-kw">clínica dentária lisboa</span><span class="rank-num">#1 ↑</span></div>
+            <div class="rank-row"><span class="rank-kw">dentista urgência lisboa</span><span class="rank-num">#2 ↑</span></div>
+            <div class="rank-row"><span class="rank-kw">implantes dentários</span><span class="rank-num">#3 ↑</span></div>
+            <div class="rank-row"><span class="rank-kw">branqueamento dentes</span><span class="rank-num">#4 ↑</span></div>
+            <div class="rank-row"><span class="rank-kw">ortodontia adultos</span><span class="rank-num">#6 ↑</span></div>
+          </div>
+          <div class="dp-stat">5.340</div>
+          <div class="dp-change">↑ +214% cliques orgânicos este mês</div>
+        </div>
+
+        <div class="d-panel">
+          <div class="dp-title">Presença Google Maps</div>
+          <div class="map-box">
+            <div class="map-grid-lines"></div>
+            <div class="map-pin" style="top:44%;left:51%;"></div>
+            <div class="map-pin sec" style="top:28%;left:34%;"></div>
+            <div class="map-pin sec" style="top:62%;left:66%;"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;">
+            <div>
+              <div style="font-size:10px;color:rgba(255,255,255,0.28);margin-bottom:3px;">Pesquisas/mês</div>
+              <div style="font-size:18px;font-weight:800;color:#fff;">1.831</div>
+              <div style="font-size:10px;color:var(--teal);">↑ +340%</div>
+            </div>
+            <div>
+              <div style="font-size:10px;color:rgba(255,255,255,0.28);margin-bottom:3px;">Chamadas</div>
+              <div style="font-size:18px;font-weight:800;color:#fff;">247</div>
+              <div style="font-size:10px;color:var(--teal);">↑ +180%</div>
+            </div>
+            <div>
+              <div style="font-size:10px;color:rgba(255,255,255,0.28);margin-bottom:3px;">Avaliação</div>
+              <div style="font-size:18px;font-weight:800;color:#fff;">4.9★</div>
+              <div style="font-size:10px;color:var(--teal);">66 reviews</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-panel">
+          <div class="dp-title">Tráfego Orgânico — 6 Meses</div>
+          <div class="traffic-bars">
+            <div class="tb tb-lo" style="height:18%"></div>
+            <div class="tb tb-lo" style="height:30%"></div>
+            <div class="tb tb-md" style="height:46%"></div>
+            <div class="tb tb-md" style="height:62%"></div>
+            <div class="tb tb-hi" style="height:80%"></div>
+            <div class="tb tb-hi" style="height:100%"></div>
+          </div>
+          <div class="dp-stat" style="margin-top:12px;">+214%</div>
+          <div class="dp-change">crescimento em 6 meses</div>
+          <div style="margin-top:14px;display:flex;flex-direction:column;gap:6px;">
+            <div style="display:flex;justify-content:space-between;font-size:11px;">
+              <span style="color:rgba(255,255,255,0.32);">Conversões / mês</span>
+              <span style="color:#fff;font-weight:700;">89</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;">
+              <span style="color:rgba(255,255,255,0.32);">Taxa de conversão</span>
+              <span style="color:#fff;font-weight:700;">1.67%</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;">
+              <span style="color:rgba(255,255,255,0.32);">Posição média Google</span>
+              <span style="color:var(--teal);font-weight:700;">#1.8</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label">Fale Connosco</div>
+    <h2>Peça a Sua Auditoria<br>SEO Gratuita</h2>
+    <p>Preencha o formulário e entraremos em contacto em menos de 24 horas com um relatório personalizado para o seu negócio.</p>
+    <form class="contact-form" onsubmit="return false;">
+      <div class="contact-row">
+        <input type="text" placeholder="Nome" required>
+        <input type="text" placeholder="Empresa">
+      </div>
+      <div class="contact-row">
+        <input type="email" placeholder="Email" required>
+        <input type="tel" placeholder="Telefone">
+      </div>
+      <select>
+        <option value="" disabled selected>Tipo de negócio</option>
+        <option>Restaurante / Café</option>
+        <option>Clínica / Saúde</option>
+        <option>Imobiliária</option>
+        <option>Comércio Local</option>
+        <option>Serviços Profissionais</option>
+        <option>Outro</option>
+      </select>
+      <textarea placeholder="Conte-nos um pouco sobre o seu negócio e os seus objetivos..."></textarea>
+      <button type="submit" class="contact-submit">Quero a Minha Auditoria Grátis →</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="logo">
+        <img src="brand_assets/logo.png" alt="">
+        <span class="logo-name" style="color:rgba(255,255,255,0.85);">Posiciona</span>
+      </a>
+      <p>Agência de SEO local especializada em colocar negócios portugueses no topo do Google — da análise aos resultados.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Serviços</h5>
+      <ul>
+        <li><a href="#">SEO Local</a></li>
+        <li><a href="#">Google Maps</a></li>
+        <li><a href="#">Link Building</a></li>
+        <li><a href="#">Conteúdo Local</a></li>
+        <li><a href="#">Gestão de Avaliações</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Empresa</h5>
+      <ul>
+        <li><a href="#">Sobre nós</a></li>
+        <li><a href="#">Casos de Sucesso</a></li>
+        <li><a href="#">Blog SEO</a></li>
+        <li><a href="#">Parceiros</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contacto</h5>
+      <ul>
+        <li><a href="#">hello@pesquisa.pt</a></li>
+        <li><a href="#">+351 912 345 678</a></li>
+        <li><a href="#">Porto, Portugal</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Pesquisa. Todos os direitos reservados.</p>
+    <div style="display:flex;gap:20px;">
+      <a href="#">Privacidade</a>
+      <a href="#">Termos</a>
+      <a href="#">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
