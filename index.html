@@ -881,9 +881,96 @@
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .dash-body { grid-template-columns: 1fr 1fr; }
       .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .hamburger { display: flex; }
       .card-sidebar { display: none; }
       .card-body { grid-template-columns: 1fr; }
     }
+
+    /* ─── HAMBURGER ─── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 8px;
+    }
+    .hamburger:hover { background: var(--gray-100); }
+    .hamburger:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--gray-900);
+      border-radius: 2px;
+      transform-origin: center;
+      transition: transform 0.25s cubic-bezier(0.4,0,0.2,1), opacity 0.25s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ─── MOBILE DRAWER ─── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 106px;
+      left: 0;
+      right: 0;
+      z-index: 99;
+      background: rgba(255,255,255,0.98);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 20px 24px 28px;
+      transform: translateY(-8px);
+      opacity: 0;
+      transition: transform 0.25s cubic-bezier(0.4,0,0.2,1), opacity 0.25s;
+    }
+    .mobile-menu.open {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .mobile-menu ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      margin-bottom: 20px;
+    }
+    .mobile-menu ul a {
+      display: block;
+      padding: 10px 12px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--gray-700);
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.15s, color 0.15s;
+    }
+    .mobile-menu ul a:hover { background: var(--gray-100); color: var(--gray-900); }
+    .mobile-menu .mobile-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      background: var(--brand);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.15s, transform 0.1s;
+    }
+    .mobile-menu .mobile-cta:hover { background: var(--brand-dark); transform: translateY(-1px); }
+    .mobile-menu .mobile-cta:active { transform: translateY(0); }
 
     @media (max-width: 640px) {
       .stats-wrap { grid-template-columns: 1fr; }
@@ -914,8 +1001,24 @@
     </ul>
 
     <a href="#contact" class="nav-cta">Começar Agora →</a>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
 </nav>
+
+<!-- MOBILE MENU DRAWER -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#features" class="mobile-link">Serviços</a></li>
+    <li><a href="#process" class="mobile-link">Como Funciona</a></li>
+    <li><a href="#case-study" class="mobile-link">Resultados</a></li>
+    <li><a href="#dashboard" class="mobile-link">Dashboard</a></li>
+  </ul>
+  <a href="#contact" class="mobile-cta mobile-link">Começar Agora →</a>
+</div>
 
 <!-- HERO -->
 <section id="hero">
@@ -1333,6 +1436,39 @@
     </div>
   </div>
 </footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  function openMenu() {
+    hamburger.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    mobileMenu.style.display = 'block';
+    requestAnimationFrame(() => mobileMenu.classList.add('open'));
+  }
+
+  function closeMenu() {
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    mobileMenu.classList.remove('open');
+    mobileMenu.addEventListener('transitionend', () => {
+      if (!mobileMenu.classList.contains('open')) mobileMenu.style.display = 'none';
+    }, { once: true });
+  }
+
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
+  });
+
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) closeMenu();
+  });
+</script>
 
 </body>
 </html>
