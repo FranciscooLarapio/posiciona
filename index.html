@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pesquisa — SEO Local em Portugal</title>
+  <title>Posiciona — Agência de SEO Local em Portugal</title>
+  <meta name="description" content="A Posiciona coloca o seu negócio local no topo do Google Maps e da pesquisa orgânica. Auditoria SEO gratuita. Resultados em menos de 60 dias." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
@@ -1026,6 +1027,97 @@
       .stat-n { font-size: 40px; }
     }
 
+    /* ─── SOCIAL PROOF BAR ─── */
+    #social-proof {
+      background: var(--gray-50);
+      border-top: 1px solid var(--gray-200);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 28px 24px;
+      text-align: center;
+    }
+    .sp-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 20px;
+    }
+    .sp-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 32px;
+    }
+    .sp-logo {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--gray-400);
+      letter-spacing: -0.02em;
+      opacity: 0.6;
+    }
+    .sp-divider {
+      width: 1px;
+      height: 18px;
+      background: var(--gray-200);
+    }
+    @media (max-width: 640px) {
+      .sp-divider { display: none; }
+      .sp-logos { gap: 12px 24px; }
+    }
+
+    /* ─── FADE-IN ON SCROLL ─── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.55s cubic-bezier(0.4,0,0.2,1), transform 0.55s cubic-bezier(0.4,0,0.2,1);
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-up.delay-1 { transition-delay: 0.1s; }
+    .fade-up.delay-2 { transition-delay: 0.2s; }
+    .fade-up.delay-3 { transition-delay: 0.3s; }
+    .fade-up.delay-4 { transition-delay: 0.4s; }
+
+    /* ─── STICKY MOBILE CTA ─── */
+    .sticky-cta {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 98;
+      padding: 12px 20px;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-top: 1px solid var(--gray-200);
+      transform: translateY(100%);
+      transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+    .sticky-cta.visible { transform: translateY(0); }
+    .sticky-cta a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 13px 20px;
+      background: linear-gradient(135deg, #2563eb 0%, #1a6fff 50%, #0ea5e9 100%);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(26,111,255,0.35);
+      transition: transform 0.1s, box-shadow 0.1s;
+    }
+    .sticky-cta a:active { transform: scale(0.98); }
+    @media (max-width: 960px) {
+      .sticky-cta { display: block; }
+    }
+
     @media (max-width: 400px) {
       .nav-inner { height: 60px; }
       .logo img { width: 44px; height: 44px; }
@@ -1176,15 +1268,31 @@
   </div>
 </section>
 
+<!-- SOCIAL PROOF BAR -->
+<section id="social-proof" class="fade-up">
+  <div class="sp-label">Negócios que confiam na Posiciona</div>
+  <div class="sp-logos">
+    <span class="sp-logo">Clínica Saúde Viva</span>
+    <div class="sp-divider"></div>
+    <span class="sp-logo">Grupo Imobiliário Norte</span>
+    <div class="sp-divider"></div>
+    <span class="sp-logo">Restaurante O Cozinheiro</span>
+    <div class="sp-divider"></div>
+    <span class="sp-logo">Farmácia Central</span>
+    <div class="sp-divider"></div>
+    <span class="sp-logo">Auto Reparações Silva</span>
+  </div>
+</section>
+
 <!-- FEATURES (light) -->
 <section id="features">
   <div class="features-wrap" style="max-width:960px;margin:0 auto;padding:0 24px;">
-    <div class="features-left">
+    <div class="features-left fade-up">
       <div class="section-label">Os nossos serviços</div>
       <h2>SEO Local que Age,<br>Não Apenas Analisa</h2>
       <p>Enquanto os concorrentes só geram relatórios, nós implementamos, otimizamos e garantimos que o seu negócio aparece onde os clientes procuram.</p>
     </div>
-    <ul class="feat-list">
+    <ul class="feat-list fade-up delay-1">
       <li class="feat-item">
         <div class="feat-icon">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1.5C5.27 1.5 2.25 4.52 2.25 8.25c0 4.22 6.75 9 6.75 9s6.75-4.78 6.75-9c0-3.73-3.02-6.75-6.75-6.75zm0 9a2.25 2.25 0 1 1 0-4.5 2.25 2.25 0 0 1 0 4.5z" fill="currentColor"/></svg>
@@ -1223,7 +1331,7 @@
     <h2>Como um Negócio Local Passou do #14<br>ao <span>#1 em €18.400 de Receita Extra</span></h2>
     <p class="sub">Uma clínica dentária em Lisboa estava invisível no Google. Em menos de 60 dias, dominaram as pesquisas locais.</p>
 
-    <div class="stats-wrap">
+    <div class="stats-wrap fade-up delay-1">
       <div class="stat-box">
         <div class="stat-n">5.340</div>
         <div class="stat-l">Visitantes orgânicos / mês<span class="stat-note">vs 412 antes da campanha</span></div>
@@ -1257,7 +1365,7 @@
 <section id="testimonial">
   <div class="testimonial-inner" style="max-width:740px;margin:0 auto;padding:0 24px;">
     <div class="section-label">O que dizem os nossos clientes</div>
-    <p class="quote-text">
+    <p class="quote-text fade-up delay-1">
       "A Pesquisa tem gerido o SEO da nossa clínica nos últimos 6 meses. Em média, recebe <span class="hl">1.831 pesquisas mensais</span> no Google Maps e, desde que os implementámos, a nossa receita de novos pacientes cresceu <span class="hl">€18.400</span>."
     </p>
     <div class="author-row">
@@ -1277,7 +1385,7 @@
     <h2>Da Pesquisa ao Topo<br>em Dias, Não Meses</h2>
     <p class="sub">Um processo estruturado de 4 passos que transforma pesquisas locais em clientes reais — sem complicações.</p>
 
-    <div class="process-grid">
+    <div class="process-grid fade-up delay-1">
       <div class="proc-item">
         <div class="proc-icon">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.8"/><path d="M13.5 13.5L17 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
@@ -1326,7 +1434,7 @@
     <span class="section-label">Painel de Controlo Pesquisa</span>
     <h2>Visibilidade Total<br>sobre os Seus Rankings Locais</h2>
 
-    <div class="dash-ui">
+    <div class="dash-ui fade-up delay-1">
       <div class="dash-topbar">
         <div class="win-dot wd-r"></div>
         <div class="win-dot wd-y"></div>
@@ -1417,7 +1525,7 @@
     <div class="section-label">Fale Connosco</div>
     <h2>Peça a Sua Auditoria<br>SEO Gratuita</h2>
     <p>Preencha o formulário e entraremos em contacto em menos de 24 horas com um relatório personalizado para o seu negócio.</p>
-    <form class="contact-form" onsubmit="return false;">
+    <form class="contact-form fade-up delay-1" onsubmit="return false;">
       <div class="contact-row">
         <input type="text" placeholder="Nome" required>
         <input type="text" placeholder="Empresa">
@@ -1474,7 +1582,7 @@
     <div class="footer-col">
       <h5>Contacto</h5>
       <ul>
-        <li><a href="#">hello@pesquisa.pt</a></li>
+        <li><a href="#">hello@posiciona.pt</a></li>
         <li><a href="#">+351 912 345 678</a></li>
         <li><a href="#">Porto, Portugal</a></li>
         <li><a href="#">LinkedIn</a></li>
@@ -1483,7 +1591,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 Pesquisa. Todos os direitos reservados.</p>
+    <p>© 2026 Posiciona. Todos os direitos reservados.</p>
     <div style="display:flex;gap:20px;">
       <a href="#">Privacidade</a>
       <a href="#">Termos</a>
@@ -1491,6 +1599,11 @@
     </div>
   </div>
 </footer>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="#contact">Auditoria Grátis →</a>
+</div>
 
 <script>
   const hamburger = document.getElementById('hamburger');
@@ -1523,6 +1636,21 @@
   document.addEventListener('click', (e) => {
     if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) closeMenu();
   });
+
+  // ─── FADE-IN ON SCROLL ───
+  const fadeEls = document.querySelectorAll('.fade-up');
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); fadeObserver.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  fadeEls.forEach(el => fadeObserver.observe(el));
+
+  // ─── STICKY MOBILE CTA ───
+  const stickyCta = document.getElementById('stickyCta');
+  const heroSection = document.getElementById('hero');
+  const ctaObserver = new IntersectionObserver((entries) => {
+    stickyCta.classList.toggle('visible', !entries[0].isIntersecting);
+  }, { threshold: 0 });
+  ctaObserver.observe(heroSection);
 </script>
 
 </body>
