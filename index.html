@@ -885,6 +885,11 @@
       .hamburger { display: flex; }
       .card-sidebar { display: none; }
       .card-body { grid-template-columns: 1fr; }
+      /* shrink nav height on tablet/mobile */
+      .nav-inner { height: 68px; }
+      .logo img { width: 52px; height: 52px; border-radius: 8px; }
+      .logo-name { font-size: 22px; }
+      .mobile-menu { top: 68px; }
     }
 
     /* ─── HAMBURGER ─── */
@@ -973,6 +978,7 @@
     .mobile-menu .mobile-cta:active { transform: translateY(0); }
 
     @media (max-width: 640px) {
+      /* grids */
       .stats-wrap { grid-template-columns: 1fr; }
       .stat-box.full { flex-direction: column; gap: 8px; }
       .cc-kpis { grid-template-columns: 1fr 1fr; }
@@ -980,6 +986,55 @@
       .footer-grid { grid-template-columns: 1fr; }
       .dash-body { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; gap: 10px; }
+
+      /* reduce section vertical padding */
+      #hero         { padding: 44px 20px 0; }
+      #features     { padding: 56px 20px; }
+      #case-study   { padding: 56px 20px; }
+      #testimonial  { padding: 56px 20px; }
+      #process      { padding: 56px 20px; }
+      #cta-banner   { padding: 48px 20px; }
+      #contact      { padding: 56px 20px; }
+      #dashboard    { padding: 48px 20px 0; }
+      footer        { padding: 40px 20px 24px; }
+
+      /* contact form */
+      .contact-submit { width: 100%; }
+
+      /* dashboard tabs: scroll horizontally instead of overflowing */
+      .dash-topbar { overflow-x: auto; }
+      .dash-tabs { flex-shrink: 0; }
+      .dtab { white-space: nowrap; }
+
+      /* hero card table: allow horizontal scroll on narrow screens */
+      .card-content { padding: 12px 14px; overflow-x: auto; }
+      .cc-table { min-width: 320px; }
+
+      /* shrink process sub text */
+      #process .sub, #case-study .sub { font-size: 14px; }
+
+      /* hero button full-width on small screens */
+      .hero-btn { display: flex; justify-content: center; width: 100%; max-width: 360px; }
+
+      /* features padding */
+      .features-wrap { padding: 0 20px !important; }
+
+      /* footer brand max-width */
+      .footer-brand p { max-width: 100%; }
+
+      /* reduce stat number size slightly */
+      .stat-n { font-size: 40px; }
+    }
+
+    @media (max-width: 400px) {
+      .nav-inner { height: 60px; }
+      .logo img { width: 44px; height: 44px; }
+      .logo-name { font-size: 19px; }
+      .mobile-menu { top: 60px; }
+      .stat-n { font-size: 34px; }
+      .kpi-v { font-size: 17px; }
+      .hero-btn { font-size: 14px; padding: 12px 20px; }
+      .contact-submit { font-size: 14px; padding: 13px 20px; }
     }
   </style>
 </head>
