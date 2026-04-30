@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog SEO Local — Posiciona</title>
+  <meta name="description" content="Artigos, guias e estratégias de SEO local para colocar o seu negócio no topo do Google Maps e da pesquisa orgânica em Portugal." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brand:       #1a6fff;
+      --brand-light: #e8f0ff;
+      --brand-dark:  #1456d4;
+      --navy:        #0c1428;
+      --navy-2:      #111c35;
+      --navy-border: rgba(255,255,255,0.08);
+      --gray-50:  #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-700: #374151;
+      --gray-900: #111827;
+      --teal:     #00d4aa;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--gray-900);
+      background: #fff;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .nav-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .logo img {
+      width: 52px;
+      height: 52px;
+      display: block;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .logo-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--gray-900);
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray-500);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--gray-900); }
+    .nav-links a.active { color: var(--brand); font-weight: 600; }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 18px;
+      background: var(--brand);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.15s, transform 0.1s;
+    }
+    .nav-cta:hover { background: var(--brand-dark); transform: translateY(-1px); }
+    .nav-cta:active { transform: translateY(0); }
+    .nav-cta:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+
+    /* ─── HAMBURGER ─── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 8px;
+    }
+    .hamburger:hover { background: var(--gray-100); }
+    .hamburger:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--gray-900);
+      border-radius: 2px;
+      transform-origin: center;
+      transition: transform 0.25s cubic-bezier(0.4,0,0.2,1), opacity 0.25s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ─── MOBILE DRAWER ─── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 68px;
+      left: 0; right: 0;
+      z-index: 99;
+      background: rgba(255,255,255,0.98);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 20px 24px 28px;
+      transform: translateY(-8px);
+      opacity: 0;
+      transition: transform 0.25s cubic-bezier(0.4,0,0.2,1), opacity 0.25s;
+    }
+    .mobile-menu.open { transform: translateY(0); opacity: 1; }
+    .mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 2px; margin-bottom: 20px; }
+    .mobile-menu ul a {
+      display: block;
+      padding: 10px 12px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--gray-700);
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.15s, color 0.15s;
+    }
+    .mobile-menu ul a:hover { background: var(--gray-100); color: var(--gray-900); }
+    .mobile-menu .mobile-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      background: var(--brand);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.15s, transform 0.1s;
+    }
+    .mobile-menu .mobile-cta:hover { background: var(--brand-dark); transform: translateY(-1px); }
+
+    /* ─── BLOG HERO ─── */
+    .blog-hero {
+      background: var(--gray-50);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 64px 24px 56px;
+      text-align: center;
+    }
+
+    .blog-hero .section-label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 16px;
+    }
+
+    .blog-hero h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(30px, 4vw, 48px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: var(--gray-900);
+      margin-bottom: 14px;
+    }
+
+    .blog-hero p {
+      font-size: 16px;
+      color: var(--gray-500);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ─── CATEGORIES ─── */
+    .categories {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 32px 24px 0;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .cat-btn {
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 500;
+      border: 1.5px solid var(--gray-200);
+      background: #fff;
+      color: var(--gray-500);
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color 0.15s, color 0.15s, background 0.15s;
+    }
+    .cat-btn:hover { border-color: var(--brand); color: var(--brand); }
+    .cat-btn.active { border-color: var(--brand); background: var(--brand-light); color: var(--brand); font-weight: 600; }
+
+    /* ─── FEATURED POST ─── */
+    .featured-wrap {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 40px 24px 0;
+    }
+
+    .featured-post {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04);
+      background: #fff;
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .featured-post:hover {
+      box-shadow: 0 12px 40px rgba(0,0,0,0.1), 0 2px 8px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+
+    .featured-img {
+      background: linear-gradient(135deg, #1e3a6e 0%, #0c1e45 50%, #0a1628 100%);
+      min-height: 320px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      padding: 28px;
+    }
+
+    .featured-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(26,111,255,0.3) 0%, rgba(0,212,170,0.15) 100%);
+    }
+
+    .featured-img-graphic {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.15;
+    }
+
+    .featured-badge {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: rgba(0,212,170,0.2);
+      border: 1px solid rgba(0,212,170,0.3);
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--teal);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .featured-content {
+      padding: 36px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .post-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--brand);
+    }
+
+    .post-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--gray-300); }
+
+    .post-date {
+      font-size: 12px;
+      color: var(--gray-400);
+    }
+
+    .featured-content h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(20px, 2.5vw, 28px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      color: var(--gray-900);
+      margin-bottom: 14px;
+    }
+
+    .featured-content p {
+      font-size: 15px;
+      color: var(--gray-500);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--brand);
+      text-decoration: none;
+      transition: gap 0.15s;
+    }
+    .read-more:hover { gap: 10px; }
+
+    /* ─── POST GRID ─── */
+    .posts-section {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    .posts-section-title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 28px;
+    }
+
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .post-card {
+      border: 1px solid var(--gray-200);
+      border-radius: 14px;
+      overflow: hidden;
+      background: #fff;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .post-card:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+      transform: translateY(-3px);
+    }
+
+    .post-thumb {
+      height: 180px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .post-thumb-inner {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .thumb-bg-1 { background: linear-gradient(135deg, #1e3a6e 0%, #0c2448 100%); }
+    .thumb-bg-2 { background: linear-gradient(135deg, #0a2e1a 0%, #0c3322 100%); }
+    .thumb-bg-3 { background: linear-gradient(135deg, #2d1b4e 0%, #1a0f36 100%); }
+    .thumb-bg-4 { background: linear-gradient(135deg, #1a2d4e 0%, #0c1e38 100%); }
+    .thumb-bg-5 { background: linear-gradient(135deg, #3a1a0a 0%, #2a1206 100%); }
+    .thumb-bg-6 { background: linear-gradient(135deg, #0a2a2e 0%, #061c20 100%); }
+
+    .thumb-icon {
+      opacity: 0.6;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .post-card-body {
+      padding: 22px 22px 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .post-card-body .post-meta { margin-bottom: 10px; }
+
+    .post-card-body h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+      color: var(--gray-900);
+      margin-bottom: 10px;
+    }
+
+    .post-card-body p {
+      font-size: 13.5px;
+      color: var(--gray-500);
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 18px;
+    }
+
+    .post-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid var(--gray-100);
+    }
+
+    .post-author {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .author-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--brand-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--brand);
+      flex-shrink: 0;
+    }
+
+    .author-info-name {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gray-700);
+    }
+
+    .read-time {
+      font-size: 11.5px;
+      color: var(--gray-400);
+    }
+
+    /* ─── NEWSLETTER BANNER ─── */
+    .newsletter {
+      background: var(--navy);
+      padding: 72px 24px;
+      text-align: center;
+    }
+
+    .newsletter .section-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .newsletter h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(24px, 3vw, 38px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #fff;
+      margin-bottom: 10px;
+      line-height: 1.15;
+    }
+
+    .newsletter p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.45);
+      max-width: 420px;
+      margin: 0 auto 32px;
+      line-height: 1.65;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 10px;
+      max-width: 460px;
+      margin: 0 auto;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 13px 18px;
+      border-radius: 10px;
+      border: 1.5px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.07);
+      color: #fff;
+      font-family: inherit;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .newsletter-form input::placeholder { color: rgba(255,255,255,0.3); }
+    .newsletter-form input:focus { border-color: var(--brand); }
+
+    .newsletter-form button {
+      padding: 13px 22px;
+      background: var(--brand);
+      color: #fff;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.15s, transform 0.1s;
+    }
+    .newsletter-form button:hover { background: var(--brand-dark); transform: translateY(-1px); }
+    .newsletter-form button:active { transform: translateY(0); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--navy-2);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 60px 24px 32px;
+    }
+
+    .footer-grid {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.32);
+      margin-top: 12px;
+      line-height: 1.7;
+      max-width: 260px;
+    }
+
+    .footer-logo .logo-name { color: rgba(255,255,255,0.85); }
+
+    .footer-col h5 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.28);
+      margin-bottom: 14px;
+    }
+
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer-col ul li a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.42);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-col ul li a:hover { color: #fff; }
+
+    .footer-bottom {
+      max-width: 1160px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.22); }
+    .footer-bottom a { font-size: 12px; color: rgba(255,255,255,0.22); text-decoration: none; }
+    .footer-bottom a:hover { color: rgba(255,255,255,0.5); }
+
+    /* ─── FADE-IN ─── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.55s cubic-bezier(0.4,0,0.2,1), transform 0.55s cubic-bezier(0.4,0,0.2,1);
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up.delay-1 { transition-delay: 0.08s; }
+    .fade-up.delay-2 { transition-delay: 0.16s; }
+    .fade-up.delay-3 { transition-delay: 0.24s; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 960px) {
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .featured-post { grid-template-columns: 1fr; }
+      .featured-img { min-height: 220px; }
+      .posts-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .blog-hero { padding: 48px 20px 40px; }
+      .featured-wrap { padding: 28px 20px 0; }
+      .featured-content { padding: 24px 24px; }
+      .posts-section { padding: 40px 20px 60px; }
+      .posts-grid { grid-template-columns: 1fr; }
+      .newsletter { padding: 56px 20px; }
+      .newsletter-form { flex-direction: column; }
+      .newsletter-form button { width: 100%; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 10px; }
+      footer { padding: 40px 20px 24px; }
+      .categories { padding: 24px 20px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="brand_assets/logo.png" alt="Posiciona">
+      <span class="logo-name">Posiciona</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#features">Serviços</a></li>
+      <li><a href="index.html#process">Como Funciona</a></li>
+      <li><a href="index.html#case-study">Resultados</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+    </ul>
+    <a href="index.html#contact" class="nav-cta">Começar Agora →</a>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="index.html#features" class="mobile-link">Serviços</a></li>
+    <li><a href="index.html#process" class="mobile-link">Como Funciona</a></li>
+    <li><a href="index.html#case-study" class="mobile-link">Resultados</a></li>
+    <li><a href="blog.html" class="mobile-link">Blog</a></li>
+  </ul>
+  <a href="index.html#contact" class="mobile-cta mobile-link">Começar Agora →</a>
+</div>
+
+<!-- BLOG HERO -->
+<section class="blog-hero">
+  <div class="section-label">Recursos Gratuitos</div>
+  <h1>Blog SEO Local</h1>
+  <p>Estratégias, guias e casos reais para colocar o seu negócio no topo do Google em Portugal.</p>
+</section>
+
+<!-- CATEGORY FILTER -->
+<div class="categories">
+  <a href="#" class="cat-btn active">Todos</a>
+  <a href="#" class="cat-btn">Google Maps</a>
+  <a href="#" class="cat-btn">SEO On-Page</a>
+  <a href="#" class="cat-btn">Link Building</a>
+  <a href="#" class="cat-btn">Casos de Sucesso</a>
+  <a href="#" class="cat-btn">Google Business</a>
+</div>
+
+<!-- FEATURED POST -->
+<div class="featured-wrap fade-up">
+  <a href="#" class="featured-post">
+    <div class="featured-img thumb-bg-1">
+      <div class="featured-img-overlay"></div>
+      <div class="featured-img-graphic">
+        <svg width="180" height="180" viewBox="0 0 180 180" fill="none">
+          <circle cx="90" cy="90" r="70" stroke="white" stroke-width="1.5" stroke-dasharray="6 4"/>
+          <circle cx="90" cy="90" r="40" stroke="white" stroke-width="1" opacity="0.5"/>
+          <circle cx="90" cy="90" r="10" fill="white" opacity="0.8"/>
+          <path d="M90 20 L90 90 L140 140" stroke="white" stroke-width="1" opacity="0.4"/>
+          <path d="M90 20 L90 90 L40 140" stroke="white" stroke-width="1" opacity="0.3"/>
+        </svg>
+      </div>
+      <div class="featured-badge">★ Artigo em Destaque</div>
+    </div>
+    <div class="featured-content">
+      <div class="post-meta">
+        <span class="post-tag">Google Maps</span>
+        <div class="post-dot"></div>
+        <span class="post-date">24 Abril 2026</span>
+      </div>
+      <h2>Como Dominar o Pack Local do Google Maps em 2026: Guia Completo para Negócios Portugueses</h2>
+      <p>O pack local aparece em 46% de todas as pesquisas no Google. Descubra como otimizar o seu Google Business Profile, conseguir reviews e bater a concorrência nas pesquisas locais.</p>
+      <span class="read-more">Ler artigo <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+  </a>
+</div>
+
+<!-- POSTS GRID -->
+<div class="posts-section">
+  <div class="posts-section-title">Artigos Recentes</div>
+  <div class="posts-grid">
+
+    <a href="#" class="post-card fade-up">
+      <div class="post-thumb thumb-bg-2">
+        <div class="post-thumb-inner">
+          <svg class="thumb-icon" width="52" height="52" viewBox="0 0 52 52" fill="none">
+            <path d="M26 8C17.16 8 10 15.16 10 24c0 9.94 16 26 16 26s16-16.06 16-26c0-8.84-7.16-16-16-16zm0 21a5 5 0 1 1 0-10 5 5 0 0 1 0 10z" fill="currentColor"/>
+          </svg>
+        </div>
+      </div>
+      <div class="post-card-body">
+        <div class="post-meta">
+          <span class="post-tag">Google Business</span>
+          <div class="post-dot"></div>
+          <span class="post-date">18 Abr 2026</span>
+        </div>
+        <h3>10 Erros no Google Business Profile que Custam Clientes</h3>
+        <p>A maioria dos negócios locais comete pelo menos 3 destes erros. Veja como os identificar e corrigir em menos de uma hora.</p>
+        <div class="post-card-footer">
+          <div class="post-author">
+            <div class="author-avatar">MC</div>
+            <span class="author-info-name">Miguel Costa</span>
+          </div>
+          <span class="read-time">5 min</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="#" class="post-card fade-up delay-1">
+      <div class="post-thumb thumb-bg-3">
+        <div class="post-thumb-inner">
+          <svg class="thumb-icon" width="52" height="52" viewBox="0 0 52 52" fill="none">
+            <path d="M44 28H28V44h16V28zM8 28v16h16V28H8zM28 8v16h16V8H28zM8 8v16h16V8H8z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="post-card-body">
+        <div class="post-meta">
+          <span class="post-tag">SEO On-Page</span>
+          <div class="post-dot"></div>
+          <span class="post-date">12 Abr 2026</span>
+        </div>
+        <h3>Schema Markup Local: O Segredo que os Seus Concorrentes Não Usam</h3>
+        <p>O schema markup LocalBusiness pode aumentar a taxa de cliques em até 30%. Guia passo a passo para implementar sem programar.</p>
+        <div class="post-card-footer">
+          <div class="post-author">
+            <div class="author-avatar">SR</div>
+            <span class="author-info-name">Sara Rodrigues</span>
+          </div>
+          <span class="read-time">7 min</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="#" class="post-card fade-up delay-2">
+      <div class="post-thumb thumb-bg-4">
+        <div class="post-thumb-inner">
+          <svg class="thumb-icon" width="52" height="52" viewBox="0 0 52 52" fill="none">
+            <path d="M10 36l10-10 8 8 14-18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="6" y="6" width="40" height="40" rx="4" stroke="currentColor" stroke-width="2.5"/>
+          </svg>
+        </div>
+      </div>
+      <div class="post-card-body">
+        <div class="post-meta">
+          <span class="post-tag">Casos de Sucesso</span>
+          <div class="post-dot"></div>
+          <span class="post-date">5 Abr 2026</span>
+        </div>
+        <h3>Do #18 ao #1: Como uma Oficina no Porto Triplicou as Marcações</h3>
+        <p>Em 47 dias, a Auto Reparações Silva passou do anonimato ao topo do Google Maps. Análise completa da estratégia usada.</p>
+        <div class="post-card-footer">
+          <div class="post-author">
+            <div class="author-avatar">MC</div>
+            <span class="author-info-name">Miguel Costa</span>
+          </div>
+          <span class="read-time">9 min</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="#" class="post-card fade-up">
+      <div class="post-thumb thumb-bg-5">
+        <div class="post-thumb-inner">
+          <svg class="thumb-icon" width="52" height="52" viewBox="0 0 52 52" fill="none">
+            <path d="M26 6l5.09 10.31L43 18.18l-8.5 8.28 2.01 11.7L26 32.77l-10.51 5.39 2.01-11.7L9 18.18l11.91-1.87L26 6z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="post-card-body">
+        <div class="post-meta">
+          <span class="post-tag">Google Maps</span>
+          <div class="post-dot"></div>
+          <span class="post-date">28 Mar 2026</span>
+        </div>
+        <h3>Como Conseguir Mais Reviews Google (Sem Pedir de Forma Estranha)</h3>
+        <p>Reviews são o fator #2 no ranking do pack local. Scripts de email, SMS e QR code para aumentar as suas avaliações de forma natural.</p>
+        <div class="post-card-footer">
+          <div class="post-author">
+            <div class="author-avatar">SR</div>
+            <span class="author-info-name">Sara Rodrigues</span>
+          </div>
+          <span class="read-time">6 min</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="#" class="post-card fade-up delay-1">
+      <div class="post-thumb thumb-bg-6">
+        <div class="post-thumb-inner">
+          <svg class="thumb-icon" width="52" height="52" viewBox="0 0 52 52" fill="none">
+            <path d="M8 26h8M36 26h8M26 8v8M26 36v8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="26" cy="26" r="10" stroke="currentColor" stroke-width="2.5"/>
+            <circle cx="26" cy="26" r="3" fill="currentColor"/>
+          </svg>
+        </div>
+      </div>
+      <div class="post-card-body">
+        <div class="post-meta">
+          <span class="post-tag">Link Building</span>
+          <div class="post-dot"></div>
+          <span class="post-date">20 Mar 2026</span>
+        </div>
+        <h3>Citações NAP: O Guia Definitivo para Negócios Locais em Portugal</h3>
+        <p>Nome, Endereço e Telefone consistentes nos diretórios certos fazem a diferença. Lista dos 40 diretórios portugueses mais importantes.</p>
+        <div class="post-card-footer">
+          <div class="post-author">
+            <div class="author-avatar">JP</div>
+            <span class="author-info-name">João Pereira</span>
+          </div>
+          <span class="read-time">8 min</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="#" class="post-card fade-up delay-2">
+      <div class="post-thumb thumb-bg-1">
+        <div class="post-thumb-inner">
+          <svg class="thumb-icon" width="52" height="52" viewBox="0 0 52 52" fill="none">
+            <path d="M14 38V24M22 38V18M30 38V28M38 38V14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="post-card-body">
+        <div class="post-meta">
+          <span class="post-tag">SEO On-Page</span>
+          <div class="post-dot"></div>
+          <span class="post-date">10 Mar 2026</span>
+        </div>
+        <h3>Palavras-chave Locais: Como Encontrar as que Trazem Clientes, Não Apenas Visitas</h3>
+        <p>A diferença entre "dentista" e "dentista urgência lisboa barato" pode valer €5.000/mês. Metodologia completa de keyword research local.</p>
+        <div class="post-card-footer">
+          <div class="post-author">
+            <div class="author-avatar">JP</div>
+            <span class="author-info-name">João Pereira</span>
+          </div>
+          <span class="read-time">10 min</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<!-- NEWSLETTER -->
+<section class="newsletter fade-up">
+  <span class="section-label">Newsletter Semanal</span>
+  <h2>SEO Local na Sua Caixa de Entrada</h2>
+  <p>Uma dica acionável por semana. Sem spam, sem teoria — só o que funciona em Portugal.</p>
+  <form class="newsletter-form" onsubmit="return false;">
+    <input type="email" placeholder="O seu email" required>
+    <button type="submit">Subscrever →</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo footer-logo">
+        <img src="brand_assets/logo.png" alt="Posiciona">
+        <span class="logo-name" style="color:rgba(255,255,255,0.85);">Posiciona</span>
+      </a>
+      <p>Agência de SEO local especializada em colocar negócios portugueses no topo do Google — da análise aos resultados.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Serviços</h5>
+      <ul>
+        <li><a href="#">SEO Local</a></li>
+        <li><a href="#">Google Maps</a></li>
+        <li><a href="#">Link Building</a></li>
+        <li><a href="#">Conteúdo Local</a></li>
+        <li><a href="#">Gestão de Avaliações</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Empresa</h5>
+      <ul>
+        <li><a href="#">Sobre nós</a></li>
+        <li><a href="#">Casos de Sucesso</a></li>
+        <li><a href="blog.html">Blog SEO</a></li>
+        <li><a href="#">Parceiros</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contacto</h5>
+      <ul>
+        <li><a href="#">hello@posiciona.pt</a></li>
+        <li><a href="#">+351 912 345 678</a></li>
+        <li><a href="#">Porto, Portugal</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Posiciona. Todos os direitos reservados.</p>
+    <div style="display:flex;gap:20px;">
+      <a href="#">Privacidade</a>
+      <a href="#">Termos</a>
+      <a href="#">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ─── HAMBURGER ───
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  function openMenu() {
+    hamburger.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    mobileMenu.style.display = 'block';
+    requestAnimationFrame(() => mobileMenu.classList.add('open'));
+  }
+
+  function closeMenu() {
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    mobileMenu.classList.remove('open');
+    mobileMenu.addEventListener('transitionend', () => {
+      if (!mobileMenu.classList.contains('open')) mobileMenu.style.display = 'none';
+    }, { once: true });
+  }
+
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
+  });
+
+  document.querySelectorAll('.mobile-link').forEach(link => link.addEventListener('click', closeMenu));
+  document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) closeMenu();
+  });
+
+  // ─── FADE-IN ON SCROLL ───
+  const fadeEls = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  fadeEls.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
