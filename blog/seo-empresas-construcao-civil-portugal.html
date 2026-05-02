@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SEO para empresas de construção civil: como conseguir mais obras pelo Google — Posiciona</title>
+  <meta name="description" content="Guia completo de SEO local para empresas de construção civil em Portugal: como aparecer no Google para 'empreiteiro em [cidade]' e transformar pesquisas em pedidos de orçamento.">
+  <meta property="og:title" content="SEO para empresas de construção civil: como conseguir mais obras pelo Google">
+  <meta property="og:description" content="Guia completo de SEO local para empresas de construção civil em Portugal: como aparecer no Google para 'empreiteiro em [cidade]' e transformar pesquisas em pedidos de orçamento.">
+  <meta property="og:type" content="article">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+  :root {
+    --navy: #0C1428;
+    --navy2: #111C35;
+    --card: #16233D;
+    --brand: #1A6FFF;
+    --teal: #00D4AA;
+    --muted: #8896B3;
+    --text: #E2E8F4;
+    --border: #1E2D4D;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--navy);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 17px;
+  }
+  a { color: var(--brand); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* NAV */
+  .nav {
+    display: flex; align-items: center; gap: 2rem;
+    padding: 1rem 2rem; border-bottom: 1px solid var(--border);
+    background: var(--navy2); position: sticky; top: 0; z-index: 100;
+  }
+  .logo { display:flex; align-items:center; gap:.5rem; font-weight:700;
+            color: var(--text); font-size:1.1rem; }
+  .logo img { height:28px; }
+  .nav-links { display:flex; gap:1.5rem; list-style:none; margin-left:auto; }
+  .nav-links a { color: var(--muted); font-size:.9rem; transition:color .2s; }
+  .nav-links a:hover { color: var(--text); text-decoration:none; }
+  .btn-nav {
+    background: var(--brand); color:#fff; padding:.45rem 1rem;
+    border-radius:6px; font-size:.9rem; font-weight:600; white-space:nowrap;
+    transition: opacity .2s;
+  }
+  .btn-nav:hover { opacity:.85; text-decoration:none; }
+
+  /* HERO */
+  .hero {
+    max-width: 780px; margin: 0 auto; padding: 4rem 2rem 2rem;
+  }
+  .tag {
+    display:inline-block; background: rgba(26,111,255,.15);
+    color: var(--brand); border: 1px solid rgba(26,111,255,.3);
+    border-radius:20px; padding:.25rem .8rem; font-size:.8rem;
+    font-weight:600; letter-spacing:.04em; margin-bottom:1.2rem;
+  }
+  .hero h1 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 800; line-height: 1.2;
+    color: #fff; margin-bottom: 1rem;
+  }
+  .hero-meta {
+    display:flex; gap:1.2rem; font-size:.85rem; color: var(--muted);
+    margin-bottom: 2rem; flex-wrap:wrap; align-items:center;
+  }
+  .hero-meta span { display:flex; align-items:center; gap:.3rem; }
+
+  /* ARTICLE BODY */
+  .article {
+    max-width: 780px; margin: 0 auto; padding: 0 2rem 4rem;
+  }
+  .article h2 {
+    font-size: 1.5rem; font-weight: 700; color: #fff;
+    margin: 2.5rem 0 .8rem; padding-top: .5rem;
+    border-top: 1px solid var(--border);
+  }
+  .article h3 {
+    font-size: 1.15rem; font-weight: 600; color: var(--brand);
+    margin: 1.8rem 0 .5rem;
+  }
+  .article p {
+    margin-bottom: 1.1rem; color: #C8D3EA;
+  }
+  .article ul, .article ol {
+    margin: .5rem 0 1.2rem 1.5rem; color: #C8D3EA;
+  }
+  .article li { margin-bottom:.4rem; }
+  .article strong { color: var(--text); }
+
+  /* META BOX */
+  .meta-box {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.2rem 1.5rem; margin-bottom: 2rem;
+    display: grid; gap: .5rem;
+  }
+  .meta-row { font-size:.85rem; color: var(--muted); }
+  .meta-row strong { color: var(--text); }
+
+  /* HIGHLIGHT BOX */
+  .highlight-box {
+    background: rgba(26,111,255,.08); border: 1px solid rgba(26,111,255,.2);
+    border-left: 3px solid var(--brand); border-radius: 8px;
+    padding: 1.2rem 1.5rem; margin: 1.5rem 0;
+  }
+  .highlight-box p { margin-bottom: 0; color: #C8D3EA; }
+
+  /* KEYWORD GRID */
+  .keyword-grid {
+    display: flex; flex-wrap: wrap; gap: 8px; margin: 1rem 0 1.5rem;
+  }
+  .kw-tag {
+    background: rgba(0,212,170,.08); border: 1px solid rgba(0,212,170,.2);
+    color: var(--teal); border-radius: 6px; padding: .25rem .75rem;
+    font-size: .82rem; font-weight: 600;
+  }
+
+  /* STEPS */
+  .steps { margin: 1rem 0 1.5rem; display: grid; gap: 1rem; }
+  .step {
+    display: flex; gap: 1rem; align-items: flex-start;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1rem 1.2rem;
+  }
+  .step-num {
+    flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%;
+    background: rgba(26,111,255,.2); border: 1px solid rgba(26,111,255,.3);
+    color: var(--brand); font-weight: 700; font-size: .9rem;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .step-body { flex: 1; }
+  .step-body strong { color: var(--text); display: block; margin-bottom: .25rem; }
+  .step-body p { margin: 0; font-size: .9rem; color: var(--muted); }
+
+  /* FAQ */
+  .faq { margin-top: 2.5rem; }
+  .faq-item {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius:10px; margin-bottom:.8rem; overflow:hidden;
+  }
+  .faq-q {
+    padding:1rem 1.2rem; font-weight:600; cursor:pointer;
+    color: var(--text); list-style:none; display:flex;
+    justify-content:space-between; align-items:center;
+  }
+  .faq-q::after { content:"＋"; color: var(--brand); font-size:1.1rem; }
+  details[open] .faq-q::after { content:"－"; }
+  .faq-a {
+    padding:0 1.2rem 1rem; color: #C8D3EA; font-size:.95rem;
+  }
+
+  /* CTA BAND */
+  .cta-band {
+    background: linear-gradient(135deg, rgba(26,111,255,.15), rgba(0,212,170,.08));
+    border: 1px solid rgba(26,111,255,.25); border-radius:14px;
+    padding: 2.5rem; margin: 3rem 0; text-align:center;
+  }
+  .cta-band h2 { font-size:1.3rem; color:#fff; margin-bottom:.6rem; border:none; margin-top:0; }
+  .cta-band p { color: var(--muted); margin-bottom:1.2rem; }
+  .btn-cta {
+    display:inline-block; background: var(--brand); color:#fff;
+    padding:.7rem 1.8rem; border-radius:8px; font-weight:700;
+    font-size:.95rem; transition: opacity .2s;
+  }
+  .btn-cta:hover { opacity:.85; text-decoration:none; }
+
+  /* FOOTER */
+  .footer { border-top:1px solid var(--border); background: var(--navy2); padding:3rem 2rem; }
+  .footer-inner { max-width:780px; margin:0 auto; text-align:center; }
+  .footer .logo { justify-content:center; margin-bottom:.8rem; }
+  .footer-copy { color: var(--muted); font-size:.9rem; margin-bottom:1rem; }
+  .footer-links { display:flex; justify-content:center; gap:1.5rem; margin-bottom:1rem; }
+  .footer-links a { color: var(--muted); font-size:.85rem; }
+  .footer-links a:hover { color: var(--text); }
+  .footer-legal { font-size:.8rem; color: #4A5570; }
+
+  @media(max-width:600px) {
+    .nav-links { display:none; }
+    .hero, .article { padding-left:1rem; padding-right:1rem; }
+  }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "SEO para empresas de construção civil: como conseguir mais obras pelo Google",
+    "description": "Guia completo de SEO local para empresas de construção civil em Portugal: como aparecer no Google para 'empreiteiro em [cidade]' e transformar pesquisas em pedidos de orçamento.",
+    "publisher": {"@type":"Organization","name":"Posiciona","url":"https://posiciona-one.vercel.app"},
+    "mainEntityOfPage": {"@type":"WebPage","@id":"https://posiciona-one.vercel.app/blog/seo-empresas-construcao-civil-portugal.html"}
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="/index.html" class="logo">
+      <img src="/brand_assets/logo.png" alt="Posiciona" height="32">
+      Posiciona
+    </a>
+    <ul class="nav-links">
+      <li><a href="/index.html#features">Serviços</a></li>
+      <li><a href="/index.html#process">Como Funciona</a></li>
+      <li><a href="/index.html#case-study">Resultados</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+    </ul>
+    <a href="/index.html#contact" class="btn-nav">Começar Agora →</a>
+  </nav>
+
+  <div class="hero">
+    <span class="tag">SEO Local</span>
+    <h1>SEO para empresas de construção civil: como conseguir mais obras pelo Google</h1>
+    <div class="hero-meta">
+      <span>📅 Maio 2026</span>
+      <span>✍️ Posiciona</span>
+    </div>
+    <div class="meta-box">
+      <div class="meta-row"><strong>Palavra-chave principal:</strong> empresa de construção civil [cidade]</div>
+      <div class="meta-row"><strong>Intenção:</strong> Informacional + Comercial — empreiteiros que querem crescer online</div>
+      <div class="meta-row"><strong>Tempo de leitura:</strong> 7 minutos</div>
+    </div>
+  </div>
+
+  <article class="article">
+
+    <p>Uma empresa de construção civil tem uma característica que a distingue da maioria dos negócios de serviços: os projetos são grandes, o valor é alto, e o cliente pesquisa muito antes de decidir. Isto significa uma coisa para ti: <strong>quem aparecer no Google em primeiro lugar vai receber os pedidos de orçamento</strong>. Quem não aparecer, não recebe — mesmo que construa melhor que todos os concorrentes.</p>
+
+    <p>Portugal tem milhares de empresas de construção civil registadas. Mas a esmagadora maioria é invisível online. O site existe, mas não rankeia. O Perfil de Empresa do Google existe, mas está incompleto. E todos os meses, dezenas de pesquisas por <strong>"empreiteiro em Setúbal"</strong> ou <strong>"construção de moradia Almada"</strong> ficam sem resposta da tua parte — e vão diretamente para um concorrente.</p>
+
+    <p>Neste artigo vais perceber exatamente o que tens de fazer para mudar isso.</p>
+
+    <h2>Como é que os clientes procuram empresas de construção no Google?</h2>
+
+    <p>Antes de otimizares seja o que for, tens de perceber que linguagem usa o teu cliente ideal. Não pesquisa "empresa de construção civil com alvará e vasta experiência no setor" — pesquisa de forma muito mais simples e direta. Estas são as pesquisas reais que acontecem todos os dias:</p>
+
+    <div class="keyword-grid">
+      <span class="kw-tag">empreiteiro em Almada</span>
+      <span class="kw-tag">construção de moradia Lisboa</span>
+      <span class="kw-tag">empresa de obras Setúbal</span>
+      <span class="kw-tag">remodelação de casa preço</span>
+      <span class="kw-tag">ampliação de moradia Porto</span>
+      <span class="kw-tag">construção civil orçamento</span>
+      <span class="kw-tag">empresa de construção perto de mim</span>
+      <span class="kw-tag">construção de moradia barata</span>
+    </div>
+
+    <p>As pesquisas locais são especialmente valiosas porque quem pesquisa <strong>"empreiteiro em Almada"</strong> está genuinamente à procura de alguém nessa zona — é intenção de compra direta. É o tipo de tráfego que nenhum anúncio pago consegue igualar em qualidade ou consistência a longo prazo.</p>
+
+    <h2>1. O Perfil de Empresa do Google para construção civil</h2>
+
+    <p>O Perfil de Empresa do Google é o ponto de partida. Quando alguém pesquisa "empresa de construção em Setúbal", são os perfis do Google Maps que aparecem no topo — antes de qualquer site. Para uma empresa de construção, o perfil tem obrigatoriamente de incluir:</p>
+
+    <ul>
+      <li><strong>Categoria principal:</strong> "Empresa de construção" ou "Empreiteiro geral" — nunca categorias genéricas como "Empresa de serviços"</li>
+      <li><strong>Categorias secundárias</strong> (podes adicionar até 9): remodelação, construção de casas, construção em betão, fundações</li>
+      <li><strong>Descrição de 750 caracteres</strong> com os teus serviços, zonas de atuação e o que te diferencia — menciona concelhos específicos</li>
+      <li><strong>Área de serviço detalhada:</strong> define todos os concelhos onde operas, não só a morada do escritório</li>
+      <li><strong>Atributos de negócio:</strong> alvará, seguros, formas de pagamento aceites, orçamentos gratuitos</li>
+    </ul>
+
+    <div class="highlight-box">
+      <p>💡 <strong>Dica:</strong> Usa a função "Publicações" do Perfil de Empresa para partilhar fotos de obras concluídas, promoções sazonais ou artigos do teu blog. O Google interpreta perfis ativos como negócios credíveis e recompensa-os com melhor posicionamento.</p>
+    </div>
+
+    <h2>2. Fotografias de antes e depois — o teu maior ativo de SEO</h2>
+
+    <p>Na construção, as fotos valem mais do que mil palavras — e também valem mais do que qualquer texto para o algoritmo do Google. Utilizadores que veem fotos de qualidade num Perfil de Empresa ficam mais tempo no perfil (sinal positivo para o algoritmo), pedem mais orçamentos e confiam mais na empresa antes do primeiro contacto.</p>
+
+    <p>O que deves fotografar sistematicamente em cada obra:</p>
+
+    <ul>
+      <li><strong>Antes e depois completo</strong> — o contraste visual é o argumento de venda mais poderoso que tens</li>
+      <li><strong>Fases de construção</strong> — fundações, estrutura, laje, cobertura, acabamentos. Mostra o processo, não só o resultado</li>
+      <li><strong>A equipa em ação</strong> — rostos humanos criam confiança imediata. Uma foto da equipa a trabalhar vale mais que dez renders 3D</li>
+      <li><strong>Pormenores de qualidade</strong> — soalhos, caixilharia, fachadas, casas de banho concluídas</li>
+    </ul>
+
+    <p>Publica pelo menos 3 a 5 fotos por semana no perfil. O Google interpreta um perfil atualizado como um negócio ativo — e sobe-o nos resultados.</p>
+
+    <h2>3. Avaliações — como pedi-las a clientes de obras grandes</h2>
+
+    <p>Para uma empresa de construção, pedir avaliações é diferente de o fazer como canalizador ou eletricista. Os projetos demoram meses, a relação é longa, e pode parecer fora de contexto pedir uma avaliação. Mas sem avaliações, o Google não te vai mostrar.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <strong>Na visita de entrega da obra</strong>
+          <p>Di ao cliente: "Se ficou satisfeito, uma avaliação no Google ajuda muito o nosso negócio. Posso mandar-lhe o link agora mesmo?"</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <strong>Envia o link direto por WhatsApp</strong>
+          <p>Não peças ao cliente para ir procurar — manda o link para a página de avaliação do teu perfil. Quanto menos fricção, mais avaliações recebes.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <strong>Follow-up 2 semanas depois</strong>
+          <p>Um email ou mensagem gentil de acompanhamento — "Esperamos que esteja a gostar do resultado. Ainda não esquecemos do link da avaliação 😊" — tem uma taxa de conversão surpreendentemente alta.</p>
+        </div>
+      </div>
+    </div>
+
+    <p><strong>Uma obra bem avaliada com fotos de qualidade vale mais do que meses de publicidade.</strong> É prova social permanente, disponível para todos os clientes futuros que pesquisem o teu nome.</p>
+
+    <h2>4. O teu site precisa de páginas por serviço e por zona geográfica</h2>
+
+    <p>O erro clássico das empresas de construção: uma página "Serviços" com uma lista genérica. Para o Google, isso é invisível. O que tens de construir (sem trocadilho) são páginas dedicadas para cada combinação de serviço e zona:</p>
+
+    <ul>
+      <li>"Construção de moradias em Setúbal"</li>
+      <li>"Remodelação de apartamentos em Lisboa"</li>
+      <li>"Ampliação de casas na Margem Sul"</li>
+      <li>"Empresa de obras no Algarve"</li>
+      <li>"Construção de piscinas em Almada"</li>
+    </ul>
+
+    <p>Cada página deve ter o nome do serviço e a zona no título e cabeçalhos, uma descrição detalhada do processo, fotos de obras realizadas nessa zona, testemunhos de clientes locais e um formulário ou botão claro para pedir orçamento.</p>
+
+    <div class="highlight-box">
+      <p>📊 <strong>Porquê?</strong> Quem pesquisa "construção de moradia em Setúbal" já sabe o que quer e está pronto para avançar. É o tráfego mais qualificado que existe — e a maioria das empresas não tem sequer uma página que capture essa pesquisa.</p>
+    </div>
+
+    <h2>5. Conteúdo que posiciona a empresa como referência do setor</h2>
+
+    <p>Uma empresa de construção civil pode ganhar muito com conteúdo informativo. Os teus clientes têm dúvidas antes de contratar — e quem responde a essas dúvidas online conquista a sua confiança antes do primeiro contacto. Tópicos que atraem exatamente o cliente certo:</p>
+
+    <ul>
+      <li>"Quanto custa construir uma moradia em Portugal em 2026?"</li>
+      <li>"O que é um alvará de construção e como obtê-lo?"</li>
+      <li>"Quanto tempo demora a construção de uma casa do zero?"</li>
+      <li>"Construção tradicional vs LSF: qual escolher?"</li>
+      <li>"Como escolher um empreiteiro de confiança em Portugal"</li>
+    </ul>
+
+    <p>Artigos que respondem a estas perguntas posicionam-te como autoridade — e trazem tráfego de quem está ativamente em fase de decisão de compra.</p>
+
+    <h2>6. Consistência de dados nos diretórios portugueses</h2>
+
+    <p>O nome, morada e telefone da tua empresa (NAP — Name, Address, Phone) devem ser <strong>exatamente iguais</strong> em todo o lado. O Google cruza esta informação entre múltiplas fontes para validar que és um negócio legítimo. Verifica os dados em:</p>
+
+    <ul>
+      <li>Perfil de Empresa do Google</li>
+      <li>Site oficial</li>
+      <li>Infopáginas e Páginas Amarelas</li>
+      <li>Guiamais e Sapo Emprego</li>
+      <li>IMPIC (Instituto dos Mercados Públicos) — para empresas com alvará</li>
+      <li>Diretórios de construção civil como ConstruPortugal</li>
+    </ul>
+
+    <p>Inconsistências confundem o algoritmo e reduzem a tua autoridade local. Um número de telefone diferente num diretório pode ser o suficiente para o Google te empurrar para trás da concorrência.</p>
+
+    <h2>Por onde começar hoje</h2>
+
+    <p>Se tiveres de escolher apenas uma coisa para fazer ainda esta semana: <strong>abre o Perfil de Empresa do Google, preenche todas as categorias e carrega 10 fotos de obras que já concluíste.</strong> Isso sozinho já te coloca à frente de 80% da concorrência local, que ignora completamente estas ferramentas gratuitas.</p>
+
+    <p>Na <strong>Posiciona</strong>, ajudamos empresas de construção civil em Portugal a transformar a sua presença online numa fonte consistente de pedidos de orçamento. Perfil otimizado, site com páginas locais, fotos de qualidade e avaliações reais — é o que separa as empresas que crescem das que ficam paradas à espera de recomendações.</p>
+
+    <div class="faq">
+      <h2>Perguntas frequentes</h2>
+
+      <details class="faq-item">
+        <summary class="faq-q">Quanto tempo demora a aparecer no Google para pesquisas de construção?</summary>
+        <div class="faq-a"><p>Entre 3 e 6 meses para resultados consistentes. A construção tem um ciclo de decisão mais longo que outros setores, por isso os resultados chegam mais devagar — mas também são mais estáveis e duradouros do que publicidade paga.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Preciso de ter alvará de construção para criar o Perfil de Empresa do Google?</summary>
+        <div class="faq-a"><p>Não. O Perfil de Empresa do Google não verifica alvarás. No entanto, exibires o número de alvará do IMPIC no teu site e perfil aumenta significativamente a confiança dos clientes e diferencia-te de empresas sem licenciamento adequado.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Vale a pena investir em SEO se a maioria dos clientes chega por recomendação?</summary>
+        <div class="faq-a"><p>Sim, especialmente. As recomendações têm um teto natural — só chegam enquanto o círculo de conhecidos chega. O SEO expande esse círculo para toda a cidade ou região, 24 horas por dia, captando clientes que nunca teriam ouvido falar de ti por recomendação.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Devo usar Google Ads além do SEO para construção?</summary>
+        <div class="faq-a"><p>Google Ads pode ser útil para resultados imediatos enquanto o SEO ainda está a ganhar terreno. Mas para construção civil, onde cada cliente pode valer dezenas de milhares de euros, o investimento em SEO sustentado tem um retorno muito superior a longo prazo. O custo por clique para pesquisas de construção em Portugal já está bastante alto.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">A minha empresa opera em várias zonas do país — como faço SEO local para cada uma?</summary>
+        <div class="faq-a"><p>Crias páginas dedicadas no site para cada zona e podes ter vários perfis de negócio no Google para escritórios ou armazéns diferentes. Se operares sem escritório físico numa zona, a estratégia passa por páginas de destino otimizadas e pela área de serviço definida no perfil principal.</p></div>
+      </details>
+    </div>
+
+    <div class="cta-band">
+      <h2>A tua empresa de construção merece estar no topo do Google</h2>
+      <p>Fazemos uma auditoria gratuita da tua presença digital em 48 horas — perfil, site e concorrência — e mostramos-te exatamente o que está a impedir que recebas mais pedidos de orçamento online.</p>
+      <a href="/index.html#contact" class="btn-cta">Auditoria Gratuita →</a>
+    </div>
+
+  </article>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="/index.html" class="logo">
+        <img src="/brand_assets/logo.png" alt="Posiciona" height="28">
+        Posiciona
+      </a>
+      <p class="footer-copy">Agência de SEO local especializada em colocar negócios portugueses no topo do Google.</p>
+      <div class="footer-links">
+        <a href="/blog.html">Blog SEO</a>
+        <a href="/index.html#contact">Contacto</a>
+        <a href="/index.html#features">Serviços</a>
+      </div>
+      <p class="footer-legal">© 2026 Posiciona. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
