@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Google Business Profile para canalizadores e eletricistas: o guia que ninguém te deu — Posiciona</title>
+  <meta name="description" content="Guia prático de Google Business Profile para canalizadores e eletricistas em Portugal: o que poucos sabem e que faz toda a diferença em 2026.">
+  <meta property="og:title" content="Google Business Profile para canalizadores e eletricistas: o guia que ninguém te deu">
+  <meta property="og:description" content="Guia prático de Google Business Profile para canalizadores e eletricistas em Portugal: o que poucos sabem e que faz toda a diferença em 2026.">
+  <meta property="og:type" content="article">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+  :root {
+    --navy: #0C1428;
+    --navy2: #111C35;
+    --card: #16233D;
+    --brand: #1A6FFF;
+    --teal: #00D4AA;
+    --muted: #8896B3;
+    --text: #E2E8F4;
+    --border: #1E2D4D;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--navy);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 17px;
+  }
+  a { color: var(--brand); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* NAV */
+  .nav {
+    display: flex; align-items: center; gap: 2rem;
+    padding: 1rem 2rem; border-bottom: 1px solid var(--border);
+    background: var(--navy2); position: sticky; top: 0; z-index: 100;
+  }
+  .logo { display:flex; align-items:center; gap:.5rem; font-weight:700;
+            color: var(--text); font-size:1.1rem; }
+  .logo img { height:28px; }
+  .nav-links { display:flex; gap:1.5rem; list-style:none; margin-left:auto; }
+  .nav-links a { color: var(--muted); font-size:.9rem; transition:color .2s; }
+  .nav-links a:hover { color: var(--text); text-decoration:none; }
+  .btn-nav {
+    background: var(--brand); color:#fff; padding:.45rem 1rem;
+    border-radius:6px; font-size:.9rem; font-weight:600; white-space:nowrap;
+    transition: opacity .2s;
+  }
+  .btn-nav:hover { opacity:.85; text-decoration:none; }
+
+  /* HERO */
+  .hero {
+    max-width: 780px; margin: 0 auto; padding: 4rem 2rem 2rem;
+  }
+  .tag {
+    display:inline-block; background: rgba(26,111,255,.15);
+    color: var(--brand); border: 1px solid rgba(26,111,255,.3);
+    border-radius:20px; padding:.25rem .8rem; font-size:.8rem;
+    font-weight:600; letter-spacing:.04em; margin-bottom:1.2rem;
+  }
+  .hero h1 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 800; line-height: 1.2;
+    color: #fff; margin-bottom: 1rem;
+  }
+  .hero-meta {
+    display:flex; gap:1.2rem; font-size:.85rem; color: var(--muted);
+    margin-bottom: 2rem; flex-wrap:wrap; align-items:center;
+  }
+  .hero-meta span { display:flex; align-items:center; gap:.3rem; }
+
+  /* ARTICLE BODY */
+  .article {
+    max-width: 780px; margin: 0 auto; padding: 0 2rem 4rem;
+  }
+  .article h2 {
+    font-size: 1.5rem; font-weight: 700; color: #fff;
+    margin: 2.5rem 0 .8rem; padding-top: .5rem;
+    border-top: 1px solid var(--border);
+  }
+  .article h3 {
+    font-size: 1.15rem; font-weight: 600; color: var(--brand);
+    margin: 1.8rem 0 .5rem;
+  }
+  .article p {
+    margin-bottom: 1.1rem; color: #C8D3EA;
+  }
+  .article ul, .article ol {
+    margin: .5rem 0 1.2rem 1.5rem; color: #C8D3EA;
+  }
+  .article li { margin-bottom:.4rem; }
+  .article strong { color: var(--text); }
+
+  /* META BOX */
+  .meta-box {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.2rem 1.5rem; margin-bottom: 2rem;
+    display: grid; gap: .5rem;
+  }
+  .meta-row { font-size:.85rem; color: var(--muted); }
+  .meta-row strong { color: var(--text); }
+
+  /* FAQ */
+  .faq { margin-top: 2.5rem; }
+  .faq-item {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius:10px; margin-bottom:.8rem; overflow:hidden;
+  }
+  .faq-q {
+    padding:1rem 1.2rem; font-weight:600; cursor:pointer;
+    color: var(--text); list-style:none; display:flex;
+    justify-content:space-between; align-items:center;
+  }
+  .faq-q::after { content:"＋"; color: var(--brand); font-size:1.1rem; }
+  details[open] .faq-q::after { content:"－"; }
+  .faq-a {
+    padding:0 1.2rem 1rem; color: #C8D3EA; font-size:.95rem;
+  }
+
+  /* CTA BAND */
+  .cta-band {
+    background: linear-gradient(135deg, rgba(26,111,255,.15), rgba(0,212,170,.08));
+    border: 1px solid rgba(26,111,255,.25); border-radius:14px;
+    padding: 2.5rem; margin: 3rem 0; text-align:center;
+  }
+  .cta-band h2 { font-size:1.3rem; color:#fff; margin-bottom:.6rem; border:none; margin-top:0; }
+  .cta-band p { color: var(--muted); margin-bottom:1.2rem; }
+  .btn-cta {
+    display:inline-block; background: var(--brand); color:#fff;
+    padding:.7rem 1.8rem; border-radius:8px; font-weight:700;
+    font-size:.95rem; transition: opacity .2s;
+  }
+  .btn-cta:hover { opacity:.85; text-decoration:none; }
+
+  /* FOOTER */
+  .footer { border-top:1px solid var(--border); background: var(--navy2); padding:3rem 2rem; }
+  .footer-inner { max-width:780px; margin:0 auto; text-align:center; }
+  .footer .logo { justify-content:center; margin-bottom:.8rem; }
+  .footer-copy { color: var(--muted); font-size:.9rem; margin-bottom:1rem; }
+  .footer-links { display:flex; justify-content:center; gap:1.5rem; margin-bottom:1rem; }
+  .footer-links a { color: var(--muted); font-size:.85rem; }
+  .footer-links a:hover { color: var(--text); }
+  .footer-legal { font-size:.8rem; color: #4A5570; }
+
+  @media(max-width:600px) {
+    .nav-links { display:none; }
+    .hero, .article { padding-left:1rem; padding-right:1rem; }
+  }
+</style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Google Business Profile para canalizadores e eletricistas: o guia que ninguém te deu",
+    "description": "Guia prático de Google Business Profile para canalizadores e eletricistas em Portugal: o que poucos sabem e que faz toda a diferença em 2026.",
+    "publisher": {"@type":"Organization","name":"Posiciona","url":"https://posiciona-one.vercel.app"},
+    "mainEntityOfPage": {"@type":"WebPage","@id":"https://posiciona-one.vercel.app/blog/google-business-profile-canalizadores-eletricistas.html"}
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="/index.html" class="logo">
+      <img src="/brand_assets/logo.png" alt="Posiciona" height="32">
+      Posiciona
+    </a>
+    <ul class="nav-links">
+      <li><a href="/index.html#features">Serviços</a></li>
+      <li><a href="/index.html#process">Como Funciona</a></li>
+      <li><a href="/index.html#case-study">Resultados</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+    </ul>
+    <a href="/index.html#contact" class="btn-nav">Começar Agora →</a>
+  </nav>
+
+  <div class="hero">
+    <span class="tag">Google Business</span>
+    <h1>Google Business Profile para canalizadores e eletricistas: o guia que ninguém te deu</h1>
+    <div class="hero-meta">
+      <span>📅 Maio 2026</span>
+      <span>✍️ Posiciona</span>
+    </div>
+    <div class="meta-box"><div class="meta-row"><strong>Palavra-chave principal:</strong> google business profile canalizador</div><div class="meta-row"><strong>Intenção:</strong> How-to — implementação prática</div><div class="meta-row"><strong>Tempo de leitura:</strong> 8 minutos</div></div>
+  </div>
+
+  <article class="article">
+
+    <p>Se és canalizador, eletricista, ou tens uma pequena empresa de serviços técnicos, há uma ferramenta gratuita que pode literalmente mudar o teu negócio. Chama-se <strong>Google Business Profile</strong> — e a maioria dos teus concorrentes ou não a usa, ou usa-a mal.</p>
+    <p>A diferença entre um perfil bem feito e um descuidado pode significar 5 ou 50 chamadas por mês. Segue este guia passo a passo.</p>
+
+    <h2>Porque é que isto é tão importante para canalizadores e eletricistas</h2>
+    <p>Os teus clientes não planeiam contratar-te — eles têm uma emergência. Uma fuga de água ao domingo. Um quadro elétrico que disparou à noite. Quando isto acontece, vão ao Google e escrevem <strong>"canalizador urgente perto de mim"</strong>. O Google mostra três opções no mapa. Se não estás nessas três, não existes para esse cliente.</p>
+
+    <h2>Passo 1: Criar e validar o perfil</h2>
+    <p>Vai a <strong>google.com/business</strong> e usa uma conta Google profissional. Atenção aos dados:</p>
+    <ul>
+      <li>Nome exato da empresa — sem palavras-chave inventadas</li>
+      <li>Categoria principal o mais específica possível ("Canalizador" em vez de "Empresa de serviços")</li>
+      <li>Até 9 categorias secundárias — usa-as todas se forem relevantes</li>
+      <li>Se trabalhas a partir de casa ou da carrinha, oculta a morada e define área de serviço</li>
+    </ul>
+
+    <h2>Passo 2: Configurar a área de serviço</h2>
+    <p>Para canalizadores e eletricistas, és um <strong>Service Area Business</strong>. Define a área por concelhos e freguesias, não por raio em km. Não exageres — indicar toda a área metropolitana quando só serves dois concelhos fará o Google desconfiar de ti.</p>
+
+    <h2>Passo 3: Lista de serviços detalhada (o segredo mais subaproveitado)</h2>
+    <p>O Google permite listar serviços específicos. Cada um é uma porta de entrada para uma pesquisa diferente.</p>
+    <p><strong>Para canalizadores:</strong></p>
+    <ul>
+      <li>Reparação de fugas de água</li>
+      <li>Desentupimento de canos e esgotos</li>
+      <li>Instalação de torneiras e sanitas</li>
+      <li>Serviço de canalizador 24 horas</li>
+    </ul>
+    <p><strong>Para eletricistas:</strong></p>
+    <ul>
+      <li>Instalação de quadros elétricos</li>
+      <li>Resolução de curto-circuitos</li>
+      <li>Certificação CERTIEL</li>
+      <li>Eletricista urgente fora de horas</li>
+    </ul>
+
+    <h2>Passo 4: Fotografias reais (esqueça o banco de imagens)</h2>
+    <p>Em 2026 o Google distingue fotos genéricas de fotos reais. Precisas de:</p>
+    <ul>
+      <li>Logótipo e foto de capa</li>
+      <li>Pelo menos 10 fotos da equipa em ação, em obra</li>
+      <li>Antes/depois de trabalhos realizados</li>
+      <li>Foto da viatura (com lettering, ainda melhor)</li>
+    </ul>
+    <p>Atualiza o álbum mensalmente — sinaliza ao Google que o negócio está vivo.</p>
+
+    <h2>Passo 5: Publicações semanais</h2>
+    <p>Cinco minutos por semana. Uma foto de um trabalho, uma legenda curta com localização e serviço. O Google vê o perfil como ativo, regular — e sobe-te no ranking.</p>
+
+    <h2>Passo 6: Sistema de avaliações</h2>
+    <ol>
+      <li>No final de cada trabalho, envia o link direto da tua avaliação Google por WhatsApp</li>
+      <li>Responde a TODAS as avaliações em menos de 48h</li>
+      <li>Nunca compres avaliações (o Google deteta e penaliza)</li>
+    </ol>
+    <p>Objetivo realista: passar de menos de 10 para mais de 30 avaliações em 6 meses.</p>
+
+    <h2>Erros mais comuns a evitar</h2>
+    <ul>
+      <li>Encher o nome da empresa de palavras-chave (causa suspensão)</li>
+      <li>Categoria principal demasiado genérica</li>
+      <li>Horário desatualizado</li>
+      <li>Não responder a avaliações negativas</li>
+      <li>Ter morada fixa quando deves configurar área de serviço</li>
+    </ul>
+
+<div class="faq"><h2>Perguntas frequentes</h2>
+      <details class="faq-item">
+        <summary class="faq-q">Posso ter dois perfis para a mesma empresa?</summary>
+        <div class="faq-a"><p>Não. Um perfil por empresa. Só em casos excecionais (duas localizações físicas diferentes) se justifica mais de um.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Vale a pena Google Ads se já tenho o perfil otimizado?</summary>
+        <div class="faq-a"><p>São complementares. O perfil traz tráfego orgânico gratuito; o Ads acelera em zonas muito competitivas. Foca-te primeiro no perfil — quando tiveres bons resultados orgânicos, considera Ads para escalar.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">O que fazer com avaliações claramente falsas?</summary>
+        <div class="faq-a"><p>Responde publicamente com calma e factos. Depois reporta ao Google pelo botão de três pontinhos. Avaliações difamatórias de quem nunca foi cliente costumam ser removidas em 1-2 semanas.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Quanto tempo até ver resultados numa zona da AML?</summary>
+        <div class="faq-a"><p>Perfil completamente otimizado em Almada, Seixal ou Barreiro: aumento visível de chamadas em 4 a 8 semanas. Resultados maduros em 4 a 6 meses.</p></div>
+      </details></div>
+    <div class="cta-band">
+      <h2>Pronto para aparecer no topo do Google?</h2>
+      <p>Não tens tempo para fazer isto sozinho? A Posiciona cuida do teu Google Business Profile do início ao fim.</p>
+      <a href="/index.html#contact" class="btn-cta">Auditoria Gratuita →</a>
+    </div>
+  </article>
+
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="/index.html" class="logo">
+        <img src="/brand_assets/logo.png" alt="Posiciona" height="28">
+        Posiciona
+      </a>
+      <p class="footer-copy">Agência de SEO local especializada em colocar negócios portugueses no topo do Google.</p>
+      <div class="footer-links">
+        <a href="/blog.html">Blog SEO</a>
+        <a href="/index.html#contact">Contacto</a>
+        <a href="/index.html#features">Serviços</a>
+      </div>
+      <p class="footer-legal">© 2026 Posiciona. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Quanto tempo demora o SEO local a dar resultados? Calendário realista para PMEs — Posiciona</title>
+  <meta name="description" content="Quanto tempo demora o SEO local a trazer clientes? Calendário mês a mês baseado em casos reais de PMEs portuguesas em 2026, sem promessas vazias.">
+  <meta property="og:title" content="Quanto tempo demora o SEO local a dar resultados? Calendário realista para PMEs">
+  <meta property="og:description" content="Quanto tempo demora o SEO local a trazer clientes? Calendário mês a mês baseado em casos reais de PMEs portuguesas em 2026, sem promessas vazias.">
+  <meta property="og:type" content="article">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+  :root {
+    --navy: #0C1428;
+    --navy2: #111C35;
+    --card: #16233D;
+    --brand: #1A6FFF;
+    --teal: #00D4AA;
+    --muted: #8896B3;
+    --text: #E2E8F4;
+    --border: #1E2D4D;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--navy);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 17px;
+  }
+  a { color: var(--brand); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* NAV */
+  .nav {
+    display: flex; align-items: center; gap: 2rem;
+    padding: 1rem 2rem; border-bottom: 1px solid var(--border);
+    background: var(--navy2); position: sticky; top: 0; z-index: 100;
+  }
+  .logo { display:flex; align-items:center; gap:.5rem; font-weight:700;
+            color: var(--text); font-size:1.1rem; }
+  .logo img { height:28px; }
+  .nav-links { display:flex; gap:1.5rem; list-style:none; margin-left:auto; }
+  .nav-links a { color: var(--muted); font-size:.9rem; transition:color .2s; }
+  .nav-links a:hover { color: var(--text); text-decoration:none; }
+  .btn-nav {
+    background: var(--brand); color:#fff; padding:.45rem 1rem;
+    border-radius:6px; font-size:.9rem; font-weight:600; white-space:nowrap;
+    transition: opacity .2s;
+  }
+  .btn-nav:hover { opacity:.85; text-decoration:none; }
+
+  /* HERO */
+  .hero {
+    max-width: 780px; margin: 0 auto; padding: 4rem 2rem 2rem;
+  }
+  .tag {
+    display:inline-block; background: rgba(26,111,255,.15);
+    color: var(--brand); border: 1px solid rgba(26,111,255,.3);
+    border-radius:20px; padding:.25rem .8rem; font-size:.8rem;
+    font-weight:600; letter-spacing:.04em; margin-bottom:1.2rem;
+  }
+  .hero h1 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 800; line-height: 1.2;
+    color: #fff; margin-bottom: 1rem;
+  }
+  .hero-meta {
+    display:flex; gap:1.2rem; font-size:.85rem; color: var(--muted);
+    margin-bottom: 2rem; flex-wrap:wrap; align-items:center;
+  }
+  .hero-meta span { display:flex; align-items:center; gap:.3rem; }
+
+  /* ARTICLE BODY */
+  .article {
+    max-width: 780px; margin: 0 auto; padding: 0 2rem 4rem;
+  }
+  .article h2 {
+    font-size: 1.5rem; font-weight: 700; color: #fff;
+    margin: 2.5rem 0 .8rem; padding-top: .5rem;
+    border-top: 1px solid var(--border);
+  }
+  .article h3 {
+    font-size: 1.15rem; font-weight: 600; color: var(--brand);
+    margin: 1.8rem 0 .5rem;
+  }
+  .article p {
+    margin-bottom: 1.1rem; color: #C8D3EA;
+  }
+  .article ul, .article ol {
+    margin: .5rem 0 1.2rem 1.5rem; color: #C8D3EA;
+  }
+  .article li { margin-bottom:.4rem; }
+  .article strong { color: var(--text); }
+
+  /* META BOX */
+  .meta-box {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.2rem 1.5rem; margin-bottom: 2rem;
+    display: grid; gap: .5rem;
+  }
+  .meta-row { font-size:.85rem; color: var(--muted); }
+  .meta-row strong { color: var(--text); }
+
+  /* FAQ */
+  .faq { margin-top: 2.5rem; }
+  .faq-item {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius:10px; margin-bottom:.8rem; overflow:hidden;
+  }
+  .faq-q {
+    padding:1rem 1.2rem; font-weight:600; cursor:pointer;
+    color: var(--text); list-style:none; display:flex;
+    justify-content:space-between; align-items:center;
+  }
+  .faq-q::after { content:"＋"; color: var(--brand); font-size:1.1rem; }
+  details[open] .faq-q::after { content:"－"; }
+  .faq-a {
+    padding:0 1.2rem 1rem; color: #C8D3EA; font-size:.95rem;
+  }
+
+  /* CTA BAND */
+  .cta-band {
+    background: linear-gradient(135deg, rgba(26,111,255,.15), rgba(0,212,170,.08));
+    border: 1px solid rgba(26,111,255,.25); border-radius:14px;
+    padding: 2.5rem; margin: 3rem 0; text-align:center;
+  }
+  .cta-band h2 { font-size:1.3rem; color:#fff; margin-bottom:.6rem; border:none; margin-top:0; }
+  .cta-band p { color: var(--muted); margin-bottom:1.2rem; }
+  .btn-cta {
+    display:inline-block; background: var(--brand); color:#fff;
+    padding:.7rem 1.8rem; border-radius:8px; font-weight:700;
+    font-size:.95rem; transition: opacity .2s;
+  }
+  .btn-cta:hover { opacity:.85; text-decoration:none; }
+
+  /* FOOTER */
+  .footer { border-top:1px solid var(--border); background: var(--navy2); padding:3rem 2rem; }
+  .footer-inner { max-width:780px; margin:0 auto; text-align:center; }
+  .footer .logo { justify-content:center; margin-bottom:.8rem; }
+  .footer-copy { color: var(--muted); font-size:.9rem; margin-bottom:1rem; }
+  .footer-links { display:flex; justify-content:center; gap:1.5rem; margin-bottom:1rem; }
+  .footer-links a { color: var(--muted); font-size:.85rem; }
+  .footer-links a:hover { color: var(--text); }
+  .footer-legal { font-size:.8rem; color: #4A5570; }
+
+  @media(max-width:600px) {
+    .nav-links { display:none; }
+    .hero, .article { padding-left:1rem; padding-right:1rem; }
+  }
+</style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Quanto tempo demora o SEO local a dar resultados? Calendário realista para PMEs",
+    "description": "Quanto tempo demora o SEO local a trazer clientes? Calendário mês a mês baseado em casos reais de PMEs portuguesas em 2026, sem promessas vazias.",
+    "publisher": {"@type":"Organization","name":"Posiciona","url":"https://posiciona-one.vercel.app"},
+    "mainEntityOfPage": {"@type":"WebPage","@id":"https://posiciona-one.vercel.app/blog/quanto-tempo-seo-local-resultados.html"}
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="/index.html" class="logo">
+      <img src="/brand_assets/logo.png" alt="Posiciona" height="32">
+      Posiciona
+    </a>
+    <ul class="nav-links">
+      <li><a href="/index.html#features">Serviços</a></li>
+      <li><a href="/index.html#process">Como Funciona</a></li>
+      <li><a href="/index.html#case-study">Resultados</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+    </ul>
+    <a href="/index.html#contact" class="btn-nav">Começar Agora →</a>
+  </nav>
+
+  <div class="hero">
+    <span class="tag">SEO Local</span>
+    <h1>Quanto tempo demora o SEO local a dar resultados? Calendário realista para uma PME portuguesa</h1>
+    <div class="hero-meta">
+      <span>📅 Maio 2026</span>
+      <span>✍️ Posiciona</span>
+    </div>
+    <div class="meta-box"><div class="meta-row"><strong>Palavra-chave principal:</strong> quanto tempo demora seo</div><div class="meta-row"><strong>Intenção:</strong> Decisão / fundo de funil</div><div class="meta-row"><strong>Tempo de leitura:</strong> 7 minutos</div></div>
+  </div>
+
+  <article class="article">
+
+    <p>"Em quanto tempo vejo resultados?" — é a primeira pergunta de quase todas as reuniões. Faz todo o sentido. Vou dar uma resposta honesta, com calendário concreto baseado no que acontece com PMEs portuguesas na AML.</p>
+
+    <h2>Os três horizontes do SEO local</h2>
+    <ul>
+      <li><strong>Curto prazo (0-90 dias):</strong> presença, reputação, primeiras chamadas</li>
+      <li><strong>Médio prazo (3-9 meses):</strong> ranking consistente, fluxo regular de clientes</li>
+      <li><strong>Longo prazo (9+ meses):</strong> autoridade, diferenciação, vantagem competitiva sustentada</li>
+    </ul>
+    <p>Tentar acelerar o longo prazo para curto prazo é o erro número um — e a forma mais rápida de queimar dinheiro.</p>
+
+    <h2>Mês a mês: o que esperar</h2>
+
+    <h3>Mês 1 — Fundação</h3>
+    <p>Auditoria completa, criação e validação do Google Business Profile, verificação de dados em diretórios, análise da concorrência, pesquisa de palavras-chave. O que vês: pouca coisa visível ainda. Talvez o perfil já apareça em pesquisas pelo nome da empresa.</p>
+
+    <h3>Mês 2 — Otimização</h3>
+    <p>Lançamento do site (ou correção do antigo), conteúdo das páginas principais, schema markup, primeiras publicações no perfil, sistema de avaliações a funcionar, listagem em diretórios. O que vês: primeiras avaliações novas, mais visualizações no perfil, algumas chamadas a mais.</p>
+
+    <h3>Mês 3 — Tração inicial</h3>
+    <p>Primeiros artigos do blog publicados, continuidade nas avaliações, primeiras correções com base em dados. Em zonas como Almada ou Seixal, é frequente passar de <strong>3-5 chamadas/semana para 8-12</strong>.</p>
+
+    <h3>Meses 4 a 6 — Consolidação</h3>
+    <p>Volume crescente de avaliações (objetivo: 30+ ao final do mês 6), blog em ritmo regular, aparição consistente no Local Pack para várias pesquisas. Já confias que vais ter mais chamadas este mês do que no passado. Começas a poder escolher trabalho.</p>
+
+    <h3>Meses 6 a 9 — Maturidade</h3>
+    <p>Conteúdo cumulativamente forte, reputação consolidada (4.7+ com 40-60 avaliações), posição no Local Pack para todas as pesquisas relevantes. O canal Google é uma fonte <strong>previsível e sustentável</strong> de novos clientes.</p>
+
+    <h3>Meses 9-12 e além — Vantagem competitiva</h3>
+    <p>A tua presença online torna-se uma barreira para novos concorrentes. Mesmo que apareça alguém amanhã, demoraria 6 a 12 meses a apanhar-te.</p>
+
+    <h2>O que pode acelerar</h2>
+    <ul>
+      <li>Zona com pouca concorrência ativa (frequente em Palmela, Montijo)</li>
+      <li>Setor com pouca digitalização (canalizadores, eletricistas)</li>
+      <li>Combinação com Google Ads nos primeiros meses</li>
+    </ul>
+
+    <h2>A conta final: vale a pena?</h2>
+    <p>Para um canalizador médio na Margem Sul: investimento em 12 meses (site + gestão SEO local) — cerca de 4000€ a 7000€. Aumento típico de chamadas: de 5/semana para 15-20/semana ao final do ano. O break-even acontece entre o mês 4 e o mês 8. A partir daí, é margem.</p>
+
+    <h2>Como saber se está a funcionar</h2>
+    <p>Exige ao teu parceiro estas métricas mensais:</p>
+    <ul>
+      <li>Visualizações do Google Business Profile</li>
+      <li>Chamadas e mensagens pelo perfil</li>
+      <li>Posição média do site para 5-10 palavras-chave alvo</li>
+      <li>Tráfego orgânico no site</li>
+      <li>Número de novas avaliações no mês</li>
+    </ul>
+    <p>Se o teu parceiro não consegue dar isto de forma simples ao final do mês, é hora de mudar.</p>
+
+<div class="faq"><h2>Perguntas frequentes</h2>
+      <details class="faq-item">
+        <summary class="faq-q">E se não tiver paciência para 6 meses?</summary>
+        <div class="faq-a"><p>Combina SEO local com Google Ads no início. O Ads dá resultados em dias (mas é caro a longo prazo). A combinação certa: Ads agressivo nos primeiros 3 meses, depois reduz progressivamente à medida que o SEO faz efeito.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Posso parar o investimento depois de chegar ao topo?</summary>
+        <div class="faq-a"><p>Não. Se paras totalmente, em 3 a 6 meses começas a cair. Podes reduzir para modo de manutenção (mais barato que crescimento), mas não eliminar. A concorrência continua a trabalhar.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">E se mudar de zona ou serviços a meio?</summary>
+        <div class="faq-a"><p>Há que recomeçar parte do trabalho. O SEO é zona-específico e tema-específico. Por isso, definir bem o nicho e a zona logo no início poupa muito dinheiro mais tarde.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Faz sentido começar já se só abro o negócio daqui a 3 meses?</summary>
+        <div class="faq-a"><p>Faz todo o sentido. Os 3 meses de 'marinagem' fazem com que, no dia em que abrires, já comeces com presença online sólida em vez de começar do zero.</p></div>
+      </details></div>
+    <div class="cta-band">
+      <h2>Pronto para aparecer no topo do Google?</h2>
+      <p>Queres uma estimativa para o teu caso específico? Em 48 horas damos-te um calendário concreto, sem promessas vazias.</p>
+      <a href="/index.html#contact" class="btn-cta">Auditoria Gratuita →</a>
+    </div>
+  </article>
+
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="/index.html" class="logo">
+        <img src="/brand_assets/logo.png" alt="Posiciona" height="28">
+        Posiciona
+      </a>
+      <p class="footer-copy">Agência de SEO local especializada em colocar negócios portugueses no topo do Google.</p>
+      <div class="footer-links">
+        <a href="/blog.html">Blog SEO</a>
+        <a href="/index.html#contact">Contacto</a>
+        <a href="/index.html#features">Serviços</a>
+      </div>
+      <p class="footer-legal">© 2026 Posiciona. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>

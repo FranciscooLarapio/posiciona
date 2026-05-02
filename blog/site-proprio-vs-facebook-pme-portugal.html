@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Site próprio ou só Facebook? A escolha que define o futuro da tua empresa — Posiciona</title>
+  <meta name="description" content="Vale a pena ter site próprio ou basta Facebook e Instagram? Análise honesta para pequenas empresas portuguesas em 2026, com prós e contras reais.">
+  <meta property="og:title" content="Site próprio ou só Facebook? A escolha que define o futuro da tua empresa">
+  <meta property="og:description" content="Vale a pena ter site próprio ou basta Facebook e Instagram? Análise honesta para pequenas empresas portuguesas em 2026, com prós e contras reais.">
+  <meta property="og:type" content="article">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+  :root {
+    --navy: #0C1428;
+    --navy2: #111C35;
+    --card: #16233D;
+    --brand: #1A6FFF;
+    --teal: #00D4AA;
+    --muted: #8896B3;
+    --text: #E2E8F4;
+    --border: #1E2D4D;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--navy);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 17px;
+  }
+  a { color: var(--brand); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* NAV */
+  .nav {
+    display: flex; align-items: center; gap: 2rem;
+    padding: 1rem 2rem; border-bottom: 1px solid var(--border);
+    background: var(--navy2); position: sticky; top: 0; z-index: 100;
+  }
+  .logo { display:flex; align-items:center; gap:.5rem; font-weight:700;
+            color: var(--text); font-size:1.1rem; }
+  .logo img { height:28px; }
+  .nav-links { display:flex; gap:1.5rem; list-style:none; margin-left:auto; }
+  .nav-links a { color: var(--muted); font-size:.9rem; transition:color .2s; }
+  .nav-links a:hover { color: var(--text); text-decoration:none; }
+  .btn-nav {
+    background: var(--brand); color:#fff; padding:.45rem 1rem;
+    border-radius:6px; font-size:.9rem; font-weight:600; white-space:nowrap;
+    transition: opacity .2s;
+  }
+  .btn-nav:hover { opacity:.85; text-decoration:none; }
+
+  /* HERO */
+  .hero {
+    max-width: 780px; margin: 0 auto; padding: 4rem 2rem 2rem;
+  }
+  .tag {
+    display:inline-block; background: rgba(26,111,255,.15);
+    color: var(--brand); border: 1px solid rgba(26,111,255,.3);
+    border-radius:20px; padding:.25rem .8rem; font-size:.8rem;
+    font-weight:600; letter-spacing:.04em; margin-bottom:1.2rem;
+  }
+  .hero h1 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 800; line-height: 1.2;
+    color: #fff; margin-bottom: 1rem;
+  }
+  .hero-meta {
+    display:flex; gap:1.2rem; font-size:.85rem; color: var(--muted);
+    margin-bottom: 2rem; flex-wrap:wrap; align-items:center;
+  }
+  .hero-meta span { display:flex; align-items:center; gap:.3rem; }
+
+  /* ARTICLE BODY */
+  .article {
+    max-width: 780px; margin: 0 auto; padding: 0 2rem 4rem;
+  }
+  .article h2 {
+    font-size: 1.5rem; font-weight: 700; color: #fff;
+    margin: 2.5rem 0 .8rem; padding-top: .5rem;
+    border-top: 1px solid var(--border);
+  }
+  .article h3 {
+    font-size: 1.15rem; font-weight: 600; color: var(--brand);
+    margin: 1.8rem 0 .5rem;
+  }
+  .article p {
+    margin-bottom: 1.1rem; color: #C8D3EA;
+  }
+  .article ul, .article ol {
+    margin: .5rem 0 1.2rem 1.5rem; color: #C8D3EA;
+  }
+  .article li { margin-bottom:.4rem; }
+  .article strong { color: var(--text); }
+
+  /* META BOX */
+  .meta-box {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.2rem 1.5rem; margin-bottom: 2rem;
+    display: grid; gap: .5rem;
+  }
+  .meta-row { font-size:.85rem; color: var(--muted); }
+  .meta-row strong { color: var(--text); }
+
+  /* FAQ */
+  .faq { margin-top: 2.5rem; }
+  .faq-item {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius:10px; margin-bottom:.8rem; overflow:hidden;
+  }
+  .faq-q {
+    padding:1rem 1.2rem; font-weight:600; cursor:pointer;
+    color: var(--text); list-style:none; display:flex;
+    justify-content:space-between; align-items:center;
+  }
+  .faq-q::after { content:"＋"; color: var(--brand); font-size:1.1rem; }
+  details[open] .faq-q::after { content:"－"; }
+  .faq-a {
+    padding:0 1.2rem 1rem; color: #C8D3EA; font-size:.95rem;
+  }
+
+  /* CTA BAND */
+  .cta-band {
+    background: linear-gradient(135deg, rgba(26,111,255,.15), rgba(0,212,170,.08));
+    border: 1px solid rgba(26,111,255,.25); border-radius:14px;
+    padding: 2.5rem; margin: 3rem 0; text-align:center;
+  }
+  .cta-band h2 { font-size:1.3rem; color:#fff; margin-bottom:.6rem; border:none; margin-top:0; }
+  .cta-band p { color: var(--muted); margin-bottom:1.2rem; }
+  .btn-cta {
+    display:inline-block; background: var(--brand); color:#fff;
+    padding:.7rem 1.8rem; border-radius:8px; font-weight:700;
+    font-size:.95rem; transition: opacity .2s;
+  }
+  .btn-cta:hover { opacity:.85; text-decoration:none; }
+
+  /* FOOTER */
+  .footer { border-top:1px solid var(--border); background: var(--navy2); padding:3rem 2rem; }
+  .footer-inner { max-width:780px; margin:0 auto; text-align:center; }
+  .footer .logo { justify-content:center; margin-bottom:.8rem; }
+  .footer-copy { color: var(--muted); font-size:.9rem; margin-bottom:1rem; }
+  .footer-links { display:flex; justify-content:center; gap:1.5rem; margin-bottom:1rem; }
+  .footer-links a { color: var(--muted); font-size:.85rem; }
+  .footer-links a:hover { color: var(--text); }
+  .footer-legal { font-size:.8rem; color: #4A5570; }
+
+  @media(max-width:600px) {
+    .nav-links { display:none; }
+    .hero, .article { padding-left:1rem; padding-right:1rem; }
+  }
+</style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Site próprio ou só Facebook? A escolha que define o futuro da tua empresa",
+    "description": "Vale a pena ter site próprio ou basta Facebook e Instagram? Análise honesta para pequenas empresas portuguesas em 2026, com prós e contras reais.",
+    "publisher": {"@type":"Organization","name":"Posiciona","url":"https://posiciona-one.vercel.app"},
+    "mainEntityOfPage": {"@type":"WebPage","@id":"https://posiciona-one.vercel.app/blog/site-proprio-vs-facebook-pme-portugal.html"}
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="/index.html" class="logo">
+      <img src="/brand_assets/logo.png" alt="Posiciona" height="32">
+      Posiciona
+    </a>
+    <ul class="nav-links">
+      <li><a href="/index.html#features">Serviços</a></li>
+      <li><a href="/index.html#process">Como Funciona</a></li>
+      <li><a href="/index.html#case-study">Resultados</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+    </ul>
+    <a href="/index.html#contact" class="btn-nav">Começar Agora →</a>
+  </nav>
+
+  <div class="hero">
+    <span class="tag">Estratégia Digital</span>
+    <h1>Site próprio ou só Facebook? A escolha que define o futuro da tua pequena empresa</h1>
+    <div class="hero-meta">
+      <span>📅 Maio 2026</span>
+      <span>✍️ Posiciona</span>
+    </div>
+    <div class="meta-box"><div class="meta-row"><strong>Palavra-chave principal:</strong> site próprio ou facebook</div><div class="meta-row"><strong>Intenção:</strong> Comparativo / decisão</div><div class="meta-row"><strong>Tempo de leitura:</strong> 6 minutos</div></div>
+  </div>
+
+  <article class="article">
+
+    <p>"Para que é que eu preciso de site se já tenho Facebook e Instagram?" — é a pergunta que ouço todas as semanas. É legítima, e a resposta não é tão óbvia como muita gente faz parecer.</p>
+
+    <h2>O que cada plataforma faz bem</h2>
+
+    <h3>O Facebook e Instagram fazem bem:</h3>
+    <ul>
+      <li>Atingir pessoas que não te procuravam (descoberta passiva)</li>
+      <li>Criar comunidade e relação ao longo do tempo</li>
+      <li>Mostrar trabalho com fotos e vídeos rapidamente</li>
+      <li>Custar zero a começar</li>
+    </ul>
+
+    <h3>Um site faz bem:</h3>
+    <ul>
+      <li>Aparecer no Google quando alguém te procura ativamente</li>
+      <li>Transmitir credibilidade profissional (especialmente em B2B e serviços técnicos)</li>
+      <li>Ser tua propriedade — ninguém pode desligar</li>
+      <li>Funcionar 24/7 sem precisares de publicar nada</li>
+    </ul>
+    <p>As duas listas resolvem problemas <em>diferentes</em>. Não estás a escolher entre dois substitutos — estás entre dois canais que servem fases distintas do percurso do cliente.</p>
+
+    <h2>Quando o Facebook chega</h2>
+    <p>Há negócios em que só redes sociais chega para crescer:</p>
+    <ul>
+      <li>Negócios visuais que dependem de descoberta espontânea (moda, gastronomia, decoração)</li>
+      <li>Profissionais individuais com agenda já cheia por recomendação</li>
+      <li>Marcas pessoais com posicionamento claro como criador de conteúdo</li>
+    </ul>
+    <p>Mas atenção: estás a construir em <strong>terreno alugado</strong>. A Meta pode mudar o algoritmo ou suspender a tua página. Já aconteceu a muita gente.</p>
+
+    <h2>Quando o site é praticamente obrigatório</h2>
+
+    <h3>Serviços técnicos com pesquisa de urgência</h3>
+    <p>Canalizadores, eletricistas, vidraceiros, desentupidores. Quando há uma fuga de água, ninguém vai ao Facebook procurar. Vai ao Google. Sem site (e sem Google Business Profile), és invisível no momento em que o cliente mais precisa.</p>
+
+    <h3>Negócios B2B</h3>
+    <p>Quando o teu cliente é outra empresa, vai querer ver NIF, alvará, anos de atividade, casos reais. O Facebook não foi feito para isto.</p>
+
+    <h3>Construção, remodelações, projetos sob orçamento</h3>
+    <p>O ciclo de decisão é longo. O site funciona como ponto de referência durante semanas ou meses até o cliente decidir.</p>
+
+    <h2>A estratégia integrada para 2026</h2>
+    <p>Para a maioria das PMEs portuguesas, a resposta não é "uma ou outra" — é <strong>as duas, com papéis diferentes</strong>:</p>
+    <ul>
+      <li>Google Business Profile → porta de entrada para quem te procura ativamente</li>
+      <li>Site simples → ponto de referência e credibilidade</li>
+      <li>Uma rede social (escolhe uma, não as duas) → relação ao longo do tempo</li>
+      <li>WhatsApp Business → canal direto de conversa</li>
+    </ul>
+    <p>Esta combinação cobre todas as fases: descoberta, decisão, contacto e fidelização.</p>
+
+    <h2>Os mitos mais comuns</h2>
+
+    <h3>"As pessoas hoje só usam redes sociais"</h3>
+    <p>Mais de 80% dos portugueses começa pesquisas de serviços no Google antes de comprar, mesmo que a compra seja feita numa loja física. Para serviços técnicos urgentes, é praticamente 100%.</p>
+
+    <h3>"Não tenho dinheiro para um site agora"</h3>
+    <p>Um site institucional simples ronda os 600€-1500€. Comparado com flyers que não se medem ou anúncios em jornais regionais, é investimento previsível e mensurável. E há agências, a <strong>Posiciona</strong> entre elas, com propostas adaptadas a orçamentos apertados.</p>
+
+<div class="faq"><h2>Perguntas frequentes</h2>
+      <details class="faq-item">
+        <summary class="faq-q">Quanto custa um site para uma pequena empresa em Portugal?</summary>
+        <div class="faq-a"><p>Um site institucional simples, profissional e otimizado para SEO local: entre 600€ e 1500€. Sites com loja ou agendamentos podem subir até 3000€ ou mais. Manutenção mensal: 20€ a 50€.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Posso fazer eu mesmo no Wix ou Squarespace?</summary>
+        <div class="faq-a"><p>Podes, e por vezes faz sentido para começar. Mas a estrutura desses sites raramente está otimizada para SEO local português específico — podes ter site e mesmo assim ficar invisível no Google.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Se tenho 2000 seguidores no Instagram, ainda preciso de site?</summary>
+        <div class="faq-a"><p>Os 2000 seguidores são úteis para fidelização. Mas um cliente novo em emergência, à procura do teu serviço no Google, pode nem te encontrar no Instagram. O site complementa, não substitui.</p></div>
+      </details></div>
+    <div class="cta-band">
+      <h2>Pronto para aparecer no topo do Google?</h2>
+      <p>Marca uma chamada de 20 minutos. Fazemos um diagnóstico honesto, sem compromisso, e dizemos-te o que faz sentido para o teu caso.</p>
+      <a href="/index.html#contact" class="btn-cta">Auditoria Gratuita →</a>
+    </div>
+  </article>
+
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="/index.html" class="logo">
+        <img src="/brand_assets/logo.png" alt="Posiciona" height="28">
+        Posiciona
+      </a>
+      <p class="footer-copy">Agência de SEO local especializada em colocar negócios portugueses no topo do Google.</p>
+      <div class="footer-links">
+        <a href="/blog.html">Blog SEO</a>
+        <a href="/index.html#contact">Contacto</a>
+        <a href="/index.html#features">Serviços</a>
+      </div>
+      <p class="footer-legal">© 2026 Posiciona. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
