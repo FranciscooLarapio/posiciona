@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Posiciona — Agência de SEO Local em Portugal</title>
   <meta name="description" content="A Posiciona coloca o seu negócio local no topo do Google Maps e da pesquisa orgânica. Auditoria SEO gratuita. Resultados em menos de 60 dias." />
+  <link rel="canonical" href="https://posiciona-one.vercel.app/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://posiciona-one.vercel.app/" />
+  <meta property="og:title" content="Posiciona — Agência de SEO Local em Portugal" />
+  <meta property="og:description" content="A Posiciona coloca o seu negócio local no topo do Google Maps e da pesquisa orgânica. Auditoria SEO gratuita. Resultados em menos de 60 dias." />
+  <meta property="og:image" content="https://placehold.co/1200x630/0c1428/1a6fff?text=Posiciona+%E2%80%94+SEO+Local+em+Portugal" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
@@ -1159,6 +1165,152 @@
       .hero-btn { font-size: 14px; padding: 12px 20px; }
       .contact-submit { font-size: 14px; padding: 13px 20px; }
     }
+
+    /* ─── HERO AMBIENT GLOW ─── */
+    #hero {
+      background: radial-gradient(ellipse 90% 55% at 50% -5%, rgba(26,111,255,0.06) 0%, transparent 65%), #fff;
+    }
+
+    /* ─── SHIMMER KEYFRAME ─── */
+    @keyframes shimmer {
+      from { transform: translateX(-100%) skewX(-15deg); }
+      to   { transform: translateX(300%) skewX(-15deg); }
+    }
+    .hero-btn, .contact-submit, .nav-cta { position: relative; overflow: hidden; }
+    .hero-btn::after, .contact-submit::after, .nav-cta::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.22) 50%, transparent 100%);
+      transform: translateX(-100%) skewX(-15deg);
+      pointer-events: none;
+    }
+    .hero-btn:hover::after, .contact-submit:hover::after, .nav-cta:hover::after {
+      animation: shimmer 0.55s ease forwards;
+    }
+
+    /* ─── NAV LINK UNDERLINE ─── */
+    .nav-links a { position: relative; padding-bottom: 3px; }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 1.5px;
+      background: var(--brand);
+      border-radius: 2px;
+      transition: width 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .nav-links a:hover::after { width: 100%; }
+
+    /* ─── FEAT ITEM HOVER ─── */
+    .feat-item { transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1); }
+    .feat-item:hover { transform: translateX(5px); }
+    .feat-icon { transition: background 0.2s, color 0.2s, box-shadow 0.2s; }
+    .feat-item:hover .feat-icon {
+      background: var(--brand);
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(26,111,255,0.35);
+    }
+
+    /* ─── STAT BOX HOVER ─── */
+    .stat-box { transition: background 0.2s, transform 0.22s cubic-bezier(0.4, 0, 0.2, 1); cursor: default; }
+    .stat-box:hover { background: #131e38; transform: translateY(-3px); }
+    .stat-n { transition: color 0.2s; }
+    .stat-box:hover .stat-n { color: #fff; }
+
+    /* ─── PROCESS ITEM HOVER ─── */
+    .proc-item { transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1); }
+    .proc-item:hover { transform: translateY(-7px); }
+    .proc-icon { transition: background 0.2s, box-shadow 0.2s; }
+    .proc-item:hover .proc-icon {
+      background: rgba(26,111,255,0.28);
+      box-shadow: 0 0 0 10px rgba(26,111,255,0.07);
+    }
+
+    /* ─── CTA BANNER AMBIENT ─── */
+    #cta-banner { position: relative; overflow: hidden; }
+    #cta-banner::before {
+      content: '';
+      position: absolute;
+      top: -80%; left: 50%;
+      transform: translateX(-50%);
+      width: 700px; height: 350px;
+      background: radial-gradient(ellipse at center, rgba(26,111,255,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* ─── TESTIMONIAL DECORATION ─── */
+    #testimonial { position: relative; overflow: hidden; }
+    #testimonial::before {
+      content: '\201C';
+      position: absolute;
+      top: 10px; left: 50%;
+      transform: translateX(-50%);
+      font-size: 240px; line-height: 1;
+      font-family: 'Plus Jakarta Sans', Georgia, serif;
+      font-weight: 900;
+      color: rgba(26,111,255,0.045);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* ─── MAP PIN PULSE ─── */
+    @keyframes pin-pulse {
+      0%   { transform: scale(1); opacity: 0.7; }
+      100% { transform: scale(3.5); opacity: 0; }
+    }
+    .map-pin { position: relative; }
+    .map-pin::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      background: currentColor;
+      opacity: 0.5;
+      animation: pin-pulse 2.2s ease-out infinite;
+    }
+    .map-pin.sec::before { animation-delay: 0.7s; }
+
+    /* ─── HERO CHART BARS GROW ON LOAD ─── */
+    @keyframes bar-grow {
+      from { transform: scaleY(0); }
+      to   { transform: scaleY(1); }
+    }
+    .cc-chart .ch-bar { transform-origin: bottom; animation: bar-grow 0.5s cubic-bezier(0.34,1.56,0.64,1) both; }
+    .cc-chart .ch-bar:nth-child(1) { animation-delay: 0.5s; }
+    .cc-chart .ch-bar:nth-child(2) { animation-delay: 0.6s; }
+    .cc-chart .ch-bar:nth-child(3) { animation-delay: 0.7s; }
+    .cc-chart .ch-bar:nth-child(4) { animation-delay: 0.8s; }
+    .cc-chart .ch-bar:nth-child(5) { animation-delay: 0.9s; }
+    .cc-chart .ch-bar:nth-child(6) { animation-delay: 1.0s; }
+
+    /* ─── TRAFFIC BARS GROW ON SCROLL ─── */
+    .traffic-bars .tb { transform-origin: bottom; transform: scaleY(0); }
+    .fade-up.visible .traffic-bars .tb { animation: bar-grow 0.45s cubic-bezier(0.34,1.56,0.64,1) both; }
+    .fade-up.visible .traffic-bars .tb:nth-child(1) { animation-delay: 0.05s; }
+    .fade-up.visible .traffic-bars .tb:nth-child(2) { animation-delay: 0.10s; }
+    .fade-up.visible .traffic-bars .tb:nth-child(3) { animation-delay: 0.15s; }
+    .fade-up.visible .traffic-bars .tb:nth-child(4) { animation-delay: 0.20s; }
+    .fade-up.visible .traffic-bars .tb:nth-child(5) { animation-delay: 0.25s; }
+    .fade-up.visible .traffic-bars .tb:nth-child(6) { animation-delay: 0.30s; }
+    .fade-up.visible .traffic-bars .tb:nth-child(7) { animation-delay: 0.35s; }
+
+    /* ─── SP LOGO HOVER ─── */
+    .sp-logo { transition: color 0.2s, opacity 0.2s; cursor: default; }
+    .sp-logo:hover { color: var(--gray-500); opacity: 1; }
+
+    /* ─── SECTION LABEL TEAL PULSE ─── */
+    @keyframes label-glow {
+      0%, 100% { text-shadow: none; }
+      50%       { text-shadow: 0 0 12px rgba(26,111,255,0.4); }
+    }
+    .section-label { animation: label-glow 4s ease-in-out infinite; }
+
+    /* ─── HERO CARD FLOAT ─── */
+    @keyframes card-float {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-6px); }
+    }
+    .hero-card { animation: card-float 5s ease-in-out infinite; }
   </style>
 </head>
 <body>
@@ -1167,7 +1319,7 @@
 <nav>
   <div class="nav-inner">
     <a href="#" class="logo">
-      <img src="brand_assets/logo.png" alt="">
+      <img src="brand_assets/logo.png" alt="Posiciona">
       <span class="logo-name">Posiciona</span>
     </a>
 
@@ -1366,24 +1518,24 @@
 
     <div class="stats-wrap fade-up delay-1">
       <div class="stat-box">
-        <div class="stat-n">5.340</div>
+        <div class="stat-n" data-count="5340" data-format="pt">5.340</div>
         <div class="stat-l">Visitantes orgânicos / mês<span class="stat-note">vs 412 antes da campanha</span></div>
       </div>
       <div class="stat-box">
-        <div class="stat-n">53</div>
+        <div class="stat-n" data-count="53">53</div>
         <div class="stat-l">Dias para chegar ao #1<span class="stat-note">para "clínica dentária lisboa"</span></div>
       </div>
       <div class="stat-box">
-        <div class="stat-n">98%</div>
+        <div class="stat-n" data-count="98" data-suffix="%">98%</div>
         <div class="stat-l">Consultas respondidas<span class="stat-note">via formulário de contacto</span></div>
       </div>
       <div class="stat-box">
-        <div class="stat-n">66+</div>
+        <div class="stat-n" data-count="66" data-suffix="+">66+</div>
         <div class="stat-l">Novas avaliações 5★ Google<span class="stat-note">nos primeiros 90 dias</span></div>
       </div>
       <div class="stat-box full">
         <div>
-          <div class="stat-n white">€18.400</div>
+          <div class="stat-n white" data-count="18400" data-prefix="€" data-format="pt">€18.400</div>
           <div class="stat-badge">↑ Faturação adicional estimada nos primeiros 3 meses</div>
         </div>
         <div style="font-size:13.5px;color:rgba(255,255,255,0.38);line-height:1.75;max-width:380px;">
@@ -1672,6 +1824,41 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); fadeObserver.unobserve(e.target); } });
   }, { threshold: 0.12 });
   fadeEls.forEach(el => fadeObserver.observe(el));
+
+  // ─── COUNTUP ANIMATION ───
+  function animateCountUp(el) {
+    const target = parseFloat(el.dataset.count);
+    const suffix = el.dataset.suffix || '';
+    const prefix = el.dataset.prefix || '';
+    const ptFormat = el.dataset.format === 'pt';
+    const duration = 1500;
+    const start = performance.now();
+
+    function fmt(n) {
+      const r = Math.round(n);
+      if (ptFormat && r >= 1000) {
+        const s = r.toString();
+        return s.slice(0, -3) + '.' + s.slice(-3);
+      }
+      return r.toString();
+    }
+
+    function tick(now) {
+      const p = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = prefix + fmt(eased * target) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  const countEls = document.querySelectorAll('[data-count]');
+  const countObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { animateCountUp(e.target); countObserver.unobserve(e.target); }
+    });
+  }, { threshold: 0.5 });
+  countEls.forEach(el => countObserver.observe(el));
 
   // ─── STICKY MOBILE CTA ───
   const stickyCta = document.getElementById('stickyCta');

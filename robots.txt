@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://posiciona-one.vercel.app/sitemap.xml
