@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sobre Nós — Posiciona</title>
+  <meta name="description" content="Conheça a Posiciona: a agência de SEO local portuguesa que ajuda pequenas e médias empresas a aparecer no topo do Google e a crescer online.">
+  <meta property="og:title" content="Sobre Nós — Posiciona">
+  <meta property="og:description" content="Conheça a Posiciona: a agência de SEO local portuguesa que ajuda PMEs a aparecer no topo do Google.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+  :root {
+    --navy:   #0C1428;
+    --navy2:  #111C35;
+    --card:   #16233D;
+    --brand:  #1A6FFF;
+    --teal:   #00D4AA;
+    --muted:  #8896B3;
+    --text:   #E2E8F4;
+    --border: #1E2D4D;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', system-ui, sans-serif; background: var(--navy); color: var(--text); line-height: 1.7; font-size: 17px; }
+  a { color: var(--brand); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* NAV */
+  .nav {
+    display: flex; align-items: center; gap: 2rem;
+    padding: 1rem 2rem; border-bottom: 1px solid var(--border);
+    background: var(--navy2); position: sticky; top: 0; z-index: 100;
+  }
+  .logo { display:flex; align-items:center; gap:.5rem; font-weight:700; color: var(--text); font-size:1.1rem; }
+  .logo img { height:28px; }
+  .nav-links { display:flex; gap:1.5rem; list-style:none; margin-left:auto; }
+  .nav-links a { color: var(--muted); font-size:.9rem; }
+  .nav-links a:hover { color: var(--text); text-decoration:none; }
+  .btn-nav { background: var(--brand); color:#fff; padding:.45rem 1rem; border-radius:6px; font-size:.9rem; font-weight:600; white-space:nowrap; transition: opacity .2s; }
+  .btn-nav:hover { opacity:.85; text-decoration:none; }
+
+  /* PAGE HERO */
+  .page-hero {
+    background: var(--navy2);
+    border-bottom: 1px solid var(--border);
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(26,111,255,.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .page-hero .tag {
+    display:inline-block; background: rgba(26,111,255,.15);
+    color: var(--brand); border: 1px solid rgba(26,111,255,.3);
+    border-radius:20px; padding:.25rem .9rem; font-size:.8rem;
+    font-weight:600; letter-spacing:.04em; margin-bottom:1.4rem;
+  }
+  .page-hero h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 800; line-height: 1.15; color: #fff;
+    margin-bottom: 1.2rem; letter-spacing: -0.03em;
+  }
+  .page-hero h1 span { color: var(--brand); }
+  .page-hero p {
+    max-width: 560px; margin: 0 auto;
+    color: var(--muted); font-size: 1.1rem; line-height: 1.7;
+  }
+
+  /* CONTENT */
+  .content { max-width: 860px; margin: 0 auto; padding: 4rem 2rem 5rem; }
+
+  /* MISSION */
+  .mission {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+    margin-bottom: 4rem; align-items: center;
+  }
+  .mission-text h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.9rem; font-weight: 800; color: #fff;
+    letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 1rem;
+  }
+  .mission-text p { color: #C8D3EA; margin-bottom: 1rem; }
+  .mission-stat-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+  }
+  .mission-stat {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.2rem 1.4rem;
+  }
+  .mission-stat .num {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 2rem; font-weight: 800; color: var(--brand);
+    letter-spacing: -0.03em; line-height: 1;
+    margin-bottom: .3rem;
+  }
+  .mission-stat .label { font-size: .82rem; color: var(--muted); }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid var(--border); margin: 3.5rem 0; }
+
+  /* VALUES */
+  .section-label {
+    display: inline-block; font-size: .78rem; font-weight: 700;
+    letter-spacing: .1em; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 1rem;
+  }
+  .section-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.7rem; font-weight: 800; color: #fff;
+    letter-spacing: -0.03em; margin-bottom: .8rem;
+  }
+  .section-sub { color: var(--muted); max-width: 520px; margin-bottom: 2.5rem; }
+
+  .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+  .value-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 14px; padding: 1.6rem;
+    transition: border-color .2s, transform .2s;
+  }
+  .value-card:hover { border-color: rgba(26,111,255,.4); transform: translateY(-2px); }
+  .value-icon {
+    width: 44px; height: 44px; border-radius: 10px;
+    background: rgba(26,111,255,.12); border: 1px solid rgba(26,111,255,.2);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--brand); margin-bottom: 1rem;
+  }
+  .value-card h3 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: .5rem; }
+  .value-card p { font-size: .9rem; color: var(--muted); line-height: 1.6; }
+
+  /* WHY US */
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+  .why-item {
+    display: flex; gap: 1rem; align-items: flex-start;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.2rem 1.4rem;
+  }
+  .why-check {
+    flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
+    background: rgba(0,212,170,.12); border: 1px solid rgba(0,212,170,.25);
+    color: var(--teal); display: flex; align-items: center; justify-content: center;
+    font-size: .85rem; font-weight: 700;
+  }
+  .why-item p { font-size: .9rem; color: #C8D3EA; line-height: 1.55; }
+  .why-item strong { color: var(--text); }
+
+  /* CTA */
+  .cta-band {
+    background: linear-gradient(135deg, rgba(26,111,255,.15), rgba(0,212,170,.08));
+    border: 1px solid rgba(26,111,255,.25); border-radius: 16px;
+    padding: 3rem 2.5rem; margin-top: 4rem; text-align: center;
+  }
+  .cta-band h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.6rem; font-weight: 800; color: #fff;
+    margin-bottom: .7rem; letter-spacing: -0.02em;
+  }
+  .cta-band p { color: var(--muted); margin-bottom: 1.5rem; }
+  .btn-cta {
+    display: inline-block; background: var(--brand); color: #fff;
+    padding: .75rem 2rem; border-radius: 8px; font-weight: 700;
+    font-size: .95rem; transition: opacity .2s;
+  }
+  .btn-cta:hover { opacity: .85; text-decoration: none; }
+
+  /* FOOTER */
+  .footer { border-top: 1px solid var(--border); background: var(--navy2); padding: 3rem 2rem; }
+  .footer-inner { max-width: 780px; margin: 0 auto; text-align: center; }
+  .footer .logo { justify-content: center; margin-bottom: .8rem; }
+  .footer-copy { color: var(--muted); font-size: .9rem; margin-bottom: 1rem; }
+  .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1rem; }
+  .footer-links a { color: var(--muted); font-size: .85rem; }
+  .footer-links a:hover { color: var(--text); }
+  .footer-legal { font-size: .8rem; color: #4A5570; }
+
+  @media(max-width: 768px) {
+    .mission { grid-template-columns: 1fr; gap: 2rem; }
+    .values-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .content { padding: 3rem 1.2rem 4rem; }
+    .page-hero { padding: 3.5rem 1.2rem 3rem; }
+  }
+  @media(max-width: 600px) {
+    .nav-links { display: none; }
+    .mission-stat-grid { grid-template-columns: 1fr 1fr; }
+  }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/index.html" class="logo">
+    <img src="/brand_assets/logo.png" alt="Posiciona" height="32">
+    Posiciona
+  </a>
+  <ul class="nav-links">
+    <li><a href="/index.html#features">Serviços</a></li>
+    <li><a href="/index.html#process">Como Funciona</a></li>
+    <li><a href="/index.html#case-study">Resultados</a></li>
+    <li><a href="/blog.html">Blog</a></li>
+  </ul>
+  <a href="/index.html#contact" class="btn-nav">Começar Agora →</a>
+</nav>
+
+<div class="page-hero">
+  <span class="tag">Sobre Nós</span>
+  <h1>Pomos o seu negócio<br>no <span>topo do Google</span>.</h1>
+  <p>Somos uma agência portuguesa de SEO local. Ajudamos pequenas e médias empresas a deixar de ser invisíveis online e a receber mais clientes — sem complicações.</p>
+</div>
+
+<div class="content">
+
+  <!-- MISSION -->
+  <div class="mission">
+    <div class="mission-text">
+      <h2>Nascemos para um problema concreto</h2>
+      <p>A maioria das PMEs portuguesas tem um bom produto ou serviço — mas ninguém as encontra no Google. Não por falta de qualidade, mas por falta de visibilidade digital.</p>
+      <p>A Posiciona nasceu com um objetivo simples: mudar isso. Trabalhamos com negócios locais em todo o país para garantir que aparecem onde os seus clientes procuram — no Google Maps, na pesquisa orgânica e cada vez mais nas respostas da IA.</p>
+    </div>
+    <div class="mission-stat-grid">
+      <div class="mission-stat">
+        <div class="num">+180</div>
+        <div class="label">Negócios otimizados</div>
+      </div>
+      <div class="mission-stat">
+        <div class="num">92%</div>
+        <div class="label">Clientes no top 3 do Maps</div>
+      </div>
+      <div class="mission-stat">
+        <div class="num">60d</div>
+        <div class="label">Primeiros resultados</div>
+      </div>
+      <div class="mission-stat">
+        <div class="num">+214%</div>
+        <div class="label">Crescimento médio de tráfego</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- VALUES -->
+  <div>
+    <div class="section-label">A Nossa Abordagem</div>
+    <h2 class="section-title">Três princípios que guiam tudo o que fazemos</h2>
+    <p class="section-sub">Não vendemos promessas. Construímos presença digital com método, transparência e foco nos resultados que realmente importam ao cliente.</p>
+
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M10 2L12.4 7.6H18L13.5 11.2L15.3 17L10 13.6L4.7 17L6.5 11.2L2 7.6H7.6L10 2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Resultados antes de relatórios</h3>
+        <p>Não perdemos tempo a produzir dashboards bonitos sem substância. O nosso foco é mover o ponteiro — mais chamadas, mais formulários, mais clientes.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M10 7v3l2 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Transparência total</h3>
+        <p>Sabe sempre o que estamos a fazer, porquê e o que pode esperar. Sem jargão, sem fumo — comunicação direta e honesta em todas as etapas.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M3 10h14M10 3l7 7-7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Estratégia à medida</h3>
+        <p>Não existe uma fórmula única. Cada negócio tem a sua cidade, o seu setor e os seus clientes — e a estratégia tem de refletir isso.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- WHY -->
+  <div>
+    <div class="section-label">Porquê a Posiciona</div>
+    <h2 class="section-title">O que nos distingue</h2>
+    <p class="section-sub">Há muitas agências de marketing em Portugal. Aqui está a diferença real.</p>
+
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-check">✓</div>
+        <p><strong>Especializados em SEO local</strong> — não fazemos tudo para todos. Fazemos SEO local para PMEs portuguesas, e fazemo-lo bem.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-check">✓</div>
+        <p><strong>Sem contratos de longo prazo obrigatórios</strong> — ficamos porque os resultados falam por si, não porque estamos presos num papel.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-check">✓</div>
+        <p><strong>Focados no mercado português</strong> — conhecemos os diretórios, os comportamentos de pesquisa e as nuances do SEO local em Portugal.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-check">✓</div>
+        <p><strong>Interlocutor único</strong> — tem sempre a mesma pessoa de contacto, que conhece o seu negócio e a sua estratégia de fio a pavio.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-check">✓</div>
+        <p><strong>Auditoria gratuita sem compromisso</strong> — antes de qualquer decisão, mostramos exatamente onde está e o que é possível melhorar.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-check">✓</div>
+        <p><strong>Relatórios mensais em português simples</strong> — nada de PDFs de 40 páginas incompreensíveis. O que mudou, porquê e o que vem a seguir.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-band">
+    <h2>Pronto para aparecer onde os seus clientes procuram?</h2>
+    <p>Fazemos uma auditoria gratuita da sua presença digital em 48 horas — sem compromisso, sem spam.</p>
+    <a href="/index.html#contact" class="btn-cta">Pedir Auditoria Gratuita →</a>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <a href="/index.html" class="logo">
+      <img src="/brand_assets/logo.png" alt="Posiciona" height="28">
+      Posiciona
+    </a>
+    <p class="footer-copy">Agência de SEO local especializada em colocar negócios portugueses no topo do Google.</p>
+    <div class="footer-links">
+      <a href="/blog.html">Blog SEO</a>
+      <a href="/index.html#contact">Contacto</a>
+      <a href="/privacidade.html">Privacidade</a>
+      <a href="/termos.html">Termos</a>
+    </div>
+    <p class="footer-legal">© 2026 Posiciona. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+</body>
+</html>
