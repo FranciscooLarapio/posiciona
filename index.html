@@ -17,7 +17,7 @@
   <meta property="og:image" content="https://placehold.co/1200x630/0c1428/1a6fff?text=Posiciona+%E2%80%94+SEO+Local+em+Portugal" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
   <script type="application/ld+json">
   {
@@ -162,211 +162,78 @@
 
     /* ─── HERO ─── */
     #hero {
-      background: #fff;
-      padding: 80px 24px 0;
+      background: #1a1a18;
+      padding: 100px 24px 90px;
       text-align: center;
       overflow: hidden;
     }
 
-    .hero-label {
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--brand);
-      margin-bottom: 20px;
-    }
-
     #hero h1 {
-      font-size: clamp(36px, 5vw, 62px);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(36px, 5.5vw, 70px);
       font-weight: 800;
       letter-spacing: -0.03em;
-      line-height: 1.08;
-      color: var(--gray-900);
-      max-width: 760px;
-      margin: 0 auto 20px;
+      line-height: 1.1;
+      color: #fff;
+      max-width: 880px;
+      margin: 0 auto 24px;
     }
 
-    #hero h1 span { color: var(--brand); }
+    .accent-highlight {
+      color: #c8f135;
+      font-style: italic;
+      background: rgba(200, 241, 53, 0.1);
+      padding: 0 10px 2px;
+      border-radius: 4px;
+    }
 
     #hero .hero-sub {
       font-size: 17px;
-      color: var(--gray-500);
-      max-width: 500px;
+      color: rgba(255,255,255,0.52);
+      max-width: 480px;
       margin: 0 auto 36px;
       line-height: 1.65;
+    }
+
+    .hero-trust {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      margin-bottom: 44px;
+      flex-wrap: wrap;
+    }
+
+    .ht-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.7);
     }
 
     .hero-btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 14px 28px;
-      background: linear-gradient(135deg, #2563eb 0%, #1a6fff 50%, #0ea5e9 100%);
-      color: #fff;
+      padding: 14px 32px;
+      background: #c8f135;
+      color: #1a1a18;
       font-size: 15px;
-      font-weight: 600;
+      font-weight: 700;
       border-radius: 10px;
       text-decoration: none;
-      box-shadow: 0 4px 24px rgba(26,111,255,0.35), 0 1px 2px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 24px rgba(200,241,53,0.25);
       transition: transform 0.15s, box-shadow 0.15s;
-      margin-bottom: 56px;
     }
     .hero-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(26,111,255,0.4), 0 1px 2px rgba(0,0,0,0.08);
+      box-shadow: 0 8px 32px rgba(200,241,53,0.38);
     }
     .hero-btn:active { transform: translateY(0); }
-    .hero-btn:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+    .hero-btn:focus-visible { outline: 2px solid #c8f135; outline-offset: 2px; }
 
-    /* browser mockup */
-    .hero-card {
-      position: relative;
-      max-width: 900px;
-      margin: 0 auto;
-      border-radius: 16px 16px 0 0;
-      overflow: hidden;
-      border: 1px solid var(--gray-200);
-      border-bottom: none;
-      box-shadow:
-        0 20px 60px -10px rgba(0,0,0,0.12),
-        0 4px 16px -4px rgba(0,0,0,0.08);
-    }
-
-    .card-topbar {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      padding: 12px 16px;
-      background: var(--gray-100);
-      border-bottom: 1px solid var(--gray-200);
-    }
-
-    .win-dot { width: 10px; height: 10px; border-radius: 50%; }
-    .wd-r { background: #ff5f57; }
-    .wd-y { background: #febc2e; }
-    .wd-g { background: #28c840; }
-
-    .card-url {
-      flex: 1;
-      background: #fff;
-      border: 1px solid var(--gray-200);
-      border-radius: 5px;
-      padding: 4px 10px;
-      font-size: 11.5px;
-      color: var(--gray-400);
-      text-align: left;
-    }
-
-    .card-body {
-      background: linear-gradient(160deg, #1e3a6e 0%, #0c1e45 40%, #0a1628 100%);
-      min-height: 340px;
-      display: grid;
-      grid-template-columns: 200px 1fr;
-    }
-
-    .card-sidebar {
-      border-right: 1px solid rgba(255,255,255,0.06);
-      padding: 14px 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .cs-section {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.3);
-      padding: 10px 8px 4px;
-    }
-
-    .cs-item {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      padding: 7px 8px;
-      border-radius: 5px;
-      font-size: 12px;
-      color: rgba(255,255,255,0.5);
-    }
-    .cs-item.active { background: rgba(26,111,255,0.2); color: #fff; }
-    .cs-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
-
-    .card-content {
-      padding: 18px 22px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .cc-kpis {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-    }
-
-    .kpi {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 8px;
-      padding: 11px 13px;
-    }
-    .kpi-l { font-size: 10px; color: rgba(255,255,255,0.4); margin-bottom: 3px; }
-    .kpi-v { font-size: 19px; font-weight: 800; color: #fff; letter-spacing: -0.02em; }
-    .kpi-s { font-size: 10px; color: var(--teal); margin-top: 2px; }
-
-    .cc-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.3);
-    }
-
-    .cc-table { width: 100%; border-collapse: collapse; }
-    .cc-table th {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.3);
-      padding: 5px 8px;
-      text-align: left;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-    .cc-table td {
-      font-size: 11.5px;
-      padding: 7px 8px;
-      color: rgba(255,255,255,0.65);
-      border-bottom: 1px solid rgba(255,255,255,0.03);
-    }
-
-    .pos {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 20px; height: 20px;
-      border-radius: 4px;
-      font-size: 10px;
-      font-weight: 700;
-    }
-    .p1 { background: rgba(0,212,170,0.15); color: var(--teal); }
-    .p2 { background: rgba(0,212,170,0.10); color: var(--teal); }
-    .p3 { background: rgba(0,212,170,0.07); color: var(--teal); }
-    .pm { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.4); }
-    .up { color: var(--teal); font-size: 10px; font-weight: 700; }
-
-    .cc-chart {
-      display: flex;
-      align-items: flex-end;
-      gap: 3px;
-      height: 38px;
-    }
-    .ch-bar { flex: 1; border-radius: 2px 2px 0 0; background: rgba(26,111,255,0.25); }
-    .ch-bar.hi { background: var(--brand); }
 
     /* ─── SECTION SHARED ─── */
     .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
@@ -380,72 +247,59 @@
       margin-bottom: 14px;
     }
 
-    /* ─── FEATURES (light) ─── */
+    /* ─── SERVICES ─── */
     #features {
-      background: #fff;
-      padding: 96px 24px;
+      background: #1e1e1b;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      padding: 80px 24px;
     }
 
-    .features-wrap {
-      max-width: 960px;
+    .services-grid {
+      max-width: 1080px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
     }
 
-    .features-left h2 {
-      font-size: clamp(28px, 3.5vw, 44px);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.15;
-      color: var(--gray-900);
-      margin-bottom: 14px;
+    .services-col { padding: 0 64px 0 0; }
+    .services-col + .services-col {
+      padding: 0 0 0 64px;
+      border-left: 1px solid rgba(255,255,255,0.07);
     }
 
-    .features-left p {
-      font-size: 15px;
-      color: var(--gray-500);
-      line-height: 1.7;
-    }
-
-    .feat-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .feat-item {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-    }
-
-    .feat-icon {
-      width: 36px; height: 36px;
-      border-radius: 8px;
-      background: var(--brand-light);
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--brand);
-      margin-top: 2px;
-    }
-
-    .feat-item h3 {
-      font-size: 15px;
+    .svc-label {
+      font-size: 11px;
       font-weight: 700;
-      color: var(--gray-900);
-      margin-bottom: 4px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #c8f135;
+      margin-bottom: 36px;
     }
 
-    .feat-item p {
-      font-size: 13.5px;
-      color: var(--gray-500);
-      line-height: 1.6;
+    .svc-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+    .svc-item:last-child { margin-bottom: 0; }
+
+    .svc-badge { flex-shrink: 0; margin-top: 3px; }
+
+    .svc-item h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 21px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 7px;
+      line-height: 1.25;
+    }
+
+    .svc-item p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.48);
+      line-height: 1.65;
     }
 
     /* ─── CASE STUDY (dark) ─── */
@@ -947,7 +801,8 @@
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 960px) {
-      .features-wrap { grid-template-columns: 1fr; gap: 40px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .services-col + .services-col { border-left: none; border-top: 1px solid rgba(255,255,255,0.07); padding: 40px 0 0; margin-top: 40px; }
       .process-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
       .process-grid::before { display: none; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -1030,7 +885,7 @@
       .footer-bottom { flex-direction: column; gap: 10px; }
 
       /* reduce section vertical padding */
-      #hero         { padding: 44px 20px 0; }
+      #hero         { padding: 60px 20px 60px; }
       #features     { padding: 56px 20px; }
       #case-study   { padding: 56px 20px; }
       #testimonial  { padding: 56px 20px; }
@@ -1057,9 +912,10 @@
 
       /* hero button full-width on small screens */
       .hero-btn { display: flex; justify-content: center; width: 100%; max-width: 360px; }
+      .hero-trust { gap: 16px; }
 
-      /* features padding */
-      .features-wrap { padding: 0 20px !important; }
+      /* services column padding */
+      .services-col { padding: 0; }
 
       /* footer brand max-width */
       .footer-brand p { max-width: 100%; }
@@ -1070,9 +926,9 @@
 
     /* ─── SOCIAL PROOF BAR ─── */
     #social-proof {
-      background: var(--gray-50);
-      border-top: 1px solid var(--gray-200);
-      border-bottom: 1px solid var(--gray-200);
+      background: #141412;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
       padding: 28px 24px;
       text-align: center;
     }
@@ -1081,7 +937,7 @@
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--gray-400);
+      color: rgba(255,255,255,0.28);
       margin-bottom: 20px;
     }
     .sp-logos {
@@ -1095,14 +951,13 @@
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 15px;
       font-weight: 700;
-      color: var(--gray-400);
+      color: rgba(255,255,255,0.22);
       letter-spacing: -0.02em;
-      opacity: 0.6;
     }
     .sp-divider {
       width: 1px;
       height: 18px;
-      background: var(--gray-200);
+      background: rgba(255,255,255,0.1);
     }
     @media (max-width: 640px) {
       .sp-divider { display: none; }
@@ -1205,11 +1060,11 @@
     }
     .nav-links a:hover::after { width: 100%; }
 
-    /* ─── FEAT ITEM HOVER ─── */
-    .feat-item { transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1); }
-    .feat-item:hover { transform: translateX(5px); }
-    .feat-icon { transition: background 0.2s, color 0.2s, box-shadow 0.2s; }
-    .feat-item:hover .feat-icon {
+    /* ─── SVC ITEM HOVER ─── */
+    .svc-item { transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1); }
+    .svc-item:hover { transform: translateX(5px); }
+    .svc-badge { transition: transform 0.2s; }
+    .svc-item:hover .svc-badge {
       background: var(--brand);
       color: #fff;
       box-shadow: 0 4px 16px rgba(26,111,255,0.35);
@@ -1359,101 +1214,23 @@
 <!-- HERO -->
 <section id="hero">
   <div class="container">
-    <div class="hero-label">Conheça a Posiciona</div>
-    <h1>A Sua Agência de <span>SEO Local em Portugal</span>.<br>No Piloto Automático.</h1>
-    <p class="hero-sub">
-      Automatizamos, otimizamos e colocamos o seu negócio local no topo do Google Maps e da pesquisa orgânica em Portugal, sem stress para si.
-    </p>
-    <a href="#contact" class="hero-btn">Auditoria Grátis →</a>
-  </div>
-
-  <div class="container">
-    <div class="hero-card">
-      <div class="card-topbar">
-        <div class="win-dot wd-r"></div>
-        <div class="win-dot wd-y"></div>
-        <div class="win-dot wd-g"></div>
-        <div class="card-url">posiciona.pt/dashboard — Clínica Saúde Viva, Lisboa</div>
-      </div>
-      <div class="card-body">
-        <div class="card-sidebar">
-          <div class="cs-section">Painel</div>
-          <div class="cs-item active"><div class="cs-dot"></div>Posições Google</div>
-          <div class="cs-item"><div class="cs-dot"></div>Google Maps</div>
-          <div class="cs-item"><div class="cs-dot"></div>Tráfego Orgânico</div>
-          <div class="cs-section">Ferramentas</div>
-          <div class="cs-item"><div class="cs-dot"></div>Palavras-chave</div>
-          <div class="cs-item"><div class="cs-dot"></div>Concorrentes</div>
-          <div class="cs-item"><div class="cs-dot"></div>Avaliações Google</div>
-          <div class="cs-item"><div class="cs-dot"></div>Backlinks</div>
-          <div class="cs-section">Relatórios</div>
-          <div class="cs-item"><div class="cs-dot"></div>Relatório Mensal</div>
-          <div class="cs-item"><div class="cs-dot"></div>Configurações</div>
-        </div>
-        <div class="card-content">
-          <div class="cc-kpis">
-            <div class="kpi">
-              <div class="kpi-l">Posição Média</div>
-              <div class="kpi-v">#1.8</div>
-              <div class="kpi-s">↑ era #9.2 há 60 dias</div>
-            </div>
-            <div class="kpi">
-              <div class="kpi-l">Cliques / mês</div>
-              <div class="kpi-v">5.340</div>
-              <div class="kpi-s">↑ +214% vs anterior</div>
-            </div>
-            <div class="kpi">
-              <div class="kpi-l">Top 3 Keywords</div>
-              <div class="kpi-v">31</div>
-              <div class="kpi-s">↑ +19 este mês</div>
-            </div>
-          </div>
-          <div class="cc-label">Rankings — Principais Palavras-chave</div>
-          <table class="cc-table">
-            <thead>
-              <tr>
-                <th>Palavra-chave</th><th>Posição</th><th>Variação</th><th>Vol./mês</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>clínica dentária lisboa centro</td>
-                <td><span class="pos p1">1</span></td>
-                <td class="up">↑ +8</td>
-                <td>2.400</td>
-              </tr>
-              <tr>
-                <td>dentista urgência lisboa</td>
-                <td><span class="pos p2">2</span></td>
-                <td class="up">↑ +13</td>
-                <td>1.100</td>
-              </tr>
-              <tr>
-                <td>implantes dentários lisboa</td>
-                <td><span class="pos p3">3</span></td>
-                <td class="up">↑ +7</td>
-                <td>880</td>
-              </tr>
-              <tr>
-                <td>ortodontia adultos lisboa</td>
-                <td><span class="pos pm">6</span></td>
-                <td class="up">↑ +4</td>
-                <td>640</td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="cc-label">Tráfego Orgânico — Últimos 6 Meses</div>
-          <div class="cc-chart">
-            <div class="ch-bar" style="height:22%"></div>
-            <div class="ch-bar" style="height:35%"></div>
-            <div class="ch-bar" style="height:50%"></div>
-            <div class="ch-bar" style="height:65%"></div>
-            <div class="ch-bar" style="height:82%"></div>
-            <div class="ch-bar hi" style="height:100%"></div>
-          </div>
-        </div>
-      </div>
+    <h1>Construímos Websites Modernos a<br><em class="accent-highlight">10x Velocidade</em><br>e Posicionamo-los no Google<br>e nos Chats de IA</h1>
+    <p class="hero-sub">Tornamos o seu website no melhor vendedor do negócio — criamos, otimizamos e posicionamos onde os clientes procuram.</p>
+    <div class="hero-trust">
+      <span class="ht-badge">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="10" fill="#c8f135"/><path d="M7 11l3 3 5-5.5" stroke="#1a1a18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Entrega Rápida
+      </span>
+      <span class="ht-badge">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="10" fill="#c8f135"/><path d="M7 11l3 3 5-5.5" stroke="#1a1a18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Focado em Resultados
+      </span>
+      <span class="ht-badge">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="10" fill="#c8f135"/><path d="M7 11l3 3 5-5.5" stroke="#1a1a18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Relatórios Claros
+      </span>
     </div>
+    <a href="#contact" class="hero-btn">Auditoria Grátis →</a>
   </div>
 </section>
 
@@ -1473,43 +1250,57 @@
   </div>
 </section>
 
-<!-- FEATURES (light) -->
+<!-- SERVICES -->
 <section id="features">
-  <div class="features-wrap" style="max-width:960px;margin:0 auto;padding:0 24px;">
-    <div class="features-left fade-up">
-      <div class="section-label">Os nossos serviços</div>
-      <h2>SEO Local que Age,<br>Não Apenas Analisa</h2>
-      <p>Enquanto os concorrentes só geram relatórios, nós implementamos, otimizamos e garantimos que o seu negócio aparece onde os clientes procuram.</p>
+  <div class="services-grid">
+    <div class="services-col fade-up">
+      <div class="svc-label">Serviços de Website</div>
+      <div class="svc-item">
+        <div class="svc-badge"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="12" fill="#c8f135"/><path d="M8.5 13l3.5 3.5 5.5-6.5" stroke="#1a1a18" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div>
+          <h3>Website Profissional</h3>
+          <p>Website moderno, rápido e otimizado para converter visitantes em clientes — entregue em dias, não meses.</p>
+        </div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-badge"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="12" fill="#c8f135"/><path d="M8.5 13l3.5 3.5 5.5-6.5" stroke="#1a1a18" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div>
+          <h3>Redesign e Atualização</h3>
+          <p>Transformamos o seu site existente com nova imagem, melhor performance e maior taxa de conversão.</p>
+        </div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-badge"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="12" fill="#c8f135"/><path d="M8.5 13l3.5 3.5 5.5-6.5" stroke="#1a1a18" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div>
+          <h3>Manutenção Mensal</h3>
+          <p>O seu site sempre atualizado, seguro e rápido — sem preocupações técnicas da sua parte.</p>
+        </div>
+      </div>
     </div>
-    <ul class="feat-list fade-up delay-1">
-      <li class="feat-item">
-        <div class="feat-icon">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1.5C5.27 1.5 2.25 4.52 2.25 8.25c0 4.22 6.75 9 6.75 9s6.75-4.78 6.75-9c0-3.73-3.02-6.75-6.75-6.75zm0 9a2.25 2.25 0 1 1 0-4.5 2.25 2.25 0 0 1 0 4.5z" fill="currentColor"/></svg>
-        </div>
+    <div class="services-col fade-up delay-1">
+      <div class="svc-label">Serviços de SEO</div>
+      <div class="svc-item">
+        <div class="svc-badge"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="12" fill="#c8f135"/><path d="M8.5 13l3.5 3.5 5.5-6.5" stroke="#1a1a18" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div>
-          <h3>Otimização Google Maps</h3>
-          <p>Perfil Google Business nas primeiras posições do pack local — onde 76% dos utilizadores clicam primeiro.</p>
+          <h3>SEO Local</h3>
+          <p>Apareça no topo do Google Maps e da pesquisa orgânica na sua cidade — mais chamadas, mais clientes.</p>
         </div>
-      </li>
-      <li class="feat-item">
-        <div class="feat-icon">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M15 9a6 6 0 0 1-6 6m6-6a6 6 0 0 0-6-6m6 6H3m6 6a6 6 0 0 1-6-6m6 6c-.83 0-2.25-2.69-2.25-6S8.17 3 9 3m0 12c.83 0 2.25-2.69 2.25-6S9.83 3 9 3m-6 6a6 6 0 0 1 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-badge"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="12" fill="#c8f135"/><path d="M8.5 13l3.5 3.5 5.5-6.5" stroke="#1a1a18" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div>
-          <h3>SEO On-Page e Conteúdo Local</h3>
-          <p>Otimizamos títulos, meta descrições, schema markup e criamos conteúdo geo-targetizado para a sua cidade.</p>
+          <h3>Presença nos Chats de IA</h3>
+          <p>Seja mencionado pelo ChatGPT e Gemini quando os seus clientes fazem perguntas sobre o seu setor.</p>
         </div>
-      </li>
-      <li class="feat-item">
-        <div class="feat-icon">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M8.25 11.25a4.5 4.5 0 0 0 6.26.5l2.25-2.25a4.5 4.5 0 0 0-6.36-6.36L9.22 4.72" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.75 6.75a4.5 4.5 0 0 0-6.26-.5L1.24 8.5a4.5 4.5 0 0 0 6.36 6.36l1.41-1.41" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-badge"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="12" fill="#c8f135"/><path d="M8.5 13l3.5 3.5 5.5-6.5" stroke="#1a1a18" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div>
-          <h3>Link Building e Citações Locais</h3>
-          <p>Backlinks de qualidade em diretórios portugueses e parceiros regionais para aumentar a sua autoridade de domínio.</p>
+          <h3>Google Maps e Avaliações</h3>
+          <p>Perfil Google Business no top 3 e gestão de avaliações para aumentar a confiança dos clientes.</p>
         </div>
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
 </section>
 
