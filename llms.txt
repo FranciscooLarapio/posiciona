@@ -1,0 +1,30 @@
+# Posiciona
+
+> Agência de SEO em Portugal especializada em SEO local para PME. Ajudamos pequenas e médias empresas portuguesas a aparecer no topo do Google Maps e da pesquisa orgânica, com auditoria gratuita incluída.
+
+## Páginas principais
+
+- [Página inicial](https://posiciona.pt/): Apresentação dos serviços de SEO local da Posiciona e auditoria gratuita.
+- [Sobre Nós](https://posiciona.pt/sobre-nos.html): Quem somos e como ajudamos PME portuguesas a crescer online.
+- [Blog](https://posiciona.pt/blog.html): Artigos e guias sobre SEO local em Portugal, publicados semanalmente.
+- [Quanto Custa o SEO Local em Portugal?](https://posiciona.pt/quanto-custa-seo-local-portugal.html): Preços típicos (150–500 €/mês), fatores de custo e cálculo de retorno.
+- [Como Aparecer na Primeira Página do Google](https://posiciona.pt/como-aparecer-na-primeira-pagina-google.html): Guia sobre palavras-chave locais, páginas dedicadas, avaliações e conteúdo.
+- [SEO ou Google Ads: O Que Vale Mais a Pena?](https://posiciona.pt/seo-ou-google-ads.html): Comparação de velocidade, custo e confiança entre SEO e Google Ads.
+
+## Blog
+
+- [Porque é que a tua empresa não aparece no Google](https://posiciona.pt/blog/porque-nao-apareco-no-google.html): 7 razões reais que impedem uma empresa de aparecer nas pesquisas locais.
+- [Google Business Profile para canalizadores e eletricistas](https://posiciona.pt/blog/google-business-profile-canalizadores-eletricistas.html): Guia prático para otimizar o perfil no Google Business.
+- [Canalizador no Seixal: 10 chamadas por semana pelo Google](https://posiciona.pt/blog/canalizador-seixal-chamadas-google.html): Caso prático de SEO local na Área Metropolitana de Lisboa.
+- [GEO em 2026: aparecer nas respostas do ChatGPT e Gemini](https://posiciona.pt/blog/geo-aparecer-chatgpt-gemini-2026.html): Como tornar uma empresa visível em respostas geradas por IA.
+- [Site próprio ou só Facebook?](https://posiciona.pt/blog/site-proprio-vs-facebook-pme-portugal.html): Análise de prós e contras para pequenas empresas portuguesas.
+- [Quanto tempo demora o SEO local a dar resultados?](https://posiciona.pt/blog/quanto-tempo-seo-local-resultados.html): Calendário realista mês a mês para PMEs.
+- [SEO para empresas de construção civil](https://posiciona.pt/blog/seo-empresas-construcao-civil-portugal.html): Como conseguir mais pedidos de orçamento pelo Google.
+- [SEO Local em 2026: Guia Completo](https://posiciona.pt/blog/seo-local-2026-guia-completo.html): O que é SEO local, porque importa e principais fatores de ranking.
+- [Como Aparecer no Google Maps](https://posiciona.pt/blog/como-aparecer-no-google-maps.html): Guia passo a passo sobre Perfil de Empresa e Local Pack.
+- [Como Conseguir Mais Avaliações no Google](https://posiciona.pt/blog/como-conseguir-mais-avaliacoes-google.html): Como pedir avaliações, responder a críticas e evitar penalizações.
+
+## Legal
+
+- [Política de Privacidade](https://posiciona.pt/privacidade.html): Como a Posiciona recolhe, utiliza e protege dados pessoais (RGPD).
+- [Termos e Condições](https://posiciona.pt/termos.html): Termos de utilização dos serviços da Posiciona.
