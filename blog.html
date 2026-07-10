@@ -17,7 +17,7 @@
   <meta property="og:image" content="https://placehold.co/1200x630/0c1428/1a6fff?text=Blog+SEO+%E2%80%94+Posiciona" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -28,6 +28,7 @@
       --brand-dark:  #1456d4;
       --navy:        #0c1428;
       --navy-2:      #111c35;
+      --navy-soft:   #16213e;
       --navy-card:   #16233d;
       --navy-border: rgba(255,255,255,0.08);
       --gray-50:  #f9fafb;
@@ -38,9 +39,52 @@
       --gray-700: #374151;
       --gray-900: #111827;
       --teal:     #00d4aa;
+      --pin:      #ff5a5f;
+
+      /* ─── mapa/papel de carta topográfica ─── */
+      --paper:      #f2f5f9;
+      --paper-line: #dde4ee;
+      --contour:    #1e2c4f;
+      --ink:        #17203a;
+      --muted:      #5b6678;
+      --muted-dark: #8fa0bd;
+
+      /* ─── tipografia ─── */
+      --f-display: 'Bricolage Grotesque', 'Inter', sans-serif;
+      --f-body:    'Inter', sans-serif;
+      --f-mono:    'JetBrains Mono', monospace;
+      --t-h1: clamp(2.1rem, 7vw, 3.6rem);
+      --t-h2: clamp(1.6rem, 5vw, 2.5rem);
+      --t-mono: 0.78rem;
+
+      /* ─── ritmo ─── */
+      --sec-pad: clamp(56px, 10vw, 110px);
+      --radius: 14px;
+      --shadow-card: 0 10px 30px rgba(12, 20, 40, .10);
     }
 
     html { scroll-behavior: smooth; }
+
+    h1, h2 { font-family: var(--f-display); }
+
+    .eyebrow {
+      font-family: var(--f-mono);
+      font-size: var(--t-mono);
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+    .bg-paper .eyebrow, .eyebrow.on-paper { color: var(--brand); }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
 
     body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -100,7 +144,7 @@
     }
 
     .logo-name {
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: var(--f-display);
       font-size: 28px;
       font-weight: 700;
       color: var(--gray-900);
@@ -228,9 +272,10 @@
     .blog-hero .section-label {
       position: relative;
       display: inline-block;
-      font-size: 12px;
+      font-family: var(--f-mono);
+      font-size: var(--t-mono);
       font-weight: 600;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--teal);
       margin-bottom: 20px;
@@ -238,7 +283,7 @@
 
     .blog-hero h1 {
       position: relative;
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: var(--f-display);
       font-size: clamp(32px, 5vw, 56px);
       font-weight: 800;
       letter-spacing: -0.03em;
@@ -479,7 +524,7 @@
     .post-readtime { font-size: 12px; color: var(--gray-400); }
 
     .featured-content h2 {
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: var(--f-display);
       font-size: clamp(20px, 2.2vw, 26px);
       font-weight: 800;
       letter-spacing: -0.03em;
@@ -637,7 +682,7 @@
     .post-card-body .post-meta { margin-bottom: 10px; }
 
     .post-card-body h3 {
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: var(--f-display);
       font-size: 15.5px;
       font-weight: 800;
       letter-spacing: -0.02em;
@@ -714,9 +759,10 @@
 
     .newsletter .section-label {
       position: relative;
-      font-size: 12px;
+      font-family: var(--f-mono);
+      font-size: var(--t-mono);
       font-weight: 600;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--teal);
       margin-bottom: 16px;
@@ -725,7 +771,7 @@
 
     .newsletter h2 {
       position: relative;
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: var(--f-display);
       font-size: clamp(26px, 3vw, 42px);
       font-weight: 800;
       letter-spacing: -0.03em;
@@ -953,7 +999,7 @@
 
 <!-- BLOG HERO -->
 <section class="blog-hero">
-  <div class="section-label">Recursos Gratuitos</div>
+  <div class="section-label">Blog — Recursos Grátis</div>
   <h1>Blog <span>SEO Local</span></h1>
   <p>Estratégias, guias e casos reais para colocar o seu negócio no topo do Google em Portugal.</p>
   <div class="hero-stats">
@@ -1356,7 +1402,7 @@
 
 <!-- NEWSLETTER -->
 <section class="newsletter fade-up">
-  <span class="section-label">Newsletter Semanal</span>
+  <span class="section-label">Newsletter — Semanal</span>
   <h2>SEO Local na Sua Caixa de Entrada</h2>
   <p>Uma dica acionável por semana. Sem spam, sem teoria — só o que funciona em Portugal.</p>
   <form class="newsletter-form" onsubmit="return false;">

@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "posiciona-one.vercel.app"
+        }
+      ],
+      "destination": "https://posiciona.pt/:path*",
+      "permanent": true
+    }
+  ]
+}
