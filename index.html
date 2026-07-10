@@ -596,47 +596,6 @@
       margin-top: 8px;
     }
 
-    /* ─── TESTIMONIAL (dark — funde visualmente com o caso de estudo acima) ─── */
-    #testimonial {
-      background: var(--navy);
-      padding: 0 24px 96px;
-      text-align: center;
-    }
-
-    .testimonial-inner {
-      max-width: 760px;
-      margin: 0 auto;
-    }
-
-    .testimonial-inner .section-label { display: block; margin-bottom: 32px; color: var(--teal); }
-
-    .quote-text {
-      font-size: clamp(18px, 2.5vw, 24px);
-      font-weight: 500;
-      color: rgba(255,255,255,0.82);
-      line-height: 1.55;
-      margin-bottom: 32px;
-    }
-
-    .quote-text .hl { color: var(--teal); font-weight: 700; }
-
-    .author-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-    }
-
-    .author-img {
-      width: 44px; height: 44px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid var(--navy-border);
-    }
-
-    .author-name { font-size: 14px; font-weight: 700; color: #fff; text-align: left; }
-    .author-role { font-size: 12px; color: var(--muted-dark); text-align: left; }
-
     /* ─── PROCESS (paper) ─── */
     #process {
       background: var(--paper);
@@ -1104,7 +1063,6 @@
       #hero         { padding: 44px 20px 0; }
       #features     { padding: 56px 20px; }
       #case-study   { padding: 56px 20px; }
-      #testimonial  { padding: 56px 20px; }
       #process      { padding: 56px 20px; }
       #cta-banner   { padding: 48px 20px; }
       #contact      { padding: 56px 20px; }
@@ -1294,21 +1252,6 @@
       pointer-events: none;
     }
 
-    /* ─── TESTIMONIAL DECORATION ─── */
-    #testimonial { position: relative; overflow: hidden; }
-    #testimonial::before {
-      content: '\201C';
-      position: absolute;
-      top: 10px; left: 50%;
-      transform: translateX(-50%);
-      font-size: 240px; line-height: 1;
-      font-family: var(--f-display), Georgia, serif;
-      font-weight: 900;
-      color: rgba(255,255,255,0.05);
-      pointer-events: none;
-      user-select: none;
-    }
-
     /* ─── MAP PIN PULSE ─── */
     @keyframes pin-pulse {
       0%   { transform: scale(1); opacity: 0.7; }
@@ -1496,66 +1439,46 @@
 <!-- CASE STUDY (dark) -->
 <section id="case-study">
   <div class="container">
-    <div class="section-label">Caso de Estudo — SEO Local</div>
-    <h2>Como um Negócio Local Passou do #14<br>ao <span>#1 em €18.400 de Receita Extra</span></h2>
-    <p class="sub">Uma clínica dentária em Lisboa estava invisível no Google. Em menos de 60 dias, dominaram as pesquisas locais.</p>
+    <div class="section-label">Projeção — Não Promessa</div>
+    <h2>O Que a Matemática Diz<br><span>Sobre um Negócio Como o Teu</span></h2>
+    <p class="sub">Ainda não temos um caso de sucesso publicável — preferimos mostrar-te a estimativa real do método do que inventar um. Os números abaixo são referências típicas de SEO local em Portugal, não resultados de um cliente específico.</p>
 
     <div class="rank-line-wrap fade-up delay-1">
       <div class="rank-line-row">
-        <span class="rank-line-tag">#14</span>
-        <span class="rank-line-day">Dia 1 → Dia 53</span>
-        <span class="rank-line-tag hi">#1</span>
+        <span class="rank-line-tag">Posição inicial típica</span>
+        <span class="rank-line-day">8 a 16 semanas</span>
+        <span class="rank-line-tag hi">Top 3</span>
       </div>
       <svg class="rank-line" viewBox="0 0 300 90" fill="none" preserveAspectRatio="none" aria-hidden="true">
         <path class="rank-line-path" d="M10,78 C70,74 110,64 150,48 C190,32 230,16 290,10" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/>
         <circle class="rank-line-dot" cx="290" cy="10" r="5" fill="var(--teal)"/>
       </svg>
       <div class="rank-line-row">
-        <span class="rank-line-kw">"clínica dentária lisboa"</span>
+        <span class="rank-line-kw">Exemplo ilustrativo — não um cliente real</span>
       </div>
     </div>
 
     <div class="stats-wrap fade-up delay-1">
       <div class="stat-box">
-        <div class="stat-n" data-count="5340" data-format="pt">5.340</div>
-        <div class="stat-l">Visitantes orgânicos / mês<span class="stat-note">vs 412 antes da campanha</span></div>
+        <div class="stat-n">150–500€</div>
+        <div class="stat-l">Investimento típico / mês<span class="stat-note">conforme setor e concorrência local</span></div>
       </div>
       <div class="stat-box">
-        <div class="stat-n" data-count="53">53</div>
-        <div class="stat-l">Dias para chegar ao #1<span class="stat-note">para "clínica dentária lisboa"</span></div>
+        <div class="stat-n">4–8</div>
+        <div class="stat-l">Semanas até aos primeiros sinais<span class="stat-note">subida inicial no ranking</span></div>
       </div>
       <div class="stat-box">
-        <div class="stat-n" data-count="98" data-suffix="%">98%</div>
-        <div class="stat-l">Consultas respondidas<span class="stat-note">via formulário de contacto</span></div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-n" data-count="66" data-suffix="+">66+</div>
-        <div class="stat-l">Novas avaliações 5★ Google<span class="stat-note">nos primeiros 90 dias</span></div>
+        <div class="stat-n">3–6</div>
+        <div class="stat-l">Meses até resultados consistentes<span class="stat-note">previsíveis, não imediatos</span></div>
       </div>
       <div class="stat-box full">
         <div>
-          <div class="stat-n white" data-count="18400" data-prefix="€" data-format="pt">€18.400</div>
-          <div class="stat-badge">↑ Faturação adicional estimada nos primeiros 3 meses</div>
+          <div class="stat-n white">500 × 5% = 25</div>
+          <div class="stat-badge">Pesquisas locais/mês × taxa de conversão típica</div>
         </div>
         <div style="font-size:13.5px;color:rgba(255,255,255,0.6);line-height:1.75;max-width:380px;">
-          Calculado com base no aumento de consultas agendadas e no valor médio por consulta da clínica. ROI de 6x sobre o investimento em SEO.
+          Exemplo ilustrativo com números conservadores: 500 pesquisas locais/mês e 5% de conversão dão 25 clientes novos só pelo Google Maps. O teu resultado depende do teu setor, zona e concorrência.
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIAL (light) -->
-<section id="testimonial">
-  <div class="testimonial-inner" style="max-width:740px;margin:0 auto;padding:0 24px;">
-    <div class="section-label">Testemunho — Cliente</div>
-    <p class="quote-text fade-up delay-1">
-      "A Posiciona tem gerido o SEO da nossa clínica nos últimos 6 meses. Em média, recebe <span class="hl">1.831 pesquisas mensais</span> no Google Maps e, desde que os implementámos, a nossa receita de novos pacientes cresceu <span class="hl">€18.400</span>."
-    </p>
-    <div class="author-row">
-      <div>
-        <div class="author-name">Ana Costa</div>
-        <div class="author-role">Diretora Clínica — Clínica Saúde Viva, Lisboa</div>
       </div>
     </div>
   </div>
@@ -1565,8 +1488,8 @@
 <section id="process">
   <div class="container">
     <div class="section-label">Processo — 4 Etapas</div>
-    <h2>Da Pesquisa ao Topo<br>em Dias, Não Meses</h2>
-    <p class="sub">Um processo estruturado de 4 passos que transforma pesquisas locais em clientes reais — sem complicações.</p>
+    <h2>Da Pesquisa ao Topo,<br>com Método</h2>
+    <p class="sub">Primeiros sinais em semanas, resultados consistentes em 3–6 meses — dizemos-te a verdade desde o início.</p>
 
     <div class="process-grid fade-up delay-1" id="processGrid">
       <div class="process-route"></div>
@@ -1611,7 +1534,7 @@
   <div class="container">
     <svg class="cta-pin" width="26" height="26" viewBox="0 0 34 34" fill="none" aria-hidden="true"><path d="M17 1C10.4 1 5 6.4 5 13c0 8.7 12 19 12 19s12-10.3 12-19C29 6.4 23.6 1 17 1z" fill="var(--pin)"/><circle cx="17" cy="13" r="4.5" fill="#fff"/></svg>
     <div class="section-label">Auditoria Grátis — Sem Compromisso</div>
-    <h2>Apareça no Top 3 do Google Maps.<br>Garantimos Resultados.</h2>
+    <h2>Apareça no Top 3 do Google Maps.<br>Garantimos trabalho visível e números claros.</h2>
     <p>Faça a sua auditoria SEO gratuita e receba um relatório personalizado com todas as oportunidades do seu negócio local — sem compromisso.</p>
     <a href="#contact" class="hero-btn" style="margin-bottom:0;">Quero a Minha Auditoria Gratuita →</a>
   </div>
