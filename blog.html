@@ -34,7 +34,7 @@
       --gray-50:  #f9fafb;
       --gray-100: #f3f4f6;
       --gray-200: #e5e7eb;
-      --gray-400: #9ca3af;
+      --gray-400: #6b7280;
       --gray-500: #6b7280;
       --gray-700: #374151;
       --gray-900: #111827;
@@ -64,6 +64,13 @@
     }
 
     html { scroll-behavior: smooth; }
+
+    /* ─── FOCUS VISÍVEL DE BASE (chão de acessibilidade) ─── */
+    a:focus-visible, button:focus-visible, input:focus-visible,
+    select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+      outline: 2px solid var(--brand);
+      outline-offset: 2px;
+    }
 
     h1, h2 { font-family: var(--f-display); }
 
@@ -338,7 +345,7 @@
 
     .hero-stat-l {
       font-size: 11.5px;
-      color: rgba(255,255,255,0.38);
+      color: rgba(255,255,255,0.6);
       font-weight: 500;
     }
 
@@ -378,8 +385,8 @@
     .cat-btn:hover { border-color: var(--brand); color: var(--brand); transform: translateY(-1px); }
     .cat-btn:active { transform: translateY(0); }
     .cat-btn.active {
-      border-color: var(--brand);
-      background: var(--brand);
+      border-color: var(--brand-dark);
+      background: var(--brand-dark);
       color: #fff;
       font-weight: 600;
     }
@@ -412,6 +419,7 @@
       color: inherit;
       transition: box-shadow 0.25s, transform 0.25s;
     }
+    .featured-post:focus-visible { outline-offset: -4px; }
     .featured-post:hover {
       box-shadow: 0 16px 48px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
       transform: translateY(-3px);
@@ -585,7 +593,7 @@
       color: var(--gray-400);
     }
 
-    .posts-count span { color: var(--brand); font-weight: 700; }
+    .posts-count span { color: var(--brand-dark); font-weight: 700; }
 
     .posts-grid {
       display: grid;
@@ -596,7 +604,6 @@
     .post-card {
       border: 1px solid var(--gray-200);
       border-radius: var(--radius);
-      overflow: hidden;
       background: #fff;
       text-decoration: none;
       color: inherit;
@@ -611,6 +618,7 @@
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 4px;
+      border-radius: var(--radius) var(--radius) 0 0;
       background: var(--card-accent, var(--brand));
     }
     .post-card:hover {
@@ -734,7 +742,7 @@
     .newsletter p {
       position: relative;
       font-size: 15px;
-      color: rgba(255,255,255,0.42);
+      color: rgba(255,255,255,0.6);
       max-width: 400px;
       margin: 0 auto 32px;
       line-height: 1.65;
@@ -830,25 +838,26 @@
 
     .footer-brand p {
       font-size: 13px;
-      color: rgba(255,255,255,0.32);
+      color: rgba(255,255,255,0.58);
       margin-top: 12px;
       line-height: 1.7;
       max-width: 260px;
     }
 
-    .footer-col h5 {
+    .footer-col h3 {
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.28);
+      color: rgba(255,255,255,0.58);
       margin-bottom: 14px;
     }
 
     .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer-col ul li { font-size: 13px; color: rgba(255,255,255,0.62); }
     .footer-col ul li a {
       font-size: 13px;
-      color: rgba(255,255,255,0.42);
+      color: rgba(255,255,255,0.62);
       text-decoration: none;
       transition: color 0.15s;
     }
@@ -864,9 +873,9 @@
       justify-content: space-between;
     }
 
-    .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.22); }
-    .footer-bottom a { font-size: 12px; color: rgba(255,255,255,0.22); text-decoration: none; }
-    .footer-bottom a:hover { color: rgba(255,255,255,0.5); }
+    .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.55); }
+    .footer-bottom a { font-size: 12px; color: rgba(255,255,255,0.55); text-decoration: none; }
+    .footer-bottom a:hover { color: #fff; }
 
     /* ─── FADE-IN ─── */
     .fade-up {
@@ -948,6 +957,7 @@
   <a href="index.html#contact" class="mobile-cta mobile-link">Começar Agora →</a>
 </div>
 
+<main>
 <!-- BLOG HERO -->
 <section class="blog-hero">
   <div class="section-label">Blog — Recursos Grátis</div>
@@ -1130,6 +1140,7 @@
     <button type="submit">Subscrever →</button>
   </form>
 </section>
+</main>
 
 <!-- FOOTER -->
 <footer>
@@ -1142,7 +1153,7 @@
       <p>Agência de SEO local especializada em colocar negócios portugueses no topo do Google — da análise aos resultados.</p>
     </div>
     <div class="footer-col">
-      <h5>Serviços</h5>
+      <h3>Serviços</h3>
       <ul>
         <li><a href="#">SEO Local</a></li>
         <li><a href="#">Google Maps</a></li>
@@ -1152,7 +1163,7 @@
       </ul>
     </div>
     <div class="footer-col">
-      <h5>Empresa</h5>
+      <h3>Empresa</h3>
       <ul>
         <li><a href="sobre-nos.html">Sobre Nós</a></li>
         <li><a href="blog.html">Blog SEO</a></li>
@@ -1160,11 +1171,11 @@
       </ul>
     </div>
     <div class="footer-col">
-      <h5>Contacto</h5>
+      <h3>Contacto</h3>
       <ul>
         <li><a href="mailto:apoio@posiciona.pt">apoio@posiciona.pt</a></li>
         <li><a href="tel:+351937214464">+351 937 214 464</a></li>
-        <li>Lisboa, Portugal</li>
+        <li>Margem Sul · Lisboa, Portugal</li>
       </ul>
     </div>
   </div>
