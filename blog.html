@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+  <script>document.documentElement.classList.add('js');</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog SEO Portugal — Guias e Estratégias | Posiciona</title>
@@ -523,7 +524,7 @@
       font-weight: 700;
       letter-spacing: 0.07em;
       text-transform: uppercase;
-      color: var(--brand);
+      color: var(--brand-dark);
       background: var(--brand-light);
       padding: 3px 9px;
       border-radius: 999px;
@@ -556,7 +557,7 @@
       gap: 8px;
       font-size: 14px;
       font-weight: 600;
-      color: var(--brand);
+      color: var(--brand-dark);
       text-decoration: none;
       padding: 10px 18px;
       background: var(--brand-light);
@@ -800,24 +801,26 @@
       -webkit-backdrop-filter: blur(10px);
       border-top: 1px solid var(--gray-200);
       transform: translateY(100%);
+      pointer-events: none;
       transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
     }
-    .sticky-cta.visible { transform: translateY(0); }
+    .sticky-cta.visible { transform: translateY(0); pointer-events: auto; }
     .sticky-cta a {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 100%;
       padding: 13px 20px;
-      background: linear-gradient(135deg, #2563eb 0%, #1a6fff 50%, #0ea5e9 100%);
-      color: #fff;
+      background: var(--teal);
+      color: var(--navy);
       font-size: 15px;
       font-weight: 700;
       border-radius: 10px;
       text-decoration: none;
-      box-shadow: 0 4px 20px rgba(26,111,255,0.35);
+      box-shadow: 0 4px 20px rgba(0,212,170,0.35);
       transition: transform 0.1s;
     }
+    .sticky-cta a:focus-visible { outline: 2px solid var(--navy); outline-offset: -4px; }
     .sticky-cta a:active { transform: scale(0.98); }
 
     /* ─── FOOTER ─── */
@@ -877,8 +880,8 @@
     .footer-bottom a { font-size: 12px; color: rgba(255,255,255,0.55); text-decoration: none; }
     .footer-bottom a:hover { color: #fff; }
 
-    /* ─── FADE-IN ─── */
-    .fade-up {
+    /* ─── FADE-IN (só esconde se o JS confirmar que está ativo) ─── */
+    .js .fade-up {
       opacity: 0;
       transform: translateY(24px);
       transition: opacity 0.55s cubic-bezier(0.4,0,0.2,1), transform 0.55s cubic-bezier(0.4,0,0.2,1);
@@ -1194,37 +1197,41 @@
 <script>
   // ─── PROGRESS BAR ───
   const progressBar = document.getElementById('progress-bar');
-  window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY;
-    const total = document.documentElement.scrollHeight - window.innerHeight;
-    progressBar.style.width = (scrolled / total * 100) + '%';
-  });
+  if (progressBar) {
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY;
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.width = (scrolled / total * 100) + '%';
+    });
+  }
 
   // ─── HAMBURGER ───
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
 
-  function openMenu() {
-    hamburger.classList.add('open');
-    hamburger.setAttribute('aria-expanded', 'true');
-    mobileMenu.style.display = 'block';
-    requestAnimationFrame(() => mobileMenu.classList.add('open'));
-  }
+  if (hamburger && mobileMenu) {
+    function openMenu() {
+      hamburger.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      mobileMenu.style.display = 'block';
+      requestAnimationFrame(() => mobileMenu.classList.add('open'));
+    }
 
-  function closeMenu() {
-    hamburger.classList.remove('open');
-    hamburger.setAttribute('aria-expanded', 'false');
-    mobileMenu.classList.remove('open');
-    mobileMenu.addEventListener('transitionend', () => {
-      if (!mobileMenu.classList.contains('open')) mobileMenu.style.display = 'none';
-    }, { once: true });
-  }
+    function closeMenu() {
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileMenu.classList.remove('open');
+      mobileMenu.addEventListener('transitionend', () => {
+        if (!mobileMenu.classList.contains('open')) mobileMenu.style.display = 'none';
+      }, { once: true });
+    }
 
-  hamburger.addEventListener('click', () => mobileMenu.classList.contains('open') ? closeMenu() : openMenu());
-  document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', closeMenu));
-  document.addEventListener('click', (e) => {
-    if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) closeMenu();
-  });
+    hamburger.addEventListener('click', () => mobileMenu.classList.contains('open') ? closeMenu() : openMenu());
+    document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', closeMenu));
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) closeMenu();
+    });
+  }
 
   // ─── CATEGORY FILTER ───
   const filterBtns = document.querySelectorAll('.cat-btn');
@@ -1246,27 +1253,38 @@
         if (match) visible++;
       });
 
-      countEl.textContent = visible;
-      emptyEl.style.display = visible === 0 ? 'block' : 'none';
+      if (countEl) countEl.textContent = visible;
+      if (emptyEl) emptyEl.style.display = visible === 0 ? 'block' : 'none';
     });
   });
 
-  // ─── FADE-IN ON SCROLL ───
+  // ─── FADE-IN ON SCROLL (progressive enhancement: nunca depende só do JS) ───
   const fadeEls = document.querySelectorAll('.fade-up');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-    });
-  }, { threshold: 0.1 });
-  fadeEls.forEach(el => observer.observe(el));
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    fadeEls.forEach(el => el.classList.add('visible'));
+  } else {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(el => observer.observe(el));
+
+    // Salvaguarda: revela tudo o que ainda esteja escondido ao fim de 3s
+    setTimeout(() => fadeEls.forEach(el => el.classList.add('visible')), 3000);
+  }
 
   // ─── STICKY MOBILE CTA ───
   const stickyCta = document.getElementById('stickyCta');
   const heroSection = document.querySelector('.blog-hero');
-  const ctaObserver = new IntersectionObserver((entries) => {
-    stickyCta.classList.toggle('visible', !entries[0].isIntersecting);
-  }, { threshold: 0 });
-  ctaObserver.observe(heroSection);
+  if (stickyCta && heroSection) {
+    const ctaObserver = new IntersectionObserver((entries) => {
+      stickyCta.classList.toggle('visible', !entries[0].isIntersecting);
+    }, { threshold: 0 });
+    ctaObserver.observe(heroSection);
+  }
 </script>
 
 </body>

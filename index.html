@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+  <script>document.documentElement.classList.add('js');</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Posiciona — Agência SEO Portugal | SEO Local para PME</title>
@@ -811,7 +812,7 @@
     }
 
     .dash-tabs { display: flex; gap: 2px; margin-left: 12px; }
-    .dtab { padding: 5px 14px; font-size: 11.5px; font-weight: 500; border-radius: 5px; color: rgba(255,255,255,0.4); }
+    .dtab { padding: 5px 14px; font-size: 11.5px; font-weight: 500; border-radius: 5px; color: rgba(255,255,255,0.6); }
     .dtab.active { background: rgba(26,111,255,0.2); color: #fff; }
 
     .dash-body {
@@ -1132,8 +1133,8 @@
       .sp-logos { gap: 12px 24px; }
     }
 
-    /* ─── FADE-IN ON SCROLL ─── */
-    .fade-up {
+    /* ─── FADE-IN ON SCROLL (só esconde se o JS confirmar que está ativo) ─── */
+    .js .fade-up {
       opacity: 0;
       transform: translateY(24px);
       transition: opacity 0.55s cubic-bezier(0.4,0,0.2,1), transform 0.55s cubic-bezier(0.4,0,0.2,1);
@@ -1159,25 +1160,27 @@
       -webkit-backdrop-filter: blur(10px);
       border-top: 1px solid var(--gray-200);
       transform: translateY(100%);
+      pointer-events: none;
       transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
     }
-    .sticky-cta.visible { transform: translateY(0); }
+    .sticky-cta.visible { transform: translateY(0); pointer-events: auto; }
     .sticky-cta a {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 100%;
       padding: 13px 20px;
-      background: linear-gradient(135deg, #2563eb 0%, #1a6fff 50%, #0ea5e9 100%);
-      color: #fff;
+      background: var(--teal);
+      color: var(--navy);
       font-size: 15px;
       font-weight: 700;
       border-radius: 10px;
       text-decoration: none;
-      box-shadow: 0 4px 20px rgba(26,111,255,0.35);
+      box-shadow: 0 4px 20px rgba(0,212,170,0.35);
       transition: transform 0.1s, box-shadow 0.1s;
     }
     .sticky-cta a:active { transform: scale(0.98); }
+    .sticky-cta a:focus-visible { outline: 2px solid var(--navy); outline-offset: -4px; }
     @media (max-width: 960px) {
       .sticky-cta { display: block; }
     }
@@ -1763,40 +1766,51 @@
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
 
-  function openMenu() {
-    hamburger.classList.add('open');
-    hamburger.setAttribute('aria-expanded', 'true');
-    mobileMenu.style.display = 'block';
-    requestAnimationFrame(() => mobileMenu.classList.add('open'));
+  if (hamburger && mobileMenu) {
+    function openMenu() {
+      hamburger.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      mobileMenu.style.display = 'block';
+      requestAnimationFrame(() => mobileMenu.classList.add('open'));
+    }
+
+    function closeMenu() {
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileMenu.classList.remove('open');
+      mobileMenu.addEventListener('transitionend', () => {
+        if (!mobileMenu.classList.contains('open')) mobileMenu.style.display = 'none';
+      }, { once: true });
+    }
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) closeMenu();
+    });
   }
 
-  function closeMenu() {
-    hamburger.classList.remove('open');
-    hamburger.setAttribute('aria-expanded', 'false');
-    mobileMenu.classList.remove('open');
-    mobileMenu.addEventListener('transitionend', () => {
-      if (!mobileMenu.classList.contains('open')) mobileMenu.style.display = 'none';
-    }, { once: true });
-  }
-
-  hamburger.addEventListener('click', () => {
-    mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
-  });
-
-  document.querySelectorAll('.mobile-link').forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
-
-  document.addEventListener('click', (e) => {
-    if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) closeMenu();
-  });
-
-  // ─── FADE-IN ON SCROLL ───
+  // ─── FADE-IN ON SCROLL (progressive enhancement: nunca depende só do JS) ───
   const fadeEls = document.querySelectorAll('.fade-up');
-  const fadeObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); fadeObserver.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  fadeEls.forEach(el => fadeObserver.observe(el));
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    fadeEls.forEach(el => el.classList.add('visible'));
+  } else {
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); fadeObserver.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    fadeEls.forEach(el => fadeObserver.observe(el));
+
+    // Salvaguarda: revela tudo o que ainda esteja escondido ao fim de 3s
+    setTimeout(() => fadeEls.forEach(el => el.classList.add('visible')), 3000);
+  }
 
   // ─── COUNTUP ANIMATION ───
   function animateCountUp(el) {
@@ -1865,17 +1879,19 @@
   // ─── STICKY MOBILE CTA (só após 600px de scroll, nunca sobre o hero) ───
   const stickyCta = document.getElementById('stickyCta');
   const whatsappBtn = document.getElementById('whatsappBtn');
-  let stickyTicking = false;
-  function updateStickyCta() {
-    const visible = window.scrollY > 600;
-    stickyCta.classList.toggle('visible', visible);
-    if (whatsappBtn) whatsappBtn.style.bottom = (visible && window.innerWidth <= 960) ? '88px' : '24px';
-    stickyTicking = false;
+  if (stickyCta) {
+    let stickyTicking = false;
+    function updateStickyCta() {
+      const visible = window.scrollY > 600;
+      stickyCta.classList.toggle('visible', visible);
+      if (whatsappBtn) whatsappBtn.style.bottom = (visible && window.innerWidth <= 960) ? '88px' : '24px';
+      stickyTicking = false;
+    }
+    window.addEventListener('scroll', () => {
+      if (!stickyTicking) { requestAnimationFrame(updateStickyCta); stickyTicking = true; }
+    }, { passive: true });
+    updateStickyCta();
   }
-  window.addEventListener('scroll', () => {
-    if (!stickyTicking) { requestAnimationFrame(updateStickyCta); stickyTicking = true; }
-  }, { passive: true });
-  updateStickyCta();
 
   // ─── LOCAL PACK VIVO (hero) ───
   (function localPack() {
