@@ -1,15 +1,27 @@
 {
+  "trailingSlash": false,
   "redirects": [
+    { "source": "/index.html", "destination": "https://posiciona.pt/", "permanent": true },
+    { "source": "/blog", "destination": "https://posiciona.pt/blog.html", "permanent": true },
+    { "source": "/sobre-nos", "destination": "https://posiciona.pt/sobre-nos.html", "permanent": true },
+    { "source": "/quanto-custa-seo-local-portugal.html", "destination": "https://posiciona.pt/blog/quanto-custa-seo-local-portugal.html", "permanent": true },
+    { "source": "/como-aparecer-na-primeira-pagina-google.html", "destination": "https://posiciona.pt/blog/como-aparecer-na-primeira-pagina-google.html", "permanent": true },
+    { "source": "/seo-ou-google-ads.html", "destination": "https://posiciona.pt/blog/seo-ou-google-ads.html", "permanent": true },
     {
       "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "posiciona-one.vercel.app"
-        }
-      ],
+      "has": [{ "type": "host", "value": "posiciona-one.vercel.app" }],
       "destination": "https://posiciona.pt/:path*",
       "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/brand_assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=2592000" }]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [{ "key": "X-Content-Type-Options", "value": "nosniff" }]
     }
   ]
 }

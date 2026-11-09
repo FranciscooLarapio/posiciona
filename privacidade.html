@@ -1,19 +1,24 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Política de Privacidade — Posiciona</title>
   <meta name="description" content="Política de Privacidade da Posiciona. Saiba como recolhemos, utilizamos e protegemos os seus dados pessoais, em conformidade com o RGPD.">
+  <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://posiciona.pt/privacidade.html" />
   <link rel="icon" type="image/png" href="/brand_assets/favicon.png" />
-  <link rel="apple-touch-icon" href="/brand_assets/favicon.png" />
+  <link rel="apple-touch-icon" href="/brand_assets/apple-touch-icon.png" />
   <meta name="theme-color" content="#1a6fff" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://posiciona.pt/privacidade.html" />
   <meta property="og:title" content="Política de Privacidade — Posiciona" />
-  <meta property="og:image" content="https://placehold.co/1200x630/0c1428/1a6fff?text=Posiciona" />
+  <meta property="og:image" content="https://posiciona.pt/brand_assets/og-image.jpg" />
+  <meta property="og:locale" content="pt_PT" />
+  <meta property="og:site_name" content="Posiciona" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
   :root {
@@ -39,7 +44,7 @@
     background: var(--navy2); position: sticky; top: 0; z-index: 100;
   }
   .logo { display:flex; align-items:center; gap:.5rem; font-weight:700; color: var(--text); font-size:1.1rem; }
-  .logo img { height:28px; }
+  .logo img { height:28px; width:auto; }
   .nav-links { display:flex; gap:1.5rem; list-style:none; margin-left:auto; }
   .nav-links a { color: var(--muted); font-size:.9rem; }
   .nav-links a:hover { color: var(--text); text-decoration:none; }
@@ -95,25 +100,56 @@
     .content { padding: 2.5rem 1.2rem 4rem; }
     .page-hero { padding: 2.5rem 1.2rem 2rem; }
   }
-  </style>
+  
+  .px-crumbs { font-size:.82rem; margin-bottom:18px; color:#9aa6bd; }
+  .px-crumbs ol { list-style:none; display:flex; flex-wrap:wrap; justify-content:center; gap:6px; margin:0; padding:0; }
+  .px-crumbs li + li::before { content:"›"; margin-right:6px; opacity:.6; }
+  .px-crumbs a { color:inherit; text-decoration:underline; text-underline-offset:3px; }
+  .px-crumbs a:hover, .px-crumbs a:focus-visible { color:#00D4AA; }
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Início",
+     "item": "https://posiciona.pt/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Política de Privacidade",
+     "item": "https://posiciona.pt/privacidade.html"
+    }
+   ]
+  }
+ ]
+}
+</script>
 </head>
 <body>
 
 <nav class="nav">
-  <a href="/index.html" class="logo">
-    <img src="/brand_assets/logo.png" alt="Posiciona" height="32">
+  <a href="/" class="logo">
+    <img src="/brand_assets/logo.webp" alt="Posiciona" width="205" height="256" decoding="async">
     Posiciona
   </a>
   <ul class="nav-links">
-    <li><a href="/index.html#features">Serviços</a></li>
-    <li><a href="/index.html#process">Como Funciona</a></li>
-    <li><a href="/index.html#case-study">Resultados</a></li>
+    <li><a href="/#features">Serviços</a></li>
+    <li><a href="/#process">Como Funciona</a></li>
+    <li><a href="/#case-study">Projeção</a></li>
     <li><a href="/blog.html">Blog</a></li>
   </ul>
-  <a href="/index.html#contact" class="btn-nav">Começar Agora →</a>
+  <a href="/#contact" class="btn-nav">Começar Agora →</a>
 </nav>
 
 <div class="page-hero">
+  <nav class="px-crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Início</a></li><li aria-current="page">Política de Privacidade</li></ol></nav>
   <span class="tag">Legal</span>
   <h1>Política de Privacidade</h1>
   <p>Última atualização: 4 de maio de 2026</p>
@@ -189,7 +225,7 @@
   <h2>8. Segurança</h2>
   <p>Adotamos medidas técnicas e organizacionais adequadas para proteger os seus dados contra acesso não autorizado, alteração, divulgação ou destruição. O nosso site utiliza HTTPS em todas as comunicações.</p>
 
-  <h2>9. Cookies</h2>
+  <h2 id="cookies">9. Cookies</h2>
   <p>Utilizamos cookies essenciais para o funcionamento do site e cookies analíticos (Google Analytics) para compreender como os visitantes interagem com as nossas páginas. Pode gerir as suas preferências de cookies através das definições do seu navegador.</p>
 
   <h2>10. Alterações a esta política</h2>
@@ -207,14 +243,14 @@
 
 <footer class="footer">
   <div class="footer-inner">
-    <a href="/index.html" class="logo">
-      <img src="/brand_assets/logo.png" alt="Posiciona" height="28">
+    <a href="/" class="logo">
+      <img src="/brand_assets/logo.webp" alt="Posiciona" width="205" height="256" decoding="async">
       Posiciona
     </a>
     <p class="footer-copy">Agência de SEO local especializada em colocar negócios portugueses no topo do Google.</p>
     <div class="footer-links">
       <a href="/blog.html">Blog SEO</a>
-      <a href="/index.html#contact">Contacto</a>
+      <a href="/#contact">Contacto</a>
       <a href="/sobre-nos.html">Sobre Nós</a>
       <a href="/termos.html">Termos</a>
       <a href="https://www.instagram.com/posiciona.pt/" target="_blank" rel="noopener">Instagram</a>

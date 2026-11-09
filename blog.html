@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
 <head>
   <script>document.documentElement.classList.add('js');</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog SEO Portugal — Guias e Estratégias | Posiciona</title>
-  <meta name="description" content="Artigos, guias e estratégias de SEO em Portugal para colocar o seu negócio no topo do Google Maps e da pesquisa orgânica. Publicado semanalmente." />
+  <meta name="description" content="Artigos, guias e estratégias de SEO em Portugal para colocar o seu negócio no topo do Google Maps e da pesquisa orgânica." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://posiciona.pt/blog.html" />
   <link rel="icon" type="image/png" href="/brand_assets/favicon.png" />
-  <link rel="apple-touch-icon" href="/brand_assets/favicon.png" />
+  <link rel="apple-touch-icon" href="/brand_assets/apple-touch-icon.png" />
   <meta name="theme-color" content="#1a6fff" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://posiciona.pt/blog.html" />
   <meta property="og:title" content="Blog SEO Portugal — Guias e Estratégias | Posiciona" />
-  <meta property="og:description" content="Artigos, guias e estratégias de SEO em Portugal para colocar o seu negócio no topo do Google Maps e da pesquisa orgânica. Publicado semanalmente." />
-  <meta property="og:image" content="https://placehold.co/1200x630/0c1428/1a6fff?text=Blog+SEO+%E2%80%94+Posiciona" />
+  <meta property="og:description" content="Artigos, guias e estratégias de SEO em Portugal para colocar o seu negócio no topo do Google Maps e da pesquisa orgânica." />
+  <meta property="og:image" content="https://posiciona.pt/brand_assets/og-image.jpg" />
+  <meta property="og:locale" content="pt_PT" />
+  <meta property="og:site_name" content="Posiciona" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -631,7 +634,7 @@
     /* 4 cores de categoria fixas e sóbrias */
     .post-card[data-cat="Google Maps"],
     .post-card[data-cat="Google Business"] { --card-accent: var(--teal); }
-    .post-card[data-cat="Casos de Sucesso"] { --card-accent: var(--pin); }
+    .post-card[data-cat="Exemplo Prático"] { --card-accent: var(--pin); }
     .post-card[data-cat="Estratégia"],
     .post-card[data-cat="Preços"],
     .post-card[data-cat="Link Building"] { --card-accent: #c08a2e; }
@@ -923,7 +926,120 @@
       .footer-bottom { flex-direction: column; gap: 10px; }
       footer { padding: 40px 20px 24px; }
     }
-  </style>
+  
+  .px-crumbs { font-size:.82rem; margin-bottom:18px; color:#9aa6bd; }
+  .px-crumbs ol { list-style:none; display:flex; flex-wrap:wrap; justify-content:center; gap:6px; margin:0; padding:0; }
+  .px-crumbs li + li::before { content:"›"; margin-right:6px; opacity:.6; }
+  .px-crumbs a { color:inherit; text-decoration:underline; text-underline-offset:3px; }
+  .px-crumbs a:hover, .px-crumbs a:focus-visible { color:#00D4AA; }
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Blog",
+   "@id": "https://posiciona.pt/blog.html",
+   "url": "https://posiciona.pt/blog.html",
+   "name": "Blog SEO Local — Posiciona",
+   "inLanguage": "pt-PT",
+   "publisher": {
+    "@id": "https://posiciona.pt/#organization"
+   },
+   "blogPost": [
+    {
+     "@type": "BlogPosting",
+     "headline": "Porque é que a tua empresa não aparece no Google quando alguém procura na tua zona",
+     "url": "https://posiciona.pt/blog/porque-nao-apareco-no-google.html"
+    },
+    {
+     "@type": "BlogPosting",
+     "headline": "Como conseguir mais avaliações no Google: estratégias que funcionam",
+     "url": "https://posiciona.pt/blog/como-conseguir-mais-avaliacoes-google.html"
+    },
+    {
+     "@type": "BlogPosting",
+     "headline": "Como aparecer no Google Maps: guia passo a passo para PME",
+     "url": "https://posiciona.pt/blog/como-aparecer-no-google-maps.html"
+    },
+    {
+     "@type": "BlogPosting",
+     "headline": "SEO Local em 2026: guia completo para dominar o Google Maps em Portugal",
+     "url": "https://posiciona.pt/blog/seo-local-2026-guia-completo.html"
+    },
+    {
+     "@type": "BlogPosting",
+     "headline": "SEO para empresas de construção civil: como conseguir mais obras pelo Google",
+     "url": "https://posiciona.pt/blog/seo-empresas-construcao-civil-portugal.html"
+    },
+    {
+     "@type": "BlogPosting",
+     "headline": "Quanto tempo demora o SEO local a dar resultados? Calendário realista para uma PME portuguesa",
+     "url": "https://posiciona.pt/blog/quanto-tempo-seo-local-resultados.html"
+    },
+    {
+     "@type": "BlogPosting",
+     "headline": "Site próprio ou só Facebook? A escolha que define o futuro da tua pequena empresa",
+     "url": "https://posiciona.pt/blog/site-proprio-vs-facebook-pme-portugal.html"
+    },
+    {
+     "@type": "BlogPosting",
+     "headline": "GEO em 2026: como aparecer nas respostas do ChatGPT e do Gemini quando alguém pede recomendações",
+     "url": "https://posiciona.pt/blog/geo-aparecer-chatgpt-gemini-2026.html"
+    },
+    {
+     "@type": "BlogPosting",
+     "headline": "Como um canalizador no Seixal pode receber 10 chamadas por semana através do Google",
+     "url": "https://posiciona.pt/blog/canalizador-seixal-chamadas-google.html"
+    },
+    {
+     "@type": "BlogPosting",
+     "headline": "Google Business Profile para canalizadores e eletricistas: o guia que ninguém te deu",
+     "url": "https://posiciona.pt/blog/google-business-profile-canalizadores-eletricistas.html"
+    },
+    {
+     "@type": "BlogPosting",
+     "headline": "Como aparecer na primeira página do Google: o guia para negócios locais",
+     "url": "https://posiciona.pt/blog/como-aparecer-na-primeira-pagina-google.html"
+    },
+    {
+     "@type": "BlogPosting",
+     "headline": "Quanto custa o SEO local em Portugal? Os preços reais em 2026",
+     "url": "https://posiciona.pt/blog/quanto-custa-seo-local-portugal.html"
+    },
+    {
+     "@type": "BlogPosting",
+     "headline": "SEO ou Google Ads: o que vale mais a pena para o teu negócio?",
+     "url": "https://posiciona.pt/blog/seo-ou-google-ads.html"
+    }
+   ]
+  },
+  {
+   "@type": "Organization",
+   "@id": "https://posiciona.pt/#organization",
+   "name": "Posiciona",
+   "url": "https://posiciona.pt/"
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Início",
+     "item": "https://posiciona.pt/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Blog",
+     "item": "https://posiciona.pt/blog.html"
+    }
+   ]
+  }
+ ]
+}
+</script>
 </head>
 <body>
 
@@ -932,17 +1048,17 @@
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="logo">
-      <img src="brand_assets/logo.png" alt="Posiciona">
+    <a href="/" class="logo">
+      <img src="/brand_assets/logo.webp" alt="Posiciona" width="205" height="256" decoding="async">
       <span class="logo-name">Posiciona</span>
     </a>
     <ul class="nav-links">
-      <li><a href="index.html#features">Serviços</a></li>
-      <li><a href="index.html#process">Como Funciona</a></li>
-      <li><a href="index.html#case-study">Resultados</a></li>
+      <li><a href="/#features">Serviços</a></li>
+      <li><a href="/#process">Como Funciona</a></li>
+      <li><a href="/#case-study">Projeção</a></li>
       <li><a href="blog.html" class="active">Blog</a></li>
     </ul>
-    <a href="index.html#contact" class="nav-cta">Começar Agora →</a>
+    <a href="/#contact" class="nav-cta">Começar Agora →</a>
     <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -952,28 +1068,25 @@
 <!-- MOBILE DRAWER -->
 <div class="mobile-menu" id="mobileMenu">
   <ul>
-    <li><a href="index.html#features" class="mobile-link">Serviços</a></li>
-    <li><a href="index.html#process" class="mobile-link">Como Funciona</a></li>
-    <li><a href="index.html#case-study" class="mobile-link">Resultados</a></li>
+    <li><a href="/#features" class="mobile-link">Serviços</a></li>
+    <li><a href="/#process" class="mobile-link">Como Funciona</a></li>
+    <li><a href="/#case-study" class="mobile-link">Projeção</a></li>
     <li><a href="blog.html" class="mobile-link">Blog</a></li>
   </ul>
-  <a href="index.html#contact" class="mobile-cta mobile-link">Começar Agora →</a>
+  <a href="/#contact" class="mobile-cta mobile-link">Começar Agora →</a>
 </div>
 
 <main>
 <!-- BLOG HERO -->
 <section class="blog-hero">
+  <div class="px-crumbs" role="navigation" aria-label="Breadcrumb"><ol><li><a href="/">Início</a></li><li aria-current="page">Blog</li></ol></div>
   <div class="section-label">Blog — Recursos Grátis</div>
   <h1>Blog <span>SEO Local</span></h1>
-  <p>Estratégias, guias e casos reais para colocar o seu negócio no topo do Google em Portugal.</p>
+  <p>Estratégias, guias e exemplos práticos para colocar o seu negócio no topo do Google em Portugal.</p>
   <div class="hero-stats">
     <div class="hero-stat">
-      <div class="hero-stat-n"><span class="accent">12</span></div>
+      <div class="hero-stat-n"><span class="accent">13</span></div>
       <div class="hero-stat-l">Artigos publicados</div>
-    </div>
-    <div class="hero-stat">
-      <div class="hero-stat-n"><span class="accent">↻</span> Semanal</div>
-      <div class="hero-stat-l">Novos artigos</div>
     </div>
   </div>
 </section>
@@ -985,7 +1098,7 @@
   <button class="cat-btn" data-filter="SEO Local">SEO Local</button>
   <button class="cat-btn" data-filter="Google Business">Google Business</button>
   <button class="cat-btn" data-filter="Google Maps">Google Maps</button>
-  <button class="cat-btn" data-filter="Casos de Sucesso">Casos de Sucesso</button>
+  <button class="cat-btn" data-filter="Exemplo Prático">Exemplo Prático</button>
   <button class="cat-btn" data-filter="SEO On-Page">SEO On-Page</button>
   <button class="cat-btn" data-filter="Estratégia">Estratégia</button>
   <button class="cat-btn" data-filter="Preços">Preços</button>
@@ -1025,7 +1138,7 @@
 <div class="posts-section">
   <div class="posts-header">
     <div class="posts-section-title">Artigos Recentes</div>
-    <div class="posts-count">A mostrar <span id="visibleCount">11</span> artigos</div>
+    <div class="posts-count">A mostrar <span id="visibleCount">12</span> artigos</div>
   </div>
   <div class="posts-grid" id="postsGrid">
 
@@ -1085,11 +1198,11 @@
       </div>
     </a>
 
-    <a href="blog/canalizador-seixal-chamadas-google.html" class="post-card fade-up delay-1" data-cat="Casos de Sucesso">
+    <a href="blog/canalizador-seixal-chamadas-google.html" class="post-card fade-up delay-1" data-cat="Exemplo Prático">
       <div class="post-card-body">
-        <div class="post-meta"><span class="post-tag">Casos de Sucesso</span><span class="meta-sep">·</span><span class="post-date">Mai 2026</span><span class="meta-sep">·</span><span class="read-time">6 min</span></div>
+        <div class="post-meta"><span class="post-tag">Exemplo Prático</span><span class="meta-sep">·</span><span class="post-date">Mai 2026</span><span class="meta-sep">·</span><span class="read-time">6 min</span></div>
         <h3>Como um canalizador no Seixal pode receber 10 chamadas por semana através do Google</h3>
-        <p>Caso real: como um negócio de serviços locais passou a receber chamadas consistentes simplesmente por otimizar a sua presença online.</p>
+        <p>Exemplo prático: o que distingue um canalizador que recebe uma chamada por semana de outro que recebe dez.</p>
       </div>
     </a>
 
@@ -1129,15 +1242,14 @@
   </div>
 </div>
 
-<!-- NEWSLETTER -->
+<!-- CTA AUDITORIA -->
 <section class="newsletter fade-up">
-  <span class="section-label">Newsletter — Semanal</span>
-  <h2>SEO Local na Sua Caixa de Entrada</h2>
-  <p>Uma dica acionável por semana. Sem spam, sem teoria — só o que funciona em Portugal.</p>
-  <form class="newsletter-form" onsubmit="return false;">
-    <input type="email" placeholder="O seu email profissional" required>
-    <button type="submit">Subscrever →</button>
-  </form>
+  <span class="section-label">Auditoria Grátis — Sem Compromisso</span>
+  <h2>Quer saber onde está o seu negócio no Google?</h2>
+  <p>Analisamos o seu site, o Perfil de Empresa e a concorrência local, e enviamos um relatório em 48 horas.</p>
+  <div class="newsletter-form" style="justify-content:center;">
+    <a href="/#contact" style="display:inline-block;background:var(--brand);color:#fff;font-weight:700;padding:14px 28px;border-radius:10px;text-decoration:none;">Pedir auditoria gratuita</a>
+  </div>
 </section>
 </main>
 
@@ -1145,8 +1257,8 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <a href="index.html" class="logo">
-        <img src="brand_assets/logo.png" alt="Posiciona">
+      <a href="/" class="logo">
+        <img src="/brand_assets/logo.webp" alt="Posiciona" width="205" height="256" decoding="async">
         <span class="logo-name" style="color:rgba(255,255,255,0.85);">Posiciona</span>
       </a>
       <p>Agência de SEO local especializada em colocar negócios portugueses no topo do Google — da análise aos resultados.</p>
@@ -1154,11 +1266,11 @@
     <div class="footer-col">
       <h3>Serviços</h3>
       <ul>
-        <li><a href="#">SEO Local</a></li>
-        <li><a href="#">Google Maps</a></li>
-        <li><a href="#">Link Building</a></li>
-        <li><a href="#">Conteúdo Local</a></li>
-        <li><a href="#">Gestão de Avaliações</a></li>
+        <li><a href="/#features">SEO Local</a></li>
+        <li><a href="/#features">Google Maps</a></li>
+        <li><a href="/#features">Link Building</a></li>
+        <li><a href="/#features">Conteúdo Local</a></li>
+        <li><a href="/#features">Gestão de Avaliações</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -1166,7 +1278,7 @@
       <ul>
         <li><a href="sobre-nos.html">Sobre Nós</a></li>
         <li><a href="blog.html">Blog SEO</a></li>
-        <li><a href="index.html#contact">Contacto</a></li>
+        <li><a href="/#contact">Contacto</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -1183,7 +1295,7 @@
     <div style="display:flex;gap:20px;">
       <a href="privacidade.html">Privacidade</a>
       <a href="termos.html">Termos</a>
-      <a href="#">Cookies</a>
+      <a href="/privacidade.html#cookies">Cookies</a>
       <a href="https://www.instagram.com/posiciona.pt/" target="_blank" rel="noopener">Instagram</a>
     </div>
   </div>
@@ -1191,7 +1303,7 @@
 
 <!-- STICKY MOBILE CTA -->
 <div class="sticky-cta" id="stickyCta">
-  <a href="index.html#contact">Auditoria SEO Grátis →</a>
+  <a href="/#contact">Auditoria SEO Grátis →</a>
 </div>
 
 <script>
